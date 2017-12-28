@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Book {
     private String ISBN;
+    private int workId;
+    private int editorId;
     private Date purchaseDate;
     private double price;
     private int year;
@@ -14,6 +16,22 @@ public class Book {
 
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
+    }
+
+    public int getWorkId() {
+        return workId;
+    }
+
+    public void setWorkId(int workId) {
+        this.workId = workId;
+    }
+
+    public int getEditorId() {
+        return editorId;
+    }
+
+    public void setEditorId(int editorId) {
+        this.editorId = editorId;
     }
 
     public Date getPurchaseDate() {

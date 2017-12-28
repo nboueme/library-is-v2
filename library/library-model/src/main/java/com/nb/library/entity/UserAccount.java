@@ -3,6 +3,7 @@ package com.nb.library.entity;
 import java.util.Date;
 
 public class UserAccount {
+    private int id;
     private String title;
     private String firstName;
     private String lastName;
@@ -17,6 +18,14 @@ public class UserAccount {
     private String role;
     private Date createdAt;
     private Date updatedAt;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

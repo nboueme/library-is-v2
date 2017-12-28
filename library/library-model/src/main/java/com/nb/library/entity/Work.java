@@ -4,13 +4,21 @@ import java.util.Date;
 import java.util.List;
 
 public class Work {
+    private int id;
     private String title;
     private String summary;
     private String imageURL;
     private Date createdAt;
     private Date updatedAt;
-
     private List<Author> authors;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

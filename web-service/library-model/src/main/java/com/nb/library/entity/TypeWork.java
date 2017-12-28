@@ -1,7 +1,16 @@
 package com.nb.library.entity;
 
 public class TypeWork {
+    private int id;
     private String typeWork;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTypeWork() {
         return typeWork;
