@@ -2,16 +2,8 @@
 .DS_Store
 
 # Project
-/target
-/*-*/target
+*/*-*/target
 
 # IDE
-/.idea
-/.settings
-/.project
+*/.idea
 *.iml
-/*-*/.project
-/*-*/.settings
-/*-*/.classpath
-/*-*/.checkstyle
-/*-*/.springBeans

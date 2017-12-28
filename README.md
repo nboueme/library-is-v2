@@ -16,21 +16,21 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 
 #### Modules
 
-- `climbing-service` : module contenant le web-service
-- `climbing-business` : module contenant la logique métier
-- `climbing-consumer` : module contenant la persistance et le pattern DAO
-- `climbing-model` : module contenant les entités de la solution
+- `library-service` : module contenant le web-service
+- `library-business` : module contenant la logique métier
+- `library-consumer` : module contenant la persistance et le pattern DAO
+- `library-model` : module contenant les entités de la solution
 
 
 ### Projet Maven 2 - application web et batch
 
 #### Modules
 
-- `climbing-webapp` : module contenant les vues et ses contrôleurs
-- `climbing-batch` : module contenant un batch qui envoie un mail de relance
-- `climbing-business` : module contenant la logique métier
-- `climbing-consumer` : module contenant la persistance et le pattern DAO, appel le service web
-- `climbing-model` : module contenant les entités de la solution
+- `library-webapp` : module contenant les vues et ses contrôleurs
+- `library-batch` : module contenant un batch qui envoie un mail de relance
+- `library-business` : module contenant la logique métier
+- `library-consumer` : module contenant la persistance et le pattern DAO, appel le service web
+- `library-model` : module contenant les entités de la solution
 
 
 ### Diagramme de classes
