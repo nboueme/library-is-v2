@@ -13,14 +13,6 @@ public class ManagerFactoryImpl implements ManagerFactory {
         this.authorManager = authorManager;
     }
 
-    private BookManager bookManager;
-    public BookManager getBookManager() {
-        return bookManager;
-    }
-    public void setBookManager(BookManager bookManager) {
-        this.bookManager = bookManager;
-    }
-
     private BorrowingManager borrowingManager;
     public BorrowingManager getBorrowingManager() {
         return borrowingManager;

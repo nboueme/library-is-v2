@@ -16,8 +16,8 @@ public class BorrowingManagerImpl extends AbstractManager implements BorrowingMa
         return getDaoFactory().getBorrowingDao().getBorrowing(borrowing);
     }
 
-    public List<Borrowing> listBorrowing() {
-        return getDaoFactory().getBorrowingDao().listBorrowing();
+    public List<Borrowing> listBorrowing(Borrowing borrowing) {
+        return getDaoFactory().getBorrowingDao().listBorrowing(borrowing);
     }
 
     public void updateBorrowing(Borrowing borrowing) {

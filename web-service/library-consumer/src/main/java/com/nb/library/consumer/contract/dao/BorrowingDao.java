@@ -9,7 +9,7 @@ public interface BorrowingDao {
 
     Borrowing getBorrowing(Borrowing borrowing);
 
-    List<Borrowing> listBorrowing();
+    List<Borrowing> listBorrowing(Borrowing borrowing);
 
     void updateBorrowing(Borrowing borrowing);
 

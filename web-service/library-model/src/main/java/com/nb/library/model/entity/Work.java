@@ -1,16 +1,17 @@
 package com.nb.library.model.entity;
 
 import java.util.Date;
-import java.util.List;
 
 public class Work {
     private int id;
+    private int typeWorkId;
     private String title;
     private String summary;
     private String imageURL;
     private Date createdAt;
     private Date updatedAt;
-    private List<Author> authors;
+    private Author author;
+    private TypeWork typeWork;
 
     public int getId() {
         return id;
@@ -18,6 +19,14 @@ public class Work {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getTypeWorkId() {
+        return typeWorkId;
+    }
+
+    public void setTypeWorkId(int typeWorkId) {
+        this.typeWorkId = typeWorkId;
     }
 
     public String getTitle() {
@@ -60,11 +69,19 @@ public class Work {
         this.updatedAt = updatedAt;
     }
 
-    public List<Author> getAuthors() {
-        return authors;
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setAuthors(List<Author> authors) {
-        this.authors = authors;
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public TypeWork getTypeWork() {
+        return typeWork;
+    }
+
+    public void setTypeWork(TypeWork typeWork) {
+        this.typeWork = typeWork;
     }
 }

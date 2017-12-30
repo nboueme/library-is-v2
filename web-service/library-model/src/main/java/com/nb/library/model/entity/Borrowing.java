@@ -10,6 +10,7 @@ public class Borrowing {
     private Date returnDate;
     private boolean isLoaned;
     private boolean isExtended;
+    private Work work;
 
     public int getId() {
         return id;
@@ -65,5 +66,13 @@ public class Borrowing {
 
     public void setExtended(boolean extended) {
         isExtended = extended;
+    }
+
+    public Work getWork() {
+        return work;
+    }
+
+    public void setWork(Work work) {
+        this.work = work;
     }
 }

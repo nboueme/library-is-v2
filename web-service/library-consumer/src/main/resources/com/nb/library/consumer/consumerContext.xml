@@ -7,7 +7,6 @@
 
     <!-- ===== Dao declaration ===== -->
     <bean id="authorDao" class="com.nb.library.consumer.impl.dao.AuthorDaoImpl"/>
-    <bean id="bookDao" class="com.nb.library.consumer.impl.dao.BookDaoImpl"/>
     <bean id="borrowingDao" class="com.nb.library.consumer.impl.dao.BorrowingDaoImpl"/>
     <bean id="editorDao" class="com.nb.library.consumer.impl.dao.EditorDaoImpl"/>
     <bean id="typeWorkDao" class="com.nb.library.consumer.impl.dao.TypeWorkDaoImpl"/>
@@ -17,7 +16,6 @@
     <!-- ===== DaoFactory ===== -->
     <bean id="daoFactory" class="com.nb.library.consumer.impl.DaoFactoryImpl">
         <property name="authorDao" ref="authorDao"/>
-        <property name="bookDao" ref="bookDao"/>
         <property name="borrowingDao" ref="borrowingDao"/>
         <property name="editorDao" ref="editorDao"/>
         <property name="typeWorkDao" ref="typeWorkDao"/>

@@ -7,10 +7,6 @@ public interface DaoFactory {
 
     void setAuthorDao(AuthorDao authorDao);
 
-    BookDao getBookDao();
-
-    void setBookDao(BookDao bookDao);
-
     BorrowingDao getBorrowingDao();
 
     void setBorrowingDao(BorrowingDao borrowingDao);

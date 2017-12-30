@@ -7,7 +7,6 @@
 
     <!-- ===== Managers declaration ===== -->
     <bean id="authorManager" class="com.nb.library.business.impl.manager.AuthorManagerImpl"/>
-    <bean id="bookManager" class="com.nb.library.business.impl.manager.BookManagerImpl"/>
     <bean id="borrowingManager" class="com.nb.library.business.impl.manager.BorrowingManagerImpl"/>
     <bean id="editorManager" class="com.nb.library.business.impl.manager.EditorManagerImpl"/>
     <bean id="typeWorkManager" class="com.nb.library.business.impl.manager.TypeWorkManagerImpl"/>
@@ -17,7 +16,6 @@
     <!-- ===== ManagerFactory ===== -->
     <bean id="managerFactory" class="com.nb.library.business.impl.ManagerFactoryImpl">
         <property name="authorManager" ref="authorManager"/>
-        <property name="bookManager" ref="bookManager"/>
         <property name="borrowingManager" ref="borrowingManager"/>
         <property name="editorManager" ref="editorManager"/>
         <property name="typeWorkManager" ref="typeWorkManager"/>

@@ -13,14 +13,6 @@ public class DaoFactoryImpl implements DaoFactory {
         this.authorDao = authorDao;
     }
 
-    private BookDao bookDao;
-    public BookDao getBookDao() {
-        return bookDao;
-    }
-    public void setBookDao(BookDao bookDao) {
-        this.bookDao = bookDao;
-    }
-
     private BorrowingDao borrowingDao;
     public BorrowingDao getBorrowingDao() {
         return borrowingDao;

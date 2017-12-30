@@ -7,10 +7,6 @@ public interface ManagerFactory {
 
     void setAuthorManager(AuthorManager authorManager);
 
-    BookManager getBookManager();
-
-    void setBookManager(BookManager bookManager);
-
     BorrowingManager getBorrowingManager();
 
     void setBorrowingManager(BorrowingManager borrowingManager);
