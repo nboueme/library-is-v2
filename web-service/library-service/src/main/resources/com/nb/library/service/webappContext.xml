@@ -4,14 +4,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- ==== JNDI resource ===== -->
-    <bean id="dataSourceLibrary" class="org.springframework.jndi.JndiObjectFactoryBean">
-        <property name="jndiName" value="java:comp/env/jdbc/DB_LIBRARY"/>
+    <!-- ==== DataSource ===== -->
+    <bean id="dataSourceLibrary" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/app_library"/>
+        <property name="username" value="admin_ocp"/>
+        <property name="password" value="Shangri_La"/>
     </bean>
 
-    <!-- ==== AbstractResource ===== -->
+    <!-- ==== AbstractService ===== -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-        <property name="targetClass" value="com.nb.library.service.resource.AbstractResource"/>
+        <property name="targetClass" value="com.nb.library.service.AbstractService"/>
         <property name="targetMethod" value="setManagerFactory"/>
         <property name="arguments" ref="managerFactory"/>
     </bean>

@@ -23,6 +23,7 @@
         <springFramework.version>5.0.2.RELEASE</springFramework.version>
         <springSecurity.version>5.0.0.RELEASE</springSecurity.version>
         <struts2.version>2.5.14.1</struts2.version>
+        <log4j.version>2.10.0</log4j.version>
     </properties>
 
     <!-- =============================================================== -->
@@ -84,6 +85,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>${log4j.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
             <!-- ===== Third-party libraries ===== -->
             <dependency>
@@ -114,6 +122,11 @@
                 <groupId>jstl</groupId>
                 <artifactId>jstl</artifactId>
                 <version>1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-dbcp2</artifactId>
+                <version>2.2.0</version>
             </dependency>
             <!-- PostgreSQL JDBC driver -->
             <dependency>

@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  database:
+    image: postgres
+    restart: always
+    hostname: 127.0.0.1
+    volumes:
+      - ./scripts/app_library/01-create_db_app_library.sql:/docker-entrypoint-initdb.d/01.sql
+      - ./scripts/app_library/02-insert_data_app_library.sql:/docker-entrypoint-initdb.d/02.sql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=app_library
+      - POSTGRES_USER=admin_ocp
+      - POSTGRES_PASSWORD=Shangri_La

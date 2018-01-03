@@ -15,9 +15,6 @@ public class TypeWorkRM implements RowMapper<TypeWork> {
             else if (rs.getMetaData().getColumnName(i).equals("type_work")) typeWork.setTypeWork(rs.getString("type_work"));
         }
 
-        WorkRM workRM = new WorkRM();
-        typeWork.setWork(workRM.mapRow(rs, rowNum));
-
         return typeWork;
     }
 }

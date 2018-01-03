@@ -15,9 +15,6 @@ public class AuthorRM implements RowMapper<Author> {
             else if (rs.getMetaData().getColumnName(i).equals("author")) author.setFullName(rs.getString("author"));
         }
 
-        WorkRM workRM = new WorkRM();
-        author.setWork(workRM.mapRow(rs, rowNum));
-
         return author;
     }
 }
