@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ===== Dao declaration ===== -->
+    <bean id="authorDao" class="com.nb.library.consumer.impl.dao.AuthorDaoImpl"/>
+    <bean id="borrowingDao" class="com.nb.library.consumer.impl.dao.BorrowingDaoImpl"/>
+    <bean id="editorDao" class="com.nb.library.consumer.impl.dao.EditorDaoImpl"/>
+    <bean id="typeWorkDao" class="com.nb.library.consumer.impl.dao.TypeWorkDaoImpl"/>
+    <bean id="userDao" class="com.nb.library.consumer.impl.dao.UserDaoImpl"/>
+    <bean id="workDao" class="com.nb.library.consumer.impl.dao.WorkDaoImpl"/>
+
+    <!-- ===== DaoFactory ===== -->
+    <bean id="daoFactory" class="com.nb.library.consumer.impl.DaoFactoryImpl">
+        <property name="authorDao" ref="authorDao"/>
+        <property name="borrowingDao" ref="borrowingDao"/>
+        <property name="editorDao" ref="editorDao"/>
+        <property name="typeWorkDao" ref="typeWorkDao"/>
+        <property name="userDao" ref="userDao"/>
+        <property name="workDao" ref="workDao"/>
+    </bean>
+</beans>

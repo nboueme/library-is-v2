@@ -7,7 +7,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.List;
 
-@WebService(serviceName = "Work")
+@WebService(name = "WorkClient", serviceName = "WorkService", portName = "WorkPort", targetNamespace = "work.service.library.nb.com")
 public class WorkService extends AbstractService {
 
     @WebMethod

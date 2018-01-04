@@ -35,5 +35,9 @@
         </dependency>
 
         <!-- ===== Third-party libraries ===== -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
     </dependencies>
 </project>

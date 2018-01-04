@@ -6,11 +6,11 @@ import com.nb.library.service.AbstractService;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-@WebService(serviceName = "User")
+@WebService(name = "UserClient", serviceName = "UserService", portName = "UserPort", targetNamespace = "user.service.library.nb.com")
 public class UserService extends AbstractService {
 
     @WebMethod
-    public void getUser(UserAccount user) {
-        getManagerFactory().getUserManager().getUser(user);
+    public UserAccount getUser(UserAccount user) {
+        return getManagerFactory().getUserManager().getUser(user);
     }
 }

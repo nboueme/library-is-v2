@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ===== Managers declaration ===== -->
+    <bean id="authorManager" class="com.nb.library.business.impl.manager.AuthorManagerImpl"/>
+    <bean id="borrowingManager" class="com.nb.library.business.impl.manager.BorrowingManagerImpl"/>
+    <bean id="editorManager" class="com.nb.library.business.impl.manager.EditorManagerImpl"/>
+    <bean id="typeWorkManager" class="com.nb.library.business.impl.manager.TypeWorkManagerImpl"/>
+    <bean id="userManager" class="com.nb.library.business.impl.manager.UserManagerImpl"/>
+    <bean id="workManager" class="com.nb.library.business.impl.manager.WorkManagerImpl"/>
+
+    <!-- ===== ManagerFactory ===== -->
+    <bean id="managerFactory" class="com.nb.library.business.impl.ManagerFactoryImpl">
+        <property name="authorManager" ref="authorManager"/>
+        <property name="borrowingManager" ref="borrowingManager"/>
+        <property name="editorManager" ref="editorManager"/>
+        <property name="typeWorkManager" ref="typeWorkManager"/>
+        <property name="userManager" ref="userManager"/>
+        <property name="workManager" ref="workManager"/>
+    </bean>
+
+    <!-- ==== AbstractManager ===== -->
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetClass" value="com.nb.library.business.impl.AbstractManager"/>
+        <property name="targetMethod" value="setDaoFactory"/>
+        <property name="arguments" ref="daoFactory"/>
+    </bean>
+</beans>
