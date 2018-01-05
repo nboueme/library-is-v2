@@ -1,6 +1,6 @@
 package com.nb.library.consumer.contract.dao;
 
-import com.nb.library.model.entity.TypeWork;
+import com.nb.library.model.entity.type.TypeWork;
 
 import java.util.List;
 

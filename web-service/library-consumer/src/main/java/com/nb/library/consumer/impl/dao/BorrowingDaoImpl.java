@@ -3,6 +3,7 @@ package com.nb.library.consumer.impl.dao;
 import com.nb.library.consumer.contract.dao.BorrowingDao;
 import com.nb.library.consumer.impl.dao.rowmapper.BorrowingRM;
 import com.nb.library.model.entity.Borrowing;
+import com.nb.library.model.entity.UserAccount;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 
@@ -42,7 +43,7 @@ public class BorrowingDaoImpl extends AbstractDaoImpl implements BorrowingDao {
         return getNamedParameterJdbcTemplate().queryForObject(sql, args, rowMapper);
     }
 
-    public List<Borrowing> listBorrowing(Borrowing borrowing) {
+    public List<Borrowing> listBorrowing(UserAccount user) {
         String sql = "SELECT work.title, borrowing_date, return_date, is_extended " +
                 "FROM work, book, borrowing, user_account " +
                 "WHERE user_account.id = borrowing.user_id " +
@@ -53,7 +54,7 @@ public class BorrowingDaoImpl extends AbstractDaoImpl implements BorrowingDao {
                 "ORDER BY borrowing.return_date ASC;";
 
         MapSqlParameterSource args = new MapSqlParameterSource();
-        args.addValue("user_id", borrowing.getUserId(), Types.INTEGER);
+        args.addValue("user_id", user.getId(), Types.INTEGER);
 
         RowMapper<Borrowing> rowMapper = new BorrowingRM();
 

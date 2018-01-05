@@ -3,6 +3,7 @@ package com.nb.library.business.impl.manager;
 import com.nb.library.business.contract.manager.BorrowingManager;
 import com.nb.library.business.impl.AbstractManager;
 import com.nb.library.model.entity.Borrowing;
+import com.nb.library.model.entity.UserAccount;
 
 import java.util.List;
 
@@ -16,8 +17,8 @@ public class BorrowingManagerImpl extends AbstractManager implements BorrowingMa
         return getDaoFactory().getBorrowingDao().getBorrowing(borrowing);
     }
 
-    public List<Borrowing> listBorrowing(Borrowing borrowing) {
-        return getDaoFactory().getBorrowingDao().listBorrowing(borrowing);
+    public List<Borrowing> listBorrowing(UserAccount user) {
+        return getDaoFactory().getBorrowingDao().listBorrowing(user);
     }
 
     public void updateBorrowing(Borrowing borrowing) {

@@ -2,7 +2,7 @@ package com.nb.library.business.impl.manager;
 
 import com.nb.library.business.contract.manager.AuthorManager;
 import com.nb.library.business.impl.AbstractManager;
-import com.nb.library.model.entity.Author;
+import com.nb.library.model.entity.author.Author;
 
 import java.util.List;
 

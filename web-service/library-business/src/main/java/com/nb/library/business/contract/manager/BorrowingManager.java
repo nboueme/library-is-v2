@@ -1,6 +1,7 @@
 package com.nb.library.business.contract.manager;
 
 import com.nb.library.model.entity.Borrowing;
+import com.nb.library.model.entity.UserAccount;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ public interface BorrowingManager {
 
     Borrowing getBorrowing(Borrowing borrowing);
 
-    List<Borrowing> listBorrowing(Borrowing borrowing);
+    List<Borrowing> listBorrowing(UserAccount user);
 
     void updateBorrowing(Borrowing borrowing);
 

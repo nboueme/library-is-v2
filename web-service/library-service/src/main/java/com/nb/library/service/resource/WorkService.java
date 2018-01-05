@@ -7,7 +7,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.List;
 
-@WebService(name = "WorkClient", serviceName = "WorkService", portName = "WorkPort", targetNamespace = "work.service.library.nb.com")
+@WebService(name = "WorkClient", serviceName = "WorkService", portName = "WorkPort", targetNamespace = "work.entity.model.library.nb.com")
 public class WorkService extends AbstractService {
 
     @WebMethod
@@ -17,6 +17,8 @@ public class WorkService extends AbstractService {
 
     @WebMethod
     public List<Work> listWorks() {
+        //List<Work> works = getManagerFactory().getWorkManager().listWorks();
+        //return works.toArray(new Work[works.size()]);
         return getManagerFactory().getWorkManager().listWorks();
     }
 }

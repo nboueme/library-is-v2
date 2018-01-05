@@ -1,6 +1,6 @@
 package com.nb.library.business.contract.manager;
 
-import com.nb.library.service.work.Work;
+import com.nb.library.model.entity.work.Work;
 
 import java.util.List;
 

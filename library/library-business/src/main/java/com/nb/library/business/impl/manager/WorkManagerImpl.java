@@ -2,7 +2,7 @@ package com.nb.library.business.impl.manager;
 
 import com.nb.library.business.contract.manager.WorkManager;
 import com.nb.library.business.impl.AbstractManager;
-import com.nb.library.service.work.Work;
+import com.nb.library.model.entity.work.Work;
 
 import java.util.List;
 

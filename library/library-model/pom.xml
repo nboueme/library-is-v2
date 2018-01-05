@@ -26,4 +26,34 @@
     <dependencies>
         <!-- ===== Third-party libraries ===== -->
     </dependencies>
+
+    <!-- =============================================================== -->
+    <!-- Build -->
+    <!-- =============================================================== -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceDestDir>${project.basedir}/src/main/java</sourceDestDir>
+                    <wsdlUrls>
+                        <wsdlUrl>http://localhost:8080/library/AuthorService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/BorrowingService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/EditorService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/TypeWorkService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/UserService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/WorkService?wsdl</wsdlUrl>
+                    </wsdlUrls>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

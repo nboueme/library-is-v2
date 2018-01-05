@@ -2,7 +2,7 @@ package com.nb.library.business.impl.manager;
 
 import com.nb.library.business.contract.manager.UserManager;
 import com.nb.library.business.impl.AbstractManager;
-import com.nb.library.service.user.UserAccount;
+import com.nb.library.model.entity.user.UserAccount;
 
 public class UserManagerImpl extends AbstractManager implements UserManager {
 

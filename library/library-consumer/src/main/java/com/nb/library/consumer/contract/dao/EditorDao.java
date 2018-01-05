@@ -1,6 +1,6 @@
 package com.nb.library.consumer.contract.dao;
 
-import com.nb.library.model.entity.Editor;
+import com.nb.library.model.entity.editor.Editor;
 
 import java.util.List;
 

@@ -6,7 +6,7 @@ import com.nb.library.service.AbstractService;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-@WebService(name = "UserClient", serviceName = "UserService", portName = "UserPort", targetNamespace = "user.service.library.nb.com")
+@WebService(name = "UserClient", serviceName = "UserService", portName = "UserPort", targetNamespace = "user.entity.model.library.nb.com")
 public class UserService extends AbstractService {
 
     @WebMethod
