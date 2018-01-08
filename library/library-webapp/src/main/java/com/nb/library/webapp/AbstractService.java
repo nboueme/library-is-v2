@@ -1,12 +1,13 @@
 package com.nb.library.webapp;
 
 import com.nb.library.business.impl.ManagerFactoryImpl;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class AbstractService {
+public class AbstractService extends ActionSupport {
 
     private static ManagerFactoryImpl managerFactory;
 
-    public static ManagerFactoryImpl getManagerFactory() {
+    protected static ManagerFactoryImpl getManagerFactory() {
         return managerFactory;
     }
 

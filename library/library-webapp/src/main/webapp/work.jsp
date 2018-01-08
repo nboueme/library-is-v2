@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>Work</title>
 </head>
 <body>
 
-<h1>Welcome to Struts 2!</h1>
-<p><a href="<s:url action="work"/>">Hello World!</a></p>
+<h2>Hello Work! <s:property value="work.title" /></h2>
 
 </body>
 </html>

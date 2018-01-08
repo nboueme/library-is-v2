@@ -26,6 +26,7 @@
         <springFramework.version>5.0.2.RELEASE</springFramework.version>
         <springSecurity.version>5.0.0.RELEASE</springSecurity.version>
         <struts2.version>2.5.14.1</struts2.version>
+        <log4j2.version>2.10.0</log4j2.version>
     </properties>
 
     <!-- =============================================================== -->
@@ -90,6 +91,13 @@
                 <groupId>org.apache.struts</groupId>
                 <artifactId>struts2-bom</artifactId>
                 <version>${struts2.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-bom</artifactId>
+                <version>${log4j2.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
