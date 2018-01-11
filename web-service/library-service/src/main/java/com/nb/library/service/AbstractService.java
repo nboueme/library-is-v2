@@ -1,16 +1,16 @@
 package com.nb.library.service;
 
-import com.nb.library.business.impl.ManagerFactoryImpl;
+import com.nb.library.repository.DaoFactory;
 
 public abstract class AbstractService {
 
-    private static ManagerFactoryImpl managerFactory;
+    private static DaoFactory daoFactory;
 
-    public static ManagerFactoryImpl getManagerFactory() {
-        return managerFactory;
+    protected static DaoFactory getDaoFactory() {
+        return daoFactory;
     }
 
-    public static void setManagerFactory(ManagerFactoryImpl managerFactory) {
-        AbstractService.managerFactory = managerFactory;
+    public static void setDaoFactory(DaoFactory daoFactory) {
+        AbstractService.daoFactory = daoFactory;
     }
 }

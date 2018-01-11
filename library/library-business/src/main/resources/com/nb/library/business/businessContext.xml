@@ -6,15 +6,15 @@
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- ===== Managers declaration ===== -->
-    <bean id="authorManager" class="com.nb.library.business.impl.manager.AuthorManagerImpl"/>
-    <bean id="borrowingManager" class="com.nb.library.business.impl.manager.BorrowingManagerImpl"/>
-    <bean id="editorManager" class="com.nb.library.business.impl.manager.EditorManagerImpl"/>
-    <bean id="typeWorkManager" class="com.nb.library.business.impl.manager.TypeWorkManagerImpl"/>
-    <bean id="userManager" class="com.nb.library.business.impl.manager.UserManagerImpl"/>
-    <bean id="workManager" class="com.nb.library.business.impl.manager.WorkManagerImpl"/>
+    <bean id="authorManager" class="com.nb.library.business.impl.AuthorManagerImpl"/>
+    <bean id="borrowingManager" class="com.nb.library.business.impl.BorrowingManagerImpl"/>
+    <bean id="editorManager" class="com.nb.library.business.impl.EditorManagerImpl"/>
+    <bean id="typeWorkManager" class="com.nb.library.business.impl.TypeWorkManagerImpl"/>
+    <bean id="userManager" class="com.nb.library.business.impl.UserManagerImpl"/>
+    <bean id="workManager" class="com.nb.library.business.impl.WorkManagerImpl"/>
 
     <!-- ===== ManagerFactory ===== -->
-    <bean id="managerFactory" class="com.nb.library.business.impl.ManagerFactoryImpl">
+    <bean id="managerFactory" class="com.nb.library.business.ManagerFactory">
         <property name="authorManager" ref="authorManager"/>
         <property name="borrowingManager" ref="borrowingManager"/>
         <property name="editorManager" ref="editorManager"/>
@@ -25,7 +25,7 @@
 
     <!-- ==== AbstractManager ===== -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-        <property name="targetClass" value="com.nb.library.business.impl.AbstractManager"/>
+        <property name="targetClass" value="com.nb.library.business.AbstractManager"/>
         <property name="targetMethod" value="setDaoFactory"/>
         <property name="arguments" ref="daoFactory"/>
     </bean>

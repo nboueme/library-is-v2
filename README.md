@@ -6,10 +6,11 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 
 ### Technologies
 
-- JDK8 version 152
-- Apache Tomcat 9.0.1
 - Apache Maven 3.5.2
-- PostgreSQL 9.6
+- Apache Tomcat 9.0.1
+- Docker 17.09-ce-mac42
+- JDK8 version 152
+- PostgreSQL 10.1
 
 
 ### Projet Maven 1 - service web
@@ -17,8 +18,7 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 #### Modules
 
 - `library-service` : module contenant le web-service
-- `library-business` : module contenant la logique métier
-- `library-consumer` : module contenant la persistance et le pattern DAO
+- `library-repository` : module contenant la persistance et le pattern DAO
 - `library-model` : module contenant les entités de la solution
 
 
@@ -29,8 +29,8 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 - `library-webapp` : module contenant les vues et ses contrôleurs
 - `library-batch` : module contenant un batch qui envoie un mail de relance
 - `library-business` : module contenant la logique métier
-- `library-consumer` : module contenant la persistance et le pattern DAO, appel le service web
-- `library-model` : module contenant les entités de la solution
+- `library-repository` : module contenant la persistance et le pattern DAO, appel le service web
+- `library-client` : module contenant les entités et classes auto-générées
 
 
 ### Diagramme de classes
@@ -42,4 +42,7 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 
 
 ### Déploiement
+
+Se placer dans la racine du projet et exécuter la commande suivante :
+`docker-compose -p library up -d`
 

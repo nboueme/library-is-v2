@@ -8,5 +8,5 @@
     <!-- Include other Spring context files -->
     <import resource="classpath:/com/nb/library/webapp/webappContext.xml"/>
     <import resource="classpath:/com/nb/library/business/businessContext.xml"/>
-    <import resource="classpath:/com/nb/library/consumer/consumerContext.xml"/>
+    <import resource="classpath:/com/nb/library/repository/repositoryContext.xml"/>
 </beans>

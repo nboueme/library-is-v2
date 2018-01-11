@@ -31,7 +31,7 @@
         </dependency>
         <dependency>
             <groupId>com.nb.library</groupId>
-            <artifactId>library-model</artifactId>
+            <artifactId>library-client</artifactId>
         </dependency>
 
         <!-- ===== Third-party libraries ===== -->

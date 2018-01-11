@@ -27,11 +27,11 @@
         <!-- ===== Modules ===== -->
         <dependency>
             <groupId>com.nb.library</groupId>
-            <artifactId>library-business</artifactId>
+            <artifactId>library-repository</artifactId>
         </dependency>
         <dependency>
             <groupId>com.nb.library</groupId>
-            <artifactId>library-model</artifactId>
+            <artifactId>library-entity</artifactId>
         </dependency>
 
         <!-- ===== Third-party libraries ===== -->
@@ -73,5 +73,16 @@
     <!-- =============================================================== -->
     <build>
         <finalName>library</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
