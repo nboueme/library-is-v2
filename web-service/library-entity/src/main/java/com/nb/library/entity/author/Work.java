@@ -5,7 +5,7 @@ import com.nb.library.entity.TypeWork;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity(name = "author_work")
+@Entity
 @Table(name = "work")
 public class Work {
 

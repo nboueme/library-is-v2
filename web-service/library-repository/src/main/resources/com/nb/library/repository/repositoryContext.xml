@@ -8,13 +8,15 @@
             http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!-- ===== Hibernate session factory ===== -->
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan" value="com.nb.library.entity"/>
-        <property name="hibernateProperties">
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <property name="jpaProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</prop>
-                <prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate5.SpringSessionContext</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.hbm2ddl.auto">validate</prop>
@@ -22,16 +24,11 @@
         </property>
     </bean>
 
-    <!--bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.nb.library.entity"/>
-        <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="showSql" value="true"/>
-                <property name="databasePlatform" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
-            </bean>
-        </property>
-    </bean-->
+    <!-- ===== Transaction manager ===== -->
+    <tx:annotation-driven transaction-manager="txManager"/>
+    <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
 
     <!-- ===== Dao declaration ===== -->
     <bean id="authorDao" class="com.nb.library.repository.impl.hibernate.HibernateAuthor"/>
@@ -40,12 +37,6 @@
     <bean id="typeWorkDao" class="com.nb.library.repository.impl.hibernate.HibernateTypeWork"/>
     <bean id="userDao" class="com.nb.library.repository.impl.hibernate.HibernateUser"/>
     <bean id="workDao" class="com.nb.library.repository.impl.hibernate.HibernateWork"/>
-
-    <!-- ===== Transaction manager ===== -->
-    <tx:annotation-driven transaction-manager="txManager"/>
-    <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
 
     <!-- ===== DaoFactory ===== -->
     <bean id="daoFactory" class="com.nb.library.repository.DaoFactory">

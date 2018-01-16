@@ -3,7 +3,7 @@ package com.nb.library.entity;
 import com.nb.library.entity.work.Work;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.*;
 import java.util.HashSet;
 import java.util.Set;
 

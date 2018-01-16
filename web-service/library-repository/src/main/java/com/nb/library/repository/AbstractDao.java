@@ -1,10 +1,10 @@
 package com.nb.library.repository;
 
-import org.hibernate.SessionFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 public abstract class AbstractDao {
@@ -26,8 +26,8 @@ public abstract class AbstractDao {
     }
 
     @Resource
-    private SessionFactory sessionFactory;
-    protected SessionFactory getSessionFactory() {
-        return sessionFactory;
+    private EntityManagerFactory entityManagerFactory;
+    protected EntityManagerFactory getEntityManagerFactory() {
+        return entityManagerFactory;
     }
 }

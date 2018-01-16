@@ -2,7 +2,7 @@ package com.nb.library.entity.work;
 
 import javax.persistence.*;
 
-@Entity(name = "work_author")
+@Entity
 @Table(name = "author")
 public class Author {
 

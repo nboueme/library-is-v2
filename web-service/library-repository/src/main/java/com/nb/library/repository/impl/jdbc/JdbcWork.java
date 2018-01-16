@@ -12,7 +12,7 @@ import java.util.List;
 
 public class JdbcWork extends AbstractDao implements WorkDaoContract {
 
-    public Work getWork(Work work) {
+    public Work findById(Work work) {
         String sql = "SELECT work.id, title, summary, image_url, isbn, type_work, first_name || ' ' || last_name AS author " +
                 "FROM book, work, type_work, work_authors, author " +
                 "WHERE work.type_work_id = type_work.id " +
@@ -29,7 +29,7 @@ public class JdbcWork extends AbstractDao implements WorkDaoContract {
         return getNamedParameterJdbcTemplate().queryForObject(sql, args, rowMapper);
     }
 
-    public List<Work> listWorks() {
+    public List<Work> findAll() {
         String sql = "SELECT DISTINCT ON (title) " +
                 "work.id, title, summary, image_url, first_name || ' ' || last_name AS author " +
                 "FROM work, work_authors, author " +

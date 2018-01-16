@@ -12,7 +12,7 @@ import java.util.List;
 
 public class JdbcAuthor extends AbstractDao implements AuthorDaoContract {
 
-    public Author getAuthor(Author author) {
+    public Author findById(Author author) {
         String sql = "SELECT author.id, first_name || ' ' || last_name AS author, title " +
                 "FROM author, work_authors, work " +
                 "WHERE author.id = work_authors.author_id " +
@@ -27,7 +27,7 @@ public class JdbcAuthor extends AbstractDao implements AuthorDaoContract {
         return getNamedParameterJdbcTemplate().queryForObject(sql, args, rowMapper);
     }
 
-    public List<Author> listAuthors() {
+    public List<Author> findAll() {
         String sql = "SELECT id, first_name || ' ' || last_name AS author FROM author;";
 
         RowMapper<Author> rowMapper = new AuthorRM();
