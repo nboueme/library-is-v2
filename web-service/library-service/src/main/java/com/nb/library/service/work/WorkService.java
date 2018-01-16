@@ -1,6 +1,6 @@
 package com.nb.library.service.work;
 
-import com.nb.library.entity.Work;
+import com.nb.library.entity.work.Work;
 import com.nb.library.repository.contract.WorkDaoContract;
 import com.nb.library.service.AbstractService;
 
@@ -15,13 +15,11 @@ public class WorkService extends AbstractService {
 
     @WebMethod
     public Work getWork(Work work) {
-        return contract.getWork(work);
+        return contract.findById(work);
     }
 
     @WebMethod
     public List<Work> listWorks() {
-        //List<Work> works = getDaoFactory().getWorkDao().listWorks();
-        //return works.toArray(new Work[works.size()]);
-        return contract.listWorks();
+        return contract.findAll();
     }
 }

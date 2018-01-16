@@ -11,6 +11,7 @@ public class WorkAction extends AbstractService {
     public Work getWork() {
         Work work = new Work();
         work.setId(7);
+        //return contract.listWorks().get(2);
         return contract.getWork(work);
     }
 }

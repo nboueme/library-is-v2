@@ -1,11 +1,11 @@
 package com.nb.library.repository.contract;
 
-import com.nb.library.entity.Author;
+import com.nb.library.entity.author.Author;
 
 import java.util.List;
 
 public interface AuthorDaoContract {
-    Author getAuthor(Author author);
+    Author findById(Author author);
 
-    List<Author> listAuthors();
+    List<Author> findAll();
 }

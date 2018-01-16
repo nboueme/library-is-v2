@@ -19,12 +19,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="editorId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="editorId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="ISBN" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="purchaseDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="workId" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="year" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="workId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="year" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -44,28 +44,36 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class Book {
 
-    protected int editorId;
+    protected Integer editorId;
     @XmlElement(name = "ISBN")
     protected String isbn;
-    protected double price;
+    protected Double price;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar purchaseDate;
-    protected int workId;
-    protected int year;
+    protected Integer workId;
+    protected Integer year;
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 editorId.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getEditorId() {
+    public Integer getEditorId() {
         return editorId;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 editorId.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setEditorId(int value) {
+    public void setEditorId(Integer value) {
         this.editorId = value;
     }
 
@@ -96,16 +104,24 @@ public class Book {
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 price.
      * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
      */
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 price.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
      */
-    public void setPrice(double value) {
+    public void setPrice(Double value) {
         this.price = value;
     }
 
@@ -136,32 +152,48 @@ public class Book {
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 workId.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getWorkId() {
+    public Integer getWorkId() {
         return workId;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 workId.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setWorkId(int value) {
+    public void setWorkId(Integer value) {
         this.workId = value;
     }
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 year.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getYear() {
+    public Integer getYear() {
         return year;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 year.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setYear(int value) {
+    public void setYear(Integer value) {
         this.year = value;
     }
 

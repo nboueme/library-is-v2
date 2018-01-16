@@ -3,58 +3,52 @@ package com.nb.library.entity;
 import java.util.Date;
 
 public class Book {
-    private String ISBN;
-    private int workId;
-    private int editorId;
-    private Date purchaseDate;
-    private double price;
-    private int year;
 
+    private String ISBN;
     public String getISBN() {
         return ISBN;
     }
-
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 
-    public int getWorkId() {
+    private Integer workId;
+    public Integer getWorkId() {
         return workId;
     }
-
-    public void setWorkId(int workId) {
+    public void setWorkId(Integer workId) {
         this.workId = workId;
     }
 
-    public int getEditorId() {
+    private Integer editorId;
+    public Integer getEditorId() {
         return editorId;
     }
-
-    public void setEditorId(int editorId) {
+    public void setEditorId(Integer editorId) {
         this.editorId = editorId;
     }
 
+    private Date purchaseDate;
     public Date getPurchaseDate() {
         return purchaseDate;
     }
-
     public void setPurchaseDate(Date purchaseDate) {
         this.purchaseDate = purchaseDate;
     }
 
-    public double getPrice() {
+    private Double price;
+    public Double getPrice() {
         return price;
     }
-
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getYear() {
+    private Integer year;
+    public Integer getYear() {
         return year;
     }
-
-    public void setYear(int year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 }

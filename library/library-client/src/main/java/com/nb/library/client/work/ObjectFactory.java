@@ -69,6 +69,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link LocalDateTime }
+     * 
+     */
+    public LocalDateTime createLocalDateTime() {
+        return new LocalDateTime();
+    }
+
+    /**
      * Create an instance of {@link Work }
      * 
      */

@@ -27,15 +27,15 @@ public interface BorrowingClient {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
+     * @param arg0
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getLoanPeriodsExceeded", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceeded")
-    @ResponseWrapper(localName = "getLoanPeriodsExceededResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceededResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededResponse")
-    public List<Borrowing> getLoanPeriodsExceeded();
+    @RequestWrapper(localName = "addBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowing")
+    @ResponseWrapper(localName = "addBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowingResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingResponse")
+    public void addBorrowing(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Borrowing arg0);
 
     /**
      * 
@@ -51,13 +51,28 @@ public interface BorrowingClient {
 
     /**
      * 
-     * @param arg0
+     * @return
+     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
      */
     @WebMethod
-    @RequestWrapper(localName = "updateBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowing")
-    @ResponseWrapper(localName = "updateBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowingResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingResponse")
-    public void updateBorrowing(
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getLoanPeriodsExceeded", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceeded")
+    @ResponseWrapper(localName = "getLoanPeriodsExceededResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceededResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededResponse")
+    public List<Borrowing> getLoanPeriodsExceeded();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns com.nb.library.client.borrowing.Borrowing
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowing")
+    @ResponseWrapper(localName = "getBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowingResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingResponse")
+    public Borrowing getBorrowing(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
 
@@ -79,27 +94,12 @@ public interface BorrowingClient {
     /**
      * 
      * @param arg0
-     * @return
-     *     returns com.nb.library.client.borrowing.Borrowing
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowing")
-    @ResponseWrapper(localName = "getBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowingResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingResponse")
-    public Borrowing getBorrowing(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Borrowing arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "addBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowing")
-    @ResponseWrapper(localName = "addBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowingResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingResponse")
-    public void addBorrowing(
+    @RequestWrapper(localName = "updateBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowing")
+    @ResponseWrapper(localName = "updateBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowingResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingResponse")
+    public void updateBorrowing(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
 

@@ -15,7 +15,7 @@ public class BookRM implements RowMapper<Book> {
             else if (rs.getMetaData().getColumnName(i).equals("work_id")) book.setWorkId(rs.getInt("work_id"));
             else if (rs.getMetaData().getColumnName(i).equals("editor_id")) book.setEditorId(rs.getInt("editor_id"));
             else if (rs.getMetaData().getColumnName(i).equals("purchase_date")) book.setPurchaseDate(rs.getDate("purchase_date"));
-            else if (rs.getMetaData().getColumnName(i).equals("price")) book.setPrice(rs.getInt("price"));
+            else if (rs.getMetaData().getColumnName(i).equals("price")) book.setPrice(rs.getDouble("price"));
             else if (rs.getMetaData().getColumnName(i).equals("year")) book.setYear(rs.getInt("year"));
         }
 

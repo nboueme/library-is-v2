@@ -1,31 +1,44 @@
 package com.nb.library.entity;
 
-public class TypeWork {
-    private int id;
-    private String typeWork;
-    private Work work;
+import com.nb.library.entity.work.Work;
 
-    public int getId() {
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlTransient;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Table(name = "type_work")
+public class TypeWork {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "type_work_id_seq")
+    @SequenceGenerator(name = "type_work_id_seq", sequenceName = "type_work_id_seq")
+    @Column(name = "id", nullable = false, unique = true, updatable = false)
+    private Integer id;
+    public Integer getId() {
         return id;
     }
-
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getTypeWork() {
-        return typeWork;
+    @Column(name = "type_work")
+    private String type;
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setTypeWork(String typeWork) {
-        this.typeWork = typeWork;
+    @OneToMany(mappedBy = "typeWork")
+    private Set<Work> works = new HashSet<>(0);
+    @XmlTransient
+    public Set<Work> getWorks() {
+        return works;
     }
-
-    public Work getWork() {
-        return work;
-    }
-
-    public void setWork(Work work) {
-        this.work = work;
+    public void setWorks(Set<Work> works) {
+        this.works = works;
     }
 }

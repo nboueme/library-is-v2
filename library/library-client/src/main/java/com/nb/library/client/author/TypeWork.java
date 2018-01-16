@@ -16,9 +16,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="typeWork" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="work" type="{author.client.library.nb.com}work" minOccurs="0"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="type" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,77 +29,59 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "typeWork", propOrder = {
     "id",
-    "typeWork",
-    "work"
+    "type"
 })
 public class TypeWork {
 
-    protected int id;
-    protected String typeWork;
-    protected Work work;
+    protected Integer id;
+    protected String type;
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 id.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 typeWork.
+     * Obtient la valeur de la propri\u00e9t\u00e9 type.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTypeWork() {
-        return typeWork;
+    public String getType() {
+        return type;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 typeWork.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 type.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTypeWork(String value) {
-        this.typeWork = value;
-    }
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 work.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Work }
-     *     
-     */
-    public Work getWork() {
-        return work;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 work.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Work }
-     *     
-     */
-    public void setWork(Work value) {
-        this.work = value;
+    public void setType(String value) {
+        this.type = value;
     }
 
 }

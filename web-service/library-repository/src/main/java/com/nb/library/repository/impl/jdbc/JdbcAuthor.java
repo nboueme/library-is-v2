@@ -3,7 +3,7 @@ package com.nb.library.repository.impl.jdbc;
 import com.nb.library.repository.AbstractDao;
 import com.nb.library.repository.contract.AuthorDaoContract;
 import com.nb.library.repository.impl.jdbc.rowmapper.AuthorRM;
-import com.nb.library.entity.Author;
+import com.nb.library.entity.author.Author;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 

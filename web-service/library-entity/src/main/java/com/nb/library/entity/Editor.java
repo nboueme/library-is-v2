@@ -1,5 +1,7 @@
 package com.nb.library.entity;
 
+import com.nb.library.entity.work.Work;
+
 public class Editor {
     private int id;
     private String name;

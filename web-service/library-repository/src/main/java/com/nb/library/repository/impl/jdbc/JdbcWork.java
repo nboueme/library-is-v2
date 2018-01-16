@@ -3,7 +3,7 @@ package com.nb.library.repository.impl.jdbc;
 import com.nb.library.repository.AbstractDao;
 import com.nb.library.repository.contract.WorkDaoContract;
 import com.nb.library.repository.impl.jdbc.rowmapper.WorkRM;
-import com.nb.library.entity.Work;
+import com.nb.library.entity.work.Work;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 

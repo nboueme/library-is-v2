@@ -1,6 +1,6 @@
 package com.nb.library.repository.impl.jdbc.rowmapper;
 
-import com.nb.library.entity.Author;
+import com.nb.library.entity.author.Author;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -12,7 +12,7 @@ public class AuthorRM implements RowMapper<Author> {
 
         for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
             if (rs.getMetaData().getColumnName(i).equals("id")) author.setId(rs.getInt("id"));
-            else if (rs.getMetaData().getColumnName(i).equals("author")) author.setFullName(rs.getString("author"));
+            else if (rs.getMetaData().getColumnName(i).equals("author")) author.setFirstName(rs.getString("first_name"));
         }
 
         return author;

@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
-            http://www.springframework.org/schema/beans
-            http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/tx
+            http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- ===== Hibernate session factory ===== -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.nb.library.entity"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</prop>
+                <prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate5.SpringSessionContext</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">validate</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.nb.library.entity"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true"/>
+                <property name="databasePlatform" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            </bean>
+        </property>
+    </bean-->
 
     <!-- ===== Dao declaration ===== -->
-    <bean id="authorDao" class="com.nb.library.repository.impl.jdbc.JdbcAuthor"/>
-    <bean id="borrowingDao" class="com.nb.library.repository.impl.jdbc.JdbcBorrowing"/>
-    <bean id="editorDao" class="com.nb.library.repository.impl.jdbc.JdbcEditor"/>
-    <bean id="typeWorkDao" class="com.nb.library.repository.impl.jdbc.JdbcTypeWork"/>
-    <bean id="userDao" class="com.nb.library.repository.impl.jdbc.JdbcUser"/>
-    <bean id="workDao" class="com.nb.library.repository.impl.jdbc.JdbcWork"/>
-
-    <!--bean id="authorDao" class="com.nb.library.repository.impl.hibernate.HibernateAuthor"/>
+    <bean id="authorDao" class="com.nb.library.repository.impl.hibernate.HibernateAuthor"/>
     <bean id="borrowingDao" class="com.nb.library.repository.impl.hibernate.HibernateBorrowing"/>
     <bean id="editorDao" class="com.nb.library.repository.impl.hibernate.HibernateEditor"/>
     <bean id="typeWorkDao" class="com.nb.library.repository.impl.hibernate.HibernateTypeWork"/>
     <bean id="userDao" class="com.nb.library.repository.impl.hibernate.HibernateUser"/>
-    <bean id="workDao" class="com.nb.library.repository.impl.hibernate.HibernateWork"/-->
+    <bean id="workDao" class="com.nb.library.repository.impl.hibernate.HibernateWork"/>
+
+    <!-- ===== Transaction manager ===== -->
+    <tx:annotation-driven transaction-manager="txManager"/>
+    <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
     <!-- ===== DaoFactory ===== -->
     <bean id="daoFactory" class="com.nb.library.repository.DaoFactory">
@@ -28,12 +55,5 @@
         <property name="typeWorkDao" ref="typeWorkDao"/>
         <property name="userDao" ref="userDao"/>
         <property name="workDao" ref="workDao"/>
-    </bean>
-
-    <!-- ==== AbstractDao ===== -->
-    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-        <property name="targetClass" value="com.nb.library.repository.AbstractDao"/>
-        <property name="targetMethod" value="setDataSource"/>
-        <property name="arguments" ref="dataSource"/>
     </bean>
 </beans>

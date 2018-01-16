@@ -12,7 +12,7 @@ public class TypeWorkRM implements RowMapper<TypeWork> {
 
         for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
             if (rs.getMetaData().getColumnName(i).equals("id")) typeWork.setId(rs.getInt("id"));
-            else if (rs.getMetaData().getColumnName(i).equals("type_work")) typeWork.setTypeWork(rs.getString("type_work"));
+            else if (rs.getMetaData().getColumnName(i).equals("type_work")) typeWork.setType(rs.getString("type_work"));
         }
 
         return typeWork;

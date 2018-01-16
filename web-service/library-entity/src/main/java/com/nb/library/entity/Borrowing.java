@@ -1,5 +1,7 @@
 package com.nb.library.entity;
 
+import com.nb.library.entity.work.Work;
+
 import java.util.Date;
 
 public class Borrowing {
