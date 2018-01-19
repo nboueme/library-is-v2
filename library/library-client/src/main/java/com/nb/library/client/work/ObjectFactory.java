@@ -25,6 +25,8 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetWorkResponse_QNAME = new QName("work.client.library.nb.com", "getWorkResponse");
+    private final static QName _Author_QNAME = new QName("work.client.library.nb.com", "author");
+    private final static QName _Work_QNAME = new QName("work.client.library.nb.com", "work");
     private final static QName _ListWorks_QNAME = new QName("work.client.library.nb.com", "listWorks");
     private final static QName _GetWork_QNAME = new QName("work.client.library.nb.com", "getWork");
     private final static QName _ListWorksResponse_QNAME = new QName("work.client.library.nb.com", "listWorksResponse");
@@ -61,19 +63,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetWorkResponse }
+     * Create an instance of {@link Author }
      * 
      */
-    public GetWorkResponse createGetWorkResponse() {
-        return new GetWorkResponse();
-    }
-
-    /**
-     * Create an instance of {@link LocalDateTime }
-     * 
-     */
-    public LocalDateTime createLocalDateTime() {
-        return new LocalDateTime();
+    public Author createAuthor() {
+        return new Author();
     }
 
     /**
@@ -85,19 +79,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Author }
+     * Create an instance of {@link GetWorkResponse }
      * 
      */
-    public Author createAuthor() {
-        return new Author();
-    }
-
-    /**
-     * Create an instance of {@link TypeWork }
-     * 
-     */
-    public TypeWork createTypeWork() {
-        return new TypeWork();
+    public GetWorkResponse createGetWorkResponse() {
+        return new GetWorkResponse();
     }
 
     /**
@@ -107,6 +93,24 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "work.client.library.nb.com", name = "getWorkResponse")
     public JAXBElement<GetWorkResponse> createGetWorkResponse(GetWorkResponse value) {
         return new JAXBElement<GetWorkResponse>(_GetWorkResponse_QNAME, GetWorkResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Author }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "work.client.library.nb.com", name = "author")
+    public JAXBElement<Author> createAuthor(Author value) {
+        return new JAXBElement<Author>(_Author_QNAME, Author.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Work }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "work.client.library.nb.com", name = "work")
+    public JAXBElement<Work> createWork(Work value) {
+        return new JAXBElement<Work>(_Work_QNAME, Work.class, null, value);
     }
 
     /**

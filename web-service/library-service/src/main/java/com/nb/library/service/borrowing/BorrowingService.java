@@ -1,10 +1,11 @@
 package com.nb.library.service.borrowing;
 
-import com.nb.library.entity.Borrowing;
-import com.nb.library.entity.UserAccount;
+import com.nb.library.entity.borrowing.Borrowing;
+import com.nb.library.entity.borrowing.UserAccount;
 import com.nb.library.repository.contract.BorrowingDaoContract;
 import com.nb.library.service.AbstractService;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.List;
 
@@ -13,27 +14,28 @@ public class BorrowingService extends AbstractService {
 
     private BorrowingDaoContract contract = getDaoFactory().getBorrowingDao();
 
+    @WebMethod
     public void addBorrowing(Borrowing borrowing) {
-        contract.addBorrowing(borrowing);
+        contract.save(borrowing);
     }
 
+    @WebMethod
     public Borrowing getBorrowing(Borrowing borrowing) {
-        return contract.getBorrowing(borrowing);
+        return contract.findByIdAndUserId(borrowing);
     }
 
+    @WebMethod
     public List<Borrowing> listBorrowing(UserAccount user) {
-        return contract.listBorrowing(user);
+        return contract.findAllByUserId(user);
     }
 
-    public void updateBorrowing(Borrowing borrowing) {
-        contract.updateBorrowing(borrowing);
-    }
-
+    @WebMethod
     public void deleteBorrowing(Borrowing borrowing) {
-        contract.deleteBorrowing(borrowing);
+        contract.delete(borrowing);
     }
 
-    public List<Borrowing> getLoanPeriodsExceeded() {
-        return contract.getLoanPeriodsExceeded();
+    @WebMethod
+    public List<Borrowing> getLoanPeriodsExceeded(Borrowing borrowing) {
+        return contract.getLoanPeriodsExceeded(borrowing);
     }
 }

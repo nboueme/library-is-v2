@@ -18,13 +18,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="bookId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="bookId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="borrowingDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *         &lt;element name="loaned" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="loaned" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="returnDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="work" type="{borrowing.client.library.nb.com}work" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -47,30 +47,38 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class Borrowing {
 
-    protected int bookId;
+    protected Integer bookId;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar borrowingDate;
-    protected boolean extended;
-    protected int id;
-    protected boolean loaned;
+    protected Boolean extended;
+    protected Integer id;
+    protected Boolean loaned;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar returnDate;
-    protected int userId;
+    protected Integer userId;
     protected Work work;
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 bookId.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getBookId() {
+    public Integer getBookId() {
         return bookId;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 bookId.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setBookId(int value) {
+    public void setBookId(Integer value) {
         this.bookId = value;
     }
 
@@ -101,48 +109,72 @@ public class Borrowing {
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 extended.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isExtended() {
+    public Boolean isExtended() {
         return extended;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 extended.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setExtended(boolean value) {
+    public void setExtended(Boolean value) {
         this.extended = value;
     }
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 id.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 loaned.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isLoaned() {
+    public Boolean isLoaned() {
         return loaned;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 loaned.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setLoaned(boolean value) {
+    public void setLoaned(Boolean value) {
         this.loaned = value;
     }
 
@@ -173,16 +205,24 @@ public class Borrowing {
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 userId.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 userId.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setUserId(int value) {
+    public void setUserId(Integer value) {
         this.userId = value;
     }
 

@@ -69,6 +69,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Work }
+     * 
+     */
+    public Work createWork() {
+        return new Work();
+    }
+
+    /**
      * Create an instance of {@link TypeWork }
      * 
      */

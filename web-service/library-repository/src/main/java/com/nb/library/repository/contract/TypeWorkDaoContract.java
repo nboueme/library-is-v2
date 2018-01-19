@@ -1,11 +1,11 @@
 package com.nb.library.repository.contract;
 
-import com.nb.library.entity.TypeWork;
+import com.nb.library.entity.type.TypeWork;
 
 import java.util.List;
 
 public interface TypeWorkDaoContract {
-    TypeWork getTypeWork(TypeWork typeWork);
+    TypeWork findById(TypeWork typeWork);
 
-    List<TypeWork> listTypesWorks();
+    List<TypeWork> findAll();
 }

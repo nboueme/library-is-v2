@@ -1,20 +1,18 @@
 package com.nb.library.repository.contract;
 
-import com.nb.library.entity.Borrowing;
-import com.nb.library.entity.UserAccount;
+import com.nb.library.entity.borrowing.Borrowing;
+import com.nb.library.entity.borrowing.UserAccount;
 
 import java.util.List;
 
 public interface BorrowingDaoContract {
-    void addBorrowing(Borrowing borrowing);
+    void save(Borrowing borrowing);
 
-    Borrowing getBorrowing(Borrowing borrowing);
+    Borrowing findByIdAndUserId(Borrowing borrowing);
 
-    List<Borrowing> listBorrowing(UserAccount user);
+    List<Borrowing> findAllByUserId(UserAccount user);
 
-    void updateBorrowing(Borrowing borrowing);
+    void delete(Borrowing borrowing);
 
-    void deleteBorrowing(Borrowing borrowing);
-
-    List<Borrowing> getLoanPeriodsExceeded();
+    List<Borrowing> getLoanPeriodsExceeded(Borrowing borrowing);
 }

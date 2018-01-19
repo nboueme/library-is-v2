@@ -26,8 +26,8 @@
     <dependencies>
         <!-- ===== Third-party libraries ===== -->
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
         </dependency>
     </dependencies>
 </project>

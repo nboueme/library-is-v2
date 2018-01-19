@@ -141,14 +141,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LocalDateTime }
-     * 
-     */
-    public LocalDateTime createLocalDateTime() {
-        return new LocalDateTime();
-    }
-
-    /**
      * Create an instance of {@link Work }
      * 
      */
@@ -162,6 +154,14 @@ public class ObjectFactory {
      */
     public Author createAuthor() {
         return new Author();
+    }
+
+    /**
+     * Create an instance of {@link Book }
+     * 
+     */
+    public Book createBook() {
+        return new Book();
     }
 
     /**

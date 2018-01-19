@@ -1,11 +1,11 @@
 package com.nb.library.repository.contract;
 
-import com.nb.library.entity.Editor;
+import com.nb.library.entity.editor.Editor;
 
 import java.util.List;
 
 public interface EditorDaoContract {
-    Editor getEditor(Editor editor);
+    Editor findById(Editor editor);
 
-    List<Editor> listEditors();
+    List<Editor> findAll();
 }

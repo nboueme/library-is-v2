@@ -24,12 +24,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="createdAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="imageURL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="phoneNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="postalCode" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="postalCode" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="updatedAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
@@ -69,12 +69,12 @@ public class UserAccount {
     protected XMLGregorianCalendar createdAt;
     protected String email;
     protected String firstName;
-    protected int id;
+    protected Integer id;
     protected String imageURL;
     protected String lastName;
     protected String password;
     protected String phoneNumber;
-    protected int postalCode;
+    protected Integer postalCode;
     protected String role;
     protected String title;
     @XmlSchemaType(name = "dateTime")
@@ -227,16 +227,24 @@ public class UserAccount {
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 id.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
@@ -339,16 +347,24 @@ public class UserAccount {
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 postalCode.
      * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
      */
-    public int getPostalCode() {
+    public Integer getPostalCode() {
         return postalCode;
     }
 
     /**
      * D\u00e9finit la valeur de la propri\u00e9t\u00e9 postalCode.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
      */
-    public void setPostalCode(int value) {
+    public void setPostalCode(Integer value) {
         this.postalCode = value;
     }
 

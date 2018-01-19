@@ -1,15 +1,14 @@
-package com.nb.library.entity;
+package com.nb.library.entity.type;
 
-import com.nb.library.entity.work.Work;
+import com.nb.library.entity.TypeWorkInterface;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name = "type_work")
 @Table(name = "type_work")
-public class TypeWork {
+public class TypeWork implements TypeWorkInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "type_work_id_seq")
@@ -32,9 +31,9 @@ public class TypeWork {
         this.type = type;
     }
 
-    @OneToMany(mappedBy = "typeWork")
+    @OneToMany
+    @JoinColumn(name = "type_work_id", referencedColumnName = "id")
     private Set<Work> works = new HashSet<>(0);
-    @XmlTransient
     public Set<Work> getWorks() {
         return works;
     }

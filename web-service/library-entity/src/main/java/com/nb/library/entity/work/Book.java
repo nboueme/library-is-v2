@@ -1,9 +1,19 @@
-package com.nb.library.entity;
+package com.nb.library.entity.work;
 
+import com.nb.library.entity.BookInterface;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
-public class Book {
+@Entity
+@Table(name = "book")
+public class Book implements BookInterface {
 
+    @Id
+    @Column(name = "isbn", nullable = false, unique = true, updatable = false)
     private String ISBN;
     public String getISBN() {
         return ISBN;
@@ -12,6 +22,7 @@ public class Book {
         this.ISBN = ISBN;
     }
 
+    @Column(name = "work_id")
     private Integer workId;
     public Integer getWorkId() {
         return workId;
@@ -20,6 +31,7 @@ public class Book {
         this.workId = workId;
     }
 
+    @Column(name = "editor_id")
     private Integer editorId;
     public Integer getEditorId() {
         return editorId;
@@ -28,6 +40,7 @@ public class Book {
         this.editorId = editorId;
     }
 
+    @Column(name = "purchase_date", columnDefinition = "DATE")
     private Date purchaseDate;
     public Date getPurchaseDate() {
         return purchaseDate;
@@ -36,6 +49,7 @@ public class Book {
         this.purchaseDate = purchaseDate;
     }
 
+    @Column(name = "price", columnDefinition = "NUMERIC(4,2)")
     private Double price;
     public Double getPrice() {
         return price;
@@ -44,6 +58,7 @@ public class Book {
         this.price = price;
     }
 
+    @Column(name = "year")
     private Integer year;
     public Integer getYear() {
         return year;

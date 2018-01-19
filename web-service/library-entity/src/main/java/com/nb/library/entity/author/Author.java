@@ -1,16 +1,18 @@
 package com.nb.library.entity.author;
 
+import com.nb.library.entity.AuthorInterface;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name = "author")
 @Table(name = "author")
-public class Author {
+public class Author implements AuthorInterface {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "work_id_seq")
-    @SequenceGenerator(name = "work_id_seq", sequenceName = "work_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_id_seq")
+    @SequenceGenerator(name = "author_id_seq", sequenceName = "author_id_seq")
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Integer id;
     public Integer getId() {
@@ -42,7 +44,6 @@ public class Author {
     @JoinTable(name = "work_authors",
             joinColumns = { @JoinColumn(name = "author_id", referencedColumnName = "id", nullable = false, updatable = false) },
             inverseJoinColumns = { @JoinColumn(name = "work_id", referencedColumnName = "id", nullable = false, updatable = false) })
-    @OrderBy("title asc")
     private Set<Work> works = new HashSet<>(0);
     public Set<Work> getWorks() {
         return works;

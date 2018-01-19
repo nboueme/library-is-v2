@@ -1,6 +1,6 @@
 package com.nb.library.service.type;
 
-import com.nb.library.entity.TypeWork;
+import com.nb.library.entity.type.TypeWork;
 import com.nb.library.repository.contract.TypeWorkDaoContract;
 import com.nb.library.service.AbstractService;
 
@@ -13,10 +13,10 @@ public class TypeWorkService extends AbstractService {
     private TypeWorkDaoContract contract = getDaoFactory().getTypeWorkDao();
 
     public TypeWork getTypeWork(TypeWork typeWork) {
-        return contract.getTypeWork(typeWork);
+        return contract.findById(typeWork);
     }
 
     public List<TypeWork> listTypesWorks() {
-        return contract.listTypesWorks();
+        return contract.findAll();
     }
 }

@@ -1,13 +1,13 @@
 package com.nb.library.entity.author;
 
-import com.nb.library.entity.TypeWork;
+import com.nb.library.entity.WorkInterface;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "work")
-public class Work {
+public class Work implements WorkInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "work_id_seq")
@@ -19,16 +19,6 @@ public class Work {
     }
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "type_work_id")
-    private TypeWork typeWork;
-    public TypeWork getTypeWork() {
-        return typeWork;
-    }
-    public void setTypeWork(TypeWork typeWork) {
-        this.typeWork = typeWork;
     }
 
     @Column(name = "title")
@@ -59,20 +49,20 @@ public class Work {
     }
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
-    public LocalDateTime getCreatedAt() {
+    private Date createdAt;
+    public Date getCreatedAt() {
         return createdAt;
     }
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-    public LocalDateTime getUpdatedAt() {
+    private Date updatedAt;
+    public Date getUpdatedAt() {
         return updatedAt;
     }
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

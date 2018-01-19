@@ -1,14 +1,16 @@
 package com.nb.library.entity.work;
 
+import com.nb.library.entity.AuthorInterface;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "author")
-public class Author {
+public class Author implements AuthorInterface {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "work_id_seq")
-    @SequenceGenerator(name = "work_id_seq", sequenceName = "work_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_id_seq")
+    @SequenceGenerator(name = "author_id_seq", sequenceName = "author_id_seq")
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Integer id;
     public Integer getId() {

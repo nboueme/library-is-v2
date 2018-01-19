@@ -1,15 +1,15 @@
 package com.nb.library.entity.work;
 
-import com.nb.library.entity.TypeWork;
+import com.nb.library.entity.WorkInterface;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name = "work")
 @Table(name = "work")
-public class Work {
+public class Work implements WorkInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "work_id_seq")
@@ -27,7 +27,7 @@ public class Work {
     @JoinTable(name = "work_authors",
             joinColumns = { @JoinColumn(name = "work_id", referencedColumnName = "id", nullable = false, updatable = false) },
             inverseJoinColumns = { @JoinColumn(name = "author_id", referencedColumnName = "id", nullable = false, updatable = false) })
-    @OrderBy("firstName asc")
+    @OrderBy("firstName ASC")
     private Set<Author> authors = new HashSet<>(0);
     public Set<Author> getAuthors() {
         return authors;
@@ -36,14 +36,24 @@ public class Work {
         this.authors = authors;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "type_work_id")
+    @ManyToOne(targetEntity = TypeWork.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "type_work_id", referencedColumnName = "id")
     private TypeWork typeWork;
     public TypeWork getTypeWork() {
         return typeWork;
     }
     public void setTypeWork(TypeWork typeWork) {
         this.typeWork = typeWork;
+    }
+
+    @OneToMany(targetEntity = Book.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "work_id", referencedColumnName = "id")
+    private Set<Book> books = new HashSet<>(0);
+    public Set<Book> getBooks() {
+        return books;
+    }
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     @Column(name = "title")
@@ -74,20 +84,20 @@ public class Work {
     }
 
     @Column(name = "created_at")
-    private LocalDateTime createdAt;
-    public LocalDateTime getCreatedAt() {
+    private Date createdAt;
+    public Date getCreatedAt() {
         return createdAt;
     }
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-    public LocalDateTime getUpdatedAt() {
+    private Date updatedAt;
+    public Date getUpdatedAt() {
         return updatedAt;
     }
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 }

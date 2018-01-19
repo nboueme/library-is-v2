@@ -21,10 +21,8 @@ public class HibernateAuthor extends AbstractDao implements AuthorDaoContract {
 
     @Transactional
     public List<Author> findAll() {
+        String query = "select a from author a join fetch a.works w order by a.firstName, w.title asc";
         EntityManager entityManager = getEntityManagerFactory().createEntityManager();
-        List<Author> authors = entityManager.createQuery("select a from Author a order by a.firstName asc", Author.class).getResultList();
-        for (Author author : authors)
-            Hibernate.initialize(author.getWorks());
-        return authors;
+        return entityManager.createQuery(query, Author.class).getResultList();
     }
 }

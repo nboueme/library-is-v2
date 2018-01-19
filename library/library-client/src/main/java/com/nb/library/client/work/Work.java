@@ -6,7 +6,9 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -19,14 +21,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="authors" type="{work.client.library.nb.com}author" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="createdAt" type="{work.client.library.nb.com}localDateTime" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="imageURL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="summary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="authors" type="{work.client.library.nb.com}author" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="typeWork" type="{work.client.library.nb.com}typeWork" minOccurs="0"/>
- *         &lt;element name="updatedAt" type="{work.client.library.nb.com}localDateTime" minOccurs="0"/>
+ *         &lt;element name="summary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="imageURL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="createdAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         &lt;element name="updatedAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,26 +38,50 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "work", propOrder = {
-    "authors",
-    "createdAt",
     "id",
-    "imageURL",
-    "summary",
+    "authors",
     "title",
-    "typeWork",
+    "summary",
+    "imageURL",
+    "createdAt",
     "updatedAt"
 })
 public class Work {
 
+    protected Integer id;
     @XmlElement(nillable = true)
     protected List<Author> authors;
-    protected LocalDateTime createdAt;
-    protected Integer id;
-    protected String imageURL;
-    protected String summary;
     protected String title;
-    protected TypeWork typeWork;
-    protected LocalDateTime updatedAt;
+    protected String summary;
+    protected String imageURL;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar createdAt;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar updatedAt;
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 id.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setId(Integer value) {
+        this.id = value;
+    }
 
     /**
      * Gets the value of the authors property.
@@ -88,75 +113,27 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.
-     * 
-     * @return
-     *     possible object is
-     *     {@link LocalDateTime }
-     *     
-     */
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 createdAt.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocalDateTime }
-     *     
-     */
-    public void setCreatedAt(LocalDateTime value) {
-        this.createdAt = value;
-    }
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 id.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setId(Integer value) {
-        this.id = value;
-    }
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 imageURL.
+     * Obtient la valeur de la propri\u00e9t\u00e9 title.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getImageURL() {
-        return imageURL;
+    public String getTitle() {
+        return title;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 imageURL.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 title.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setImageURL(String value) {
-        this.imageURL = value;
+    public void setTitle(String value) {
+        this.title = value;
     }
 
     /**
@@ -184,51 +161,51 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 title.
+     * Obtient la valeur de la propri\u00e9t\u00e9 imageURL.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTitle() {
-        return title;
+    public String getImageURL() {
+        return imageURL;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 title.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 imageURL.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTitle(String value) {
-        this.title = value;
+    public void setImageURL(String value) {
+        this.imageURL = value;
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 typeWork.
+     * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.
      * 
      * @return
      *     possible object is
-     *     {@link TypeWork }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public TypeWork getTypeWork() {
-        return typeWork;
+    public XMLGregorianCalendar getCreatedAt() {
+        return createdAt;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 typeWork.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 createdAt.
      * 
      * @param value
      *     allowed object is
-     *     {@link TypeWork }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setTypeWork(TypeWork value) {
-        this.typeWork = value;
+    public void setCreatedAt(XMLGregorianCalendar value) {
+        this.createdAt = value;
     }
 
     /**
@@ -236,10 +213,10 @@ public class Work {
      * 
      * @return
      *     possible object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalDateTime getUpdatedAt() {
+    public XMLGregorianCalendar getUpdatedAt() {
         return updatedAt;
     }
 
@@ -248,10 +225,10 @@ public class Work {
      * 
      * @param value
      *     allowed object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setUpdatedAt(LocalDateTime value) {
+    public void setUpdatedAt(XMLGregorianCalendar value) {
         this.updatedAt = value;
     }
 

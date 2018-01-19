@@ -6,7 +6,9 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -20,13 +22,14 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="authors" type="{editor.client.library.nb.com}author" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="createdAt" type="{editor.client.library.nb.com}localDateTime" minOccurs="0"/>
+ *         &lt;element name="books" type="{editor.client.library.nb.com}book" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="createdAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="imageURL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="summary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="typeWork" type="{editor.client.library.nb.com}typeWork" minOccurs="0"/>
- *         &lt;element name="updatedAt" type="{editor.client.library.nb.com}localDateTime" minOccurs="0"/>
+ *         &lt;element name="updatedAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,6 +41,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "work", propOrder = {
     "authors",
+    "books",
     "createdAt",
     "id",
     "imageURL",
@@ -50,13 +54,17 @@ public class Work {
 
     @XmlElement(nillable = true)
     protected List<Author> authors;
-    protected LocalDateTime createdAt;
+    @XmlElement(nillable = true)
+    protected List<Book> books;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar createdAt;
     protected Integer id;
     protected String imageURL;
     protected String summary;
     protected String title;
     protected TypeWork typeWork;
-    protected LocalDateTime updatedAt;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar updatedAt;
 
     /**
      * Gets the value of the authors property.
@@ -88,14 +96,43 @@ public class Work {
     }
 
     /**
+     * Gets the value of the books property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the books property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBooks().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Book }
+     * 
+     * 
+     */
+    public List<Book> getBooks() {
+        if (books == null) {
+            books = new ArrayList<Book>();
+        }
+        return this.books;
+    }
+
+    /**
      * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.
      * 
      * @return
      *     possible object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalDateTime getCreatedAt() {
+    public XMLGregorianCalendar getCreatedAt() {
         return createdAt;
     }
 
@@ -104,10 +141,10 @@ public class Work {
      * 
      * @param value
      *     allowed object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setCreatedAt(LocalDateTime value) {
+    public void setCreatedAt(XMLGregorianCalendar value) {
         this.createdAt = value;
     }
 
@@ -236,10 +273,10 @@ public class Work {
      * 
      * @return
      *     possible object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalDateTime getUpdatedAt() {
+    public XMLGregorianCalendar getUpdatedAt() {
         return updatedAt;
     }
 
@@ -248,10 +285,10 @@ public class Work {
      * 
      * @param value
      *     allowed object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setUpdatedAt(LocalDateTime value) {
+    public void setUpdatedAt(XMLGregorianCalendar value) {
         this.updatedAt = value;
     }
 

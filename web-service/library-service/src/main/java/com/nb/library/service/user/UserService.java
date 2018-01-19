@@ -1,6 +1,6 @@
 package com.nb.library.service.user;
 
-import com.nb.library.entity.UserAccount;
+import com.nb.library.entity.user.UserAccount;
 import com.nb.library.repository.contract.UserDaoContract;
 import com.nb.library.service.AbstractService;
 
@@ -14,6 +14,6 @@ public class UserService extends AbstractService {
 
     @WebMethod
     public UserAccount getUser(UserAccount user) {
-        return contract.getUser(user);
+        return contract.login(user);
     }
 }

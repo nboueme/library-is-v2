@@ -1,9 +1,14 @@
 
 package com.nb.library.client.author;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -16,13 +21,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="createdAt" type="{author.client.library.nb.com}localDateTime" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="imageURL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="summary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="authors" type="{author.client.library.nb.com}author" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="typeWork" type="{author.client.library.nb.com}typeWork" minOccurs="0"/>
- *         &lt;element name="updatedAt" type="{author.client.library.nb.com}localDateTime" minOccurs="0"/>
+ *         &lt;element name="summary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="imageURL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="createdAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         &lt;element name="updatedAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,47 +38,26 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "work", propOrder = {
-    "createdAt",
     "id",
-    "imageURL",
-    "summary",
+    "authors",
     "title",
-    "typeWork",
+    "summary",
+    "imageURL",
+    "createdAt",
     "updatedAt"
 })
 public class Work {
 
-    protected LocalDateTime createdAt;
     protected Integer id;
-    protected String imageURL;
-    protected String summary;
+    @XmlElement(nillable = true)
+    protected List<Author> authors;
     protected String title;
-    protected TypeWork typeWork;
-    protected LocalDateTime updatedAt;
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.
-     * 
-     * @return
-     *     possible object is
-     *     {@link LocalDateTime }
-     *     
-     */
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 createdAt.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link LocalDateTime }
-     *     
-     */
-    public void setCreatedAt(LocalDateTime value) {
-        this.createdAt = value;
-    }
+    protected String summary;
+    protected String imageURL;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar createdAt;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar updatedAt;
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 id.
@@ -100,51 +84,32 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 imageURL.
+     * Gets the value of the authors property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getImageURL() {
-        return imageURL;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 imageURL.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the authors property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setImageURL(String value) {
-        this.imageURL = value;
-    }
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 summary.
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getAuthors().add(newItem);
+     * </pre>
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getSummary() {
-        return summary;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 summary.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Author }
+     * 
+     * 
      */
-    public void setSummary(String value) {
-        this.summary = value;
+    public List<Author> getAuthors() {
+        if (authors == null) {
+            authors = new ArrayList<Author>();
+        }
+        return this.authors;
     }
 
     /**
@@ -172,27 +137,75 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 typeWork.
+     * Obtient la valeur de la propri\u00e9t\u00e9 summary.
      * 
      * @return
      *     possible object is
-     *     {@link TypeWork }
+     *     {@link String }
      *     
      */
-    public TypeWork getTypeWork() {
-        return typeWork;
+    public String getSummary() {
+        return summary;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 typeWork.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 summary.
      * 
      * @param value
      *     allowed object is
-     *     {@link TypeWork }
+     *     {@link String }
      *     
      */
-    public void setTypeWork(TypeWork value) {
-        this.typeWork = value;
+    public void setSummary(String value) {
+        this.summary = value;
+    }
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 imageURL.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 imageURL.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setImageURL(String value) {
+        this.imageURL = value;
+    }
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getCreatedAt() {
+        return createdAt;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 createdAt.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setCreatedAt(XMLGregorianCalendar value) {
+        this.createdAt = value;
     }
 
     /**
@@ -200,10 +213,10 @@ public class Work {
      * 
      * @return
      *     possible object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalDateTime getUpdatedAt() {
+    public XMLGregorianCalendar getUpdatedAt() {
         return updatedAt;
     }
 
@@ -212,10 +225,10 @@ public class Work {
      * 
      * @param value
      *     allowed object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setUpdatedAt(LocalDateTime value) {
+    public void setUpdatedAt(XMLGregorianCalendar value) {
         this.updatedAt = value;
     }
 

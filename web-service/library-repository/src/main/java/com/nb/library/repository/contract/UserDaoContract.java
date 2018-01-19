@@ -1,7 +1,7 @@
 package com.nb.library.repository.contract;
 
-import com.nb.library.entity.UserAccount;
+import com.nb.library.entity.user.UserAccount;
 
 public interface UserDaoContract {
-    UserAccount getUser(UserAccount user);
+    UserAccount login(UserAccount user);
 }

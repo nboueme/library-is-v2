@@ -19,7 +19,7 @@ public class Main {
             System.out.println("par " + author.getFirstName() + " " + author.getLastName());
         }*/
         for (Work work : managerFactory.getWorkManager().listWorks()) {
-            System.out.println(work.getTitle() + " de type " + work.getTypeWork().getType());
+            System.out.println(work.getTitle() + " de type " + "work.getTypeWork().getType()");
             for (Author author : work.getAuthors()) {
                 System.out.println("par " + author.getFirstName() + " " + author.getLastName());
             }

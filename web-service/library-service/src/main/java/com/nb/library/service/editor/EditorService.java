@@ -1,6 +1,6 @@
 package com.nb.library.service.editor;
 
-import com.nb.library.entity.Editor;
+import com.nb.library.entity.editor.Editor;
 import com.nb.library.repository.contract.EditorDaoContract;
 import com.nb.library.service.AbstractService;
 
@@ -13,10 +13,10 @@ public class EditorService extends AbstractService {
     EditorDaoContract contract = getDaoFactory().getEditorDao();
 
     public Editor getEditor(Editor editor) {
-        return contract.getEditor(editor);
+        return contract.findById(editor);
     }
 
     public List<Editor> listEditors() {
-        return contract.listEditors();
+        return contract.findAll();
     }
 }
