@@ -12,8 +12,7 @@ import java.util.Set;
 public class Work implements WorkInterface {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "work_id_seq")
-    @SequenceGenerator(name = "work_id_seq", sequenceName = "work_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Integer id;
     public Integer getId() {

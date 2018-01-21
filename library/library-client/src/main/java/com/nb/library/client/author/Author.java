@@ -19,8 +19,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="works" type="{author.client.library.nb.com}work" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
@@ -33,42 +33,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "author", propOrder = {
-    "id",
     "firstName",
+    "id",
     "lastName",
     "works"
 })
 public class Author {
 
-    protected Integer id;
     protected String firstName;
+    protected Integer id;
     protected String lastName;
     @XmlElement(nillable = true)
     protected List<Work> works;
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 id.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setId(Integer value) {
-        this.id = value;
-    }
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 firstName.
@@ -92,6 +68,30 @@ public class Author {
      */
     public void setFirstName(String value) {
         this.firstName = value;
+    }
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 id.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setId(Integer value) {
+        this.id = value;
     }
 
     /**

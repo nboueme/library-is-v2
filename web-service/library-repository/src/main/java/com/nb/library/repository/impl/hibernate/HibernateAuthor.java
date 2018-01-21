@@ -1,28 +1,30 @@
 package com.nb.library.repository.impl.hibernate;
 
 import com.nb.library.entity.author.Author;
-import com.nb.library.repository.AbstractDao;
 import com.nb.library.repository.contract.AuthorDaoContract;
-import org.hibernate.Hibernate;
+import com.nb.library.repository.impl.data.AuthorRepository;
 
-import javax.persistence.EntityManager;
+import javax.annotation.Resource;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class HibernateAuthor extends AbstractDao implements AuthorDaoContract {
+public class HibernateAuthor implements AuthorDaoContract {
+
+    @Resource
+    private AuthorRepository authorRepository;
 
     @Transactional
     public Author findById(Author author) {
-        EntityManager entityManager = getEntityManagerFactory().createEntityManager();
-        Author authorResult = entityManager.getReference(Author.class, author.getId()); // same to session.load
-        Hibernate.initialize(authorResult.getWorks());
-        return authorResult;
+        Optional<Author> existingAuthor = authorRepository.findById(author.getId());
+        return existingAuthor.orElse(null);
     }
 
     @Transactional
     public List<Author> findAll() {
-        String query = "select a from author a join fetch a.works w order by a.firstName, w.title asc";
-        EntityManager entityManager = getEntityManagerFactory().createEntityManager();
-        return entityManager.createQuery(query, Author.class).getResultList();
+        List<Author> authors = new ArrayList<>(0);
+        authorRepository.findAll().iterator().forEachRemaining(authors::add);
+        return authors;
     }
 }

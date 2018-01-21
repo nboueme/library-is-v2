@@ -21,12 +21,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="authors" type="{work.client.library.nb.com}author" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="summary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="imageURL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="books" type="{work.client.library.nb.com}book" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="createdAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="imageURL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="summary" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="typeWork" type="{work.client.library.nb.com}typeWork" minOccurs="0"/>
  *         &lt;element name="updatedAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -38,50 +40,31 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "work", propOrder = {
-    "id",
     "authors",
-    "title",
-    "summary",
-    "imageURL",
+    "books",
     "createdAt",
+    "id",
+    "imageURL",
+    "summary",
+    "title",
+    "typeWork",
     "updatedAt"
 })
 public class Work {
 
-    protected Integer id;
     @XmlElement(nillable = true)
     protected List<Author> authors;
-    protected String title;
-    protected String summary;
-    protected String imageURL;
+    @XmlElement(nillable = true)
+    protected List<Book> books;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar createdAt;
+    protected Integer id;
+    protected String imageURL;
+    protected String summary;
+    protected String title;
+    protected TypeWork typeWork;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar updatedAt;
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 id.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setId(Integer value) {
-        this.id = value;
-    }
 
     /**
      * Gets the value of the authors property.
@@ -113,51 +96,80 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 title.
+     * Gets the value of the books property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the books property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBooks().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Book }
+     * 
+     * 
+     */
+    public List<Book> getBooks() {
+        if (books == null) {
+            books = new ArrayList<Book>();
+        }
+        return this.books;
+    }
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public String getTitle() {
-        return title;
+    public XMLGregorianCalendar getCreatedAt() {
+        return createdAt;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 title.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 createdAt.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setTitle(String value) {
-        this.title = value;
+    public void setCreatedAt(XMLGregorianCalendar value) {
+        this.createdAt = value;
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 summary.
+     * Obtient la valeur de la propri\u00e9t\u00e9 id.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public String getSummary() {
-        return summary;
+    public Integer getId() {
+        return id;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 summary.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public void setSummary(String value) {
-        this.summary = value;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
     /**
@@ -185,27 +197,75 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.
+     * Obtient la valeur de la propri\u00e9t\u00e9 summary.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getCreatedAt() {
-        return createdAt;
+    public String getSummary() {
+        return summary;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 createdAt.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 summary.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setCreatedAt(XMLGregorianCalendar value) {
-        this.createdAt = value;
+    public void setSummary(String value) {
+        this.summary = value;
+    }
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 title.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 title.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setTitle(String value) {
+        this.title = value;
+    }
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 typeWork.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TypeWork }
+     *     
+     */
+    public TypeWork getTypeWork() {
+        return typeWork;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 typeWork.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TypeWork }
+     *     
+     */
+    public void setTypeWork(TypeWork value) {
+        this.typeWork = value;
     }
 
     /**

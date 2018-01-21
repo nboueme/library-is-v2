@@ -4,6 +4,7 @@ import com.nb.library.entity.type.TypeWork;
 import com.nb.library.repository.contract.TypeWorkDaoContract;
 import com.nb.library.service.AbstractService;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.List;
 
@@ -12,10 +13,12 @@ public class TypeWorkService extends AbstractService {
 
     private TypeWorkDaoContract contract = getDaoFactory().getTypeWorkDao();
 
+    @WebMethod
     public TypeWork getTypeWork(TypeWork typeWork) {
         return contract.findById(typeWork);
     }
 
+    @WebMethod
     public List<TypeWork> listTypesWorks() {
         return contract.findAll();
     }

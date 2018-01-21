@@ -11,8 +11,7 @@ import java.util.Set;
 public class TypeWork implements TypeWorkInterface {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "type_work_id_seq")
-    @SequenceGenerator(name = "type_work_id_seq", sequenceName = "type_work_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Integer id;
     public Integer getId() {
@@ -31,8 +30,9 @@ public class TypeWork implements TypeWorkInterface {
         this.type = type;
     }
 
-    @OneToMany
+    @OneToMany(targetEntity = Work.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "type_work_id", referencedColumnName = "id")
+    @OrderBy("title ASC")
     private Set<Work> works = new HashSet<>(0);
     public Set<Work> getWorks() {
         return works;

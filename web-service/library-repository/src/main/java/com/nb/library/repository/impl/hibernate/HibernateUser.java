@@ -1,7 +1,6 @@
 package com.nb.library.repository.impl.hibernate;
 
 import com.nb.library.entity.user.UserAccount;
-import com.nb.library.repository.AbstractDao;
 import com.nb.library.repository.contract.UserDaoContract;
 import com.nb.library.repository.impl.data.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -10,7 +9,7 @@ import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.Optional;
 
-public class HibernateUser extends AbstractDao implements UserDaoContract {
+public class HibernateUser implements UserDaoContract {
 
     @Resource
     private UserRepository userRepository;

@@ -11,8 +11,7 @@ import java.util.Set;
 public class Editor implements EditorInterface {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "editor_id_seq")
-    @SequenceGenerator(name = "editor_id_seq", sequenceName = "editor_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Integer id;
     public Integer getId() {
@@ -31,7 +30,7 @@ public class Editor implements EditorInterface {
         this.name = name;
     }
 
-    @OneToMany
+    @OneToMany(targetEntity = Book.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "editor_id", referencedColumnName = "id")
     private Set<Book> books = new HashSet<>(0);
     public Set<Book> getBooks() {

@@ -9,8 +9,7 @@ import javax.persistence.*;
 public class TypeWork implements TypeWorkInterface {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "type_work_id_seq")
-    @SequenceGenerator(name = "type_work_id_seq", sequenceName = "type_work_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Integer id;
     public Integer getId() {

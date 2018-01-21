@@ -27,8 +27,6 @@ public class ObjectFactory {
     private final static QName _GetAuthorResponse_QNAME = new QName("author.client.library.nb.com", "getAuthorResponse");
     private final static QName _ListAuthors_QNAME = new QName("author.client.library.nb.com", "listAuthors");
     private final static QName _GetAuthor_QNAME = new QName("author.client.library.nb.com", "getAuthor");
-    private final static QName _Author_QNAME = new QName("author.client.library.nb.com", "author");
-    private final static QName _Work_QNAME = new QName("author.client.library.nb.com", "work");
     private final static QName _ListAuthorsResponse_QNAME = new QName("author.client.library.nb.com", "listAuthorsResponse");
 
     /**
@@ -55,22 +53,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Author }
-     * 
-     */
-    public Author createAuthor() {
-        return new Author();
-    }
-
-    /**
-     * Create an instance of {@link Work }
-     * 
-     */
-    public Work createWork() {
-        return new Work();
-    }
-
-    /**
      * Create an instance of {@link ListAuthors }
      * 
      */
@@ -84,6 +66,22 @@ public class ObjectFactory {
      */
     public GetAuthorResponse createGetAuthorResponse() {
         return new GetAuthorResponse();
+    }
+
+    /**
+     * Create an instance of {@link Author }
+     * 
+     */
+    public Author createAuthor() {
+        return new Author();
+    }
+
+    /**
+     * Create an instance of {@link Work }
+     * 
+     */
+    public Work createWork() {
+        return new Work();
     }
 
     /**
@@ -111,24 +109,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "author.client.library.nb.com", name = "getAuthor")
     public JAXBElement<GetAuthor> createGetAuthor(GetAuthor value) {
         return new JAXBElement<GetAuthor>(_GetAuthor_QNAME, GetAuthor.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Author }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "author.client.library.nb.com", name = "author")
-    public JAXBElement<Author> createAuthor(Author value) {
-        return new JAXBElement<Author>(_Author_QNAME, Author.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Work }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "author.client.library.nb.com", name = "work")
-    public JAXBElement<Work> createWork(Work value) {
-        return new JAXBElement<Work>(_Work_QNAME, Work.class, null, value);
     }
 
     /**

@@ -9,8 +9,7 @@ import javax.persistence.*;
 public class Author implements AuthorInterface {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "author_id_seq")
-    @SequenceGenerator(name = "author_id_seq", sequenceName = "author_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Integer id;
     public Integer getId() {

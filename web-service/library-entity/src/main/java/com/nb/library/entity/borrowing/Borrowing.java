@@ -10,8 +10,7 @@ import java.util.Date;
 public class Borrowing implements BorrowingInterface {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "borrowing_id_seq")
-    @SequenceGenerator(name = "borrowing_id_seq", sequenceName = "borrowing_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Integer id;
     public Integer getId() {
@@ -19,6 +18,24 @@ public class Borrowing implements BorrowingInterface {
     }
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Column(name = "user_id")
+    private Integer userId;
+    public Integer getUserId() {
+        return userId;
+    }
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    @Column(name = "book_id")
+    private String bookId;
+    public String getBookId() {
+        return bookId;
+    }
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
     }
 
     @Column(name = "borrowing_date")
@@ -57,8 +74,8 @@ public class Borrowing implements BorrowingInterface {
         isExtended = extended;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @ManyToOne(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", insertable = false, updatable = false)
     private UserAccount user;
     public UserAccount getUser() {
         return user;
@@ -67,8 +84,8 @@ public class Borrowing implements BorrowingInterface {
         this.user = user;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "book_id", referencedColumnName = "isbn")
+    @ManyToOne(targetEntity = Book.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "book_id", referencedColumnName = "isbn", insertable = false, updatable = false)
     private Book book;
     public Book getBook() {
         return book;

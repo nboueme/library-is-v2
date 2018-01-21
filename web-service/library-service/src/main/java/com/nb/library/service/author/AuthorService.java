@@ -4,6 +4,7 @@ import com.nb.library.entity.author.Author;
 import com.nb.library.repository.contract.AuthorDaoContract;
 import com.nb.library.service.AbstractService;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.List;
 
@@ -12,10 +13,12 @@ public class AuthorService extends AbstractService {
 
     private AuthorDaoContract contract = getDaoFactory().getAuthorDao();
 
+    @WebMethod
     public Author getAuthor(Author author) {
         return contract.findById(author);
     }
 
+    @WebMethod
     public List<Author> listAuthors() {
         return contract.findAll();
     }

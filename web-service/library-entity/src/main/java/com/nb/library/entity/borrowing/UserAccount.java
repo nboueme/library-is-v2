@@ -10,8 +10,7 @@ import java.util.Date;
 public class UserAccount implements UserAccountInterface {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_account_id_seq")
-    @SequenceGenerator(name = "user_account_id_seq", sequenceName = "user_account_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true, updatable = false)
     private Integer id;
     public Integer getId() {
