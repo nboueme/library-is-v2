@@ -4,6 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- ==== Struts Actions ===== -->
+    <!--bean id="workAction" class="com.nb.library.webapp.action.WorkAction">
+        <property name="workManager" ref="workManager"/>
+    </bean-->
+
     <!-- ==== AbstractService ===== -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
         <property name="targetClass" value="com.nb.library.webapp.AbstractService"/>
