@@ -1,8 +1,11 @@
 
 package com.nb.library.client.editor;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -16,10 +19,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="book" type="{editor.client.library.nb.com}book" minOccurs="0"/>
+ *         &lt;element name="books" type="{editor.client.library.nb.com}book" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="work" type="{editor.client.library.nb.com}work" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,40 +32,44 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "editor", propOrder = {
-    "book",
+    "books",
     "id",
-    "name",
-    "work"
+    "name"
 })
 public class Editor {
 
-    protected Book book;
+    @XmlElement(nillable = true)
+    protected List<Book> books;
     protected Integer id;
     protected String name;
-    protected Work work;
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 book.
+     * Gets the value of the books property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Book }
-     *     
-     */
-    public Book getBook() {
-        return book;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 book.
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the books property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Book }
-     *     
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBooks().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Book }
+     * 
+     * 
      */
-    public void setBook(Book value) {
-        this.book = value;
+    public List<Book> getBooks() {
+        if (books == null) {
+            books = new ArrayList<Book>();
+        }
+        return this.books;
     }
 
     /**
@@ -112,30 +118,6 @@ public class Editor {
      */
     public void setName(String value) {
         this.name = value;
-    }
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 work.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Work }
-     *     
-     */
-    public Work getWork() {
-        return work;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 work.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Work }
-     *     
-     */
-    public void setWork(Work value) {
-        this.work = value;
     }
 
 }

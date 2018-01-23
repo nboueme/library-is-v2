@@ -30,7 +30,7 @@ public class Editor implements EditorInterface {
         this.name = name;
     }
 
-    @OneToMany(targetEntity = Book.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Book.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "editor_id", referencedColumnName = "id")
     private Set<Book> books = new HashSet<>(0);
     public Set<Book> getBooks() {

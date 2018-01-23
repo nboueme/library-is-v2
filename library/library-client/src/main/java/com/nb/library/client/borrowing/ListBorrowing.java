@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{borrowing.client.library.nb.com}userAccount" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{borrowing.client.library.nb.com}borrowing" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,17 +31,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class ListBorrowing {
 
-    protected UserAccount arg0;
+    protected Borrowing arg0;
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 arg0.
      * 
      * @return
      *     possible object is
-     *     {@link UserAccount }
+     *     {@link Borrowing }
      *     
      */
-    public UserAccount getArg0() {
+    public Borrowing getArg0() {
         return arg0;
     }
 
@@ -50,10 +50,10 @@ public class ListBorrowing {
      * 
      * @param value
      *     allowed object is
-     *     {@link UserAccount }
+     *     {@link Borrowing }
      *     
      */
-    public void setArg0(UserAccount value) {
+    public void setArg0(Borrowing value) {
         this.arg0 = value;
     }
 

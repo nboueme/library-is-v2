@@ -40,30 +40,6 @@ public interface BorrowingClient {
     /**
      * 
      * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "deleteBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.DeleteBorrowing")
-    @ResponseWrapper(localName = "deleteBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.DeleteBorrowingResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingResponse")
-    public void deleteBorrowing(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Borrowing arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getLoanPeriodsExceeded", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceeded")
-    @ResponseWrapper(localName = "getLoanPeriodsExceededResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceededResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededResponse")
-    public List<Borrowing> getLoanPeriodsExceeded();
-
-    /**
-     * 
-     * @param arg0
      * @return
      *     returns com.nb.library.client.borrowing.Borrowing
      */
@@ -89,7 +65,19 @@ public interface BorrowingClient {
     @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingResponse")
     public List<Borrowing> listBorrowing(
         @WebParam(name = "arg0", targetNamespace = "")
-        UserAccount arg0);
+        Borrowing arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getLoanPeriodsExceeded", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceeded")
+    @ResponseWrapper(localName = "getLoanPeriodsExceededResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceededResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededResponse")
+    public List<Borrowing> getLoanPeriodsExceeded();
 
     /**
      * 
@@ -100,6 +88,18 @@ public interface BorrowingClient {
     @ResponseWrapper(localName = "updateBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowingResponse")
     @Action(input = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingResponse")
     public void updateBorrowing(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Borrowing arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "deleteBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.DeleteBorrowing")
+    @ResponseWrapper(localName = "deleteBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.DeleteBorrowingResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingResponse")
+    public void deleteBorrowing(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
 

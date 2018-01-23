@@ -85,27 +85,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Author }
-     * 
-     */
-    public Author createAuthor() {
-        return new Author();
-    }
-
-    /**
      * Create an instance of {@link Book }
      * 
      */
     public Book createBook() {
         return new Book();
-    }
-
-    /**
-     * Create an instance of {@link TypeWork }
-     * 
-     */
-    public TypeWork createTypeWork() {
-        return new TypeWork();
     }
 
     /**

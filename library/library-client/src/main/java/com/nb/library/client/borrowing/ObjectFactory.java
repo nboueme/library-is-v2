@@ -149,14 +149,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Author }
-     * 
-     */
-    public Author createAuthor() {
-        return new Author();
-    }
-
-    /**
      * Create an instance of {@link Book }
      * 
      */
@@ -178,14 +170,6 @@ public class ObjectFactory {
      */
     public Borrowing createBorrowing() {
         return new Borrowing();
-    }
-
-    /**
-     * Create an instance of {@link TypeWork }
-     * 
-     */
-    public TypeWork createTypeWork() {
-        return new TypeWork();
     }
 
     /**

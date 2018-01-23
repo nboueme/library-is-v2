@@ -1,7 +1,6 @@
 package com.nb.library.repository.contract;
 
 import com.nb.library.client.borrowing.Borrowing;
-import com.nb.library.client.borrowing.UserAccount;
 
 import java.util.List;
 
@@ -10,7 +9,7 @@ public interface BorrowingDaoContract {
 
     Borrowing getBorrowing(Borrowing borrowing);
 
-    List<Borrowing> listBorrowing(UserAccount user);
+    List<Borrowing> listBorrowing(Borrowing borrowing);
 
     void updateBorrowing(Borrowing borrowing);
 

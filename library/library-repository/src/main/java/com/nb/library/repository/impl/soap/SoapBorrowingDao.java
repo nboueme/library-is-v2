@@ -4,7 +4,6 @@ import com.nb.library.repository.contract.BorrowingDaoContract;
 import com.nb.library.client.borrowing.Borrowing;
 import com.nb.library.client.borrowing.BorrowingClient;
 import com.nb.library.client.borrowing.BorrowingService;
-import com.nb.library.client.borrowing.UserAccount;
 
 import java.util.List;
 
@@ -21,8 +20,8 @@ public class SoapBorrowingDao implements BorrowingDaoContract {
         return client.getBorrowing(borrowing);
     }
 
-    public List<Borrowing> listBorrowing(UserAccount user) {
-        return client.listBorrowing(user);
+    public List<Borrowing> listBorrowing(Borrowing borrowing) {
+        return client.listBorrowing(borrowing);
     }
 
     public void updateBorrowing(Borrowing borrowing) {

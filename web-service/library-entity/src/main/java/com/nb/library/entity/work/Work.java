@@ -22,7 +22,7 @@ public class Work implements WorkInterface {
         this.id = id;
     }
 
-    @ManyToMany(targetEntity = Author.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Author.class, fetch = FetchType.LAZY)
     @JoinTable(name = "work_authors",
             joinColumns = { @JoinColumn(name = "work_id", referencedColumnName = "id", nullable = false, updatable = false) },
             inverseJoinColumns = { @JoinColumn(name = "author_id", referencedColumnName = "id", nullable = false, updatable = false) })
@@ -35,7 +35,7 @@ public class Work implements WorkInterface {
         this.authors = authors;
     }
 
-    @ManyToOne(targetEntity = TypeWork.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = TypeWork.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "type_work_id", referencedColumnName = "id")
     private TypeWork typeWork;
     public TypeWork getTypeWork() {
@@ -45,7 +45,7 @@ public class Work implements WorkInterface {
         this.typeWork = typeWork;
     }
 
-    @OneToMany(targetEntity = Book.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Book.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "work_id", referencedColumnName = "id")
     private Set<Book> books = new HashSet<>(0);
     public Set<Book> getBooks() {

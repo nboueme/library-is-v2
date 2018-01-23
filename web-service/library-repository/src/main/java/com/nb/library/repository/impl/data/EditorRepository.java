@@ -12,6 +12,6 @@ public interface EditorRepository extends Repository<Editor, Integer> {
     @Query("SELECT e FROM editor e JOIN FETCH e.books b JOIN FETCH b.work w WHERE e.id = :editor_id")
     Optional<Editor> findById(@Param("editor_id") Integer editorId);
 
-    @Query("SELECT e FROM editor e ORDER BY e.name ASC")
+    @Query("SELECT DISTINCT e FROM editor e JOIN FETCH e.books b JOIN FETCH b.work w ORDER BY e.name ASC")
     Iterable<Editor> findAll();
 }

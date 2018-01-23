@@ -30,7 +30,7 @@ public class TypeWork implements TypeWorkInterface {
         this.type = type;
     }
 
-    @OneToMany(targetEntity = Work.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = Work.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "type_work_id", referencedColumnName = "id")
     @OrderBy("title ASC")
     private Set<Work> works = new HashSet<>(0);

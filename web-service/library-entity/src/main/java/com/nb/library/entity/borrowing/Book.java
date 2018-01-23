@@ -46,7 +46,7 @@ public class Book implements BookInterface {
         this.year = year;
     }
 
-    @ManyToOne(targetEntity = Work.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Work.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "work_id", referencedColumnName = "id")
     private Work work;
     public Work getWork() {

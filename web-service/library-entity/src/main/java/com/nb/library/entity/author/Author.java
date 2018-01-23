@@ -39,7 +39,7 @@ public class Author implements AuthorInterface {
         this.lastName = lastName;
     }
 
-    @ManyToMany(targetEntity = Work.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Work.class, fetch = FetchType.LAZY)
     @JoinTable(name = "work_authors",
             joinColumns = { @JoinColumn(name = "author_id", referencedColumnName = "id", nullable = false, updatable = false) },
             inverseJoinColumns = { @JoinColumn(name = "work_id", referencedColumnName = "id", nullable = false, updatable = false) })

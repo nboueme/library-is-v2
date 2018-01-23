@@ -18,14 +18,15 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="bookId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="book" type="{borrowing.client.library.nb.com}book" minOccurs="0"/>
+ *         &lt;element name="bookId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="borrowingDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="loaned" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="returnDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         &lt;element name="user" type="{borrowing.client.library.nb.com}userAccount" minOccurs="0"/>
  *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="work" type="{borrowing.client.library.nb.com}work" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,18 +37,20 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "borrowing", propOrder = {
+    "book",
     "bookId",
     "borrowingDate",
     "extended",
     "id",
     "loaned",
     "returnDate",
-    "userId",
-    "work"
+    "user",
+    "userId"
 })
 public class Borrowing {
 
-    protected Integer bookId;
+    protected Book book;
+    protected String bookId;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar borrowingDate;
     protected Boolean extended;
@@ -55,18 +58,42 @@ public class Borrowing {
     protected Boolean loaned;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar returnDate;
+    protected UserAccount user;
     protected Integer userId;
-    protected Work work;
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 book.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Book }
+     *     
+     */
+    public Book getBook() {
+        return book;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 book.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Book }
+     *     
+     */
+    public void setBook(Book value) {
+        this.book = value;
+    }
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 bookId.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public Integer getBookId() {
+    public String getBookId() {
         return bookId;
     }
 
@@ -75,10 +102,10 @@ public class Borrowing {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link String }
      *     
      */
-    public void setBookId(Integer value) {
+    public void setBookId(String value) {
         this.bookId = value;
     }
 
@@ -203,6 +230,30 @@ public class Borrowing {
     }
 
     /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 user.
+     * 
+     * @return
+     *     possible object is
+     *     {@link UserAccount }
+     *     
+     */
+    public UserAccount getUser() {
+        return user;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 user.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link UserAccount }
+     *     
+     */
+    public void setUser(UserAccount value) {
+        this.user = value;
+    }
+
+    /**
      * Obtient la valeur de la propri\u00e9t\u00e9 userId.
      * 
      * @return
@@ -224,30 +275,6 @@ public class Borrowing {
      */
     public void setUserId(Integer value) {
         this.userId = value;
-    }
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 work.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Work }
-     *     
-     */
-    public Work getWork() {
-        return work;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 work.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Work }
-     *     
-     */
-    public void setWork(Work value) {
-        this.work = value;
     }
 
 }

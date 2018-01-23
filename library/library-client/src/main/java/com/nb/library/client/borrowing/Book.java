@@ -19,11 +19,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="editorId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="ISBN" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="purchaseDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="workId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="work" type="{borrowing.client.library.nb.com}work" minOccurs="0"/>
  *         &lt;element name="year" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -35,47 +34,21 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "book", propOrder = {
-    "editorId",
     "isbn",
     "price",
     "purchaseDate",
-    "workId",
+    "work",
     "year"
 })
 public class Book {
 
-    protected Integer editorId;
     @XmlElement(name = "ISBN")
     protected String isbn;
     protected Double price;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar purchaseDate;
-    protected Integer workId;
+    protected Work work;
     protected Integer year;
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 editorId.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
-     */
-    public Integer getEditorId() {
-        return editorId;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 editorId.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
-     */
-    public void setEditorId(Integer value) {
-        this.editorId = value;
-    }
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 isbn.
@@ -150,27 +123,27 @@ public class Book {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 workId.
+     * Obtient la valeur de la propri\u00e9t\u00e9 work.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Work }
      *     
      */
-    public Integer getWorkId() {
-        return workId;
+    public Work getWork() {
+        return work;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 workId.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 work.
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Work }
      *     
      */
-    public void setWorkId(Integer value) {
-        this.workId = value;
+    public void setWork(Work value) {
+        this.work = value;
     }
 
     /**
