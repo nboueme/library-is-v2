@@ -20,7 +20,9 @@
         <div class="col-sm">
             <ul class="nav flex-column">
                 <s:iterator value="work.authors">
-                    <li class="nav-item"><s:property value="firstName"/> <b><s:property value="lastName"/></b></li>
+                    <li class="nav-item">
+                        <a href="<s:url action="author/%{id}"/>"><s:property value="firstName"/> <b><s:property value="lastName"/></b></a>
+                    </li>
                 </s:iterator>
             </ul>
 

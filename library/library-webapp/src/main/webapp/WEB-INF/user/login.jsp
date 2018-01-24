@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%@ include file="_include/html_head.jsp" %>
+    <%@ include file="../_include/html_head.jsp" %>
     <title>Library - Login</title>
 </head>
 <body>
 
-<%@ include file="_include/header.jsp" %>
+<%@ include file="../_include/header.jsp" %>
 
 <div class="container">
     <h1>Login</h1>
@@ -29,7 +29,7 @@
     <p><a href="${userEmailLink}">Hello Nicolas Bouème</a></p>
 </div>
 
-<%@ include file="_include/footer.jsp" %>
+<%@ include file="../_include/footer.jsp" %>
 
 </body>
 </html>

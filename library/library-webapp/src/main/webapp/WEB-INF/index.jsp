@@ -9,8 +9,7 @@
 <%@ include file="_include/header.jsp" %>
 
 <div class="container">
-    <h1>Welcome to Struts 2!</h1>
-    <p><a href="<s:url action="work"/>">Hello World!</a></p>
+    <h2 class="mt-md-3">Accueil</h2>
 </div>
 
 <%@ include file="_include/footer.jsp" %>

@@ -18,9 +18,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
                         <a class="dropdown-item" href="<s:url action="work"/>">Œuvres</a>
-                        <a class="dropdown-item" href="<s:url value="/"/>">Auteurs</a>
+                        <a class="dropdown-item" href="<s:url action="author"/>">Auteurs</a>
                         <a class="dropdown-item" href="<s:url value="/"/>">Éditeurs</a>
-                        <a class="dropdown-item" href="<s:url value="/"/>">Types</a>
+                        <a class="dropdown-item" href="<s:url value="/"/>">Genres</a>
                     </div>
                 </li>
                 <li class="nav-item">

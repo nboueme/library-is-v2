@@ -32,7 +32,7 @@
                     <td>
                         <nav class="nav flex-column">
                             <s:iterator value="authors">
-                                <a class="nav-link" href="#"><s:property value="firstName"/> <s:property value="lastName"/></a>
+                                <a class="nav-link" href="<s:url action="author/%{id}"/>"><s:property value="firstName"/> <s:property value="lastName"/></a>
                             </s:iterator>
                         </nav>
                     </td>
