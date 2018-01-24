@@ -43,7 +43,7 @@
         <s:iterator value="work.books">
             <tr>
                 <td><s:property value="ISBN"/></td>
-                <td>inconnu (<s:property value="year"/>)</td>
+                <td><s:property value="editor.name"/> (<s:property value="year"/>)</td>
                 <td>inconnu</td>
             </tr>
         </s:iterator>

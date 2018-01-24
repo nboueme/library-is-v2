@@ -19,7 +19,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="editorId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="editor" type="{work.client.library.nb.com}editor" minOccurs="0"/>
  *         &lt;element name="ISBN" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="purchaseDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
@@ -35,7 +35,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "book", propOrder = {
-    "editorId",
+    "editor",
     "isbn",
     "price",
     "purchaseDate",
@@ -44,7 +44,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class Book {
 
-    protected Integer editorId;
+    protected Editor editor;
     @XmlElement(name = "ISBN")
     protected String isbn;
     protected Double price;
@@ -54,27 +54,27 @@ public class Book {
     protected Integer year;
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 editorId.
+     * Obtient la valeur de la propri\u00e9t\u00e9 editor.
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link Editor }
      *     
      */
-    public Integer getEditorId() {
-        return editorId;
+    public Editor getEditor() {
+        return editor;
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 editorId.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 editor.
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link Editor }
      *     
      */
-    public void setEditorId(Integer value) {
-        this.editorId = value;
+    public void setEditor(Editor value) {
+        this.editor = value;
     }
 
     /**

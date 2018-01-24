@@ -2,10 +2,7 @@ package com.nb.library.entity.work;
 
 import com.nb.library.entity.BookInterface;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -29,15 +26,6 @@ public class Book implements BookInterface {
     }
     public void setWorkId(Integer workId) {
         this.workId = workId;
-    }
-
-    @Column(name = "editor_id")
-    private Integer editorId;
-    public Integer getEditorId() {
-        return editorId;
-    }
-    public void setEditorId(Integer editorId) {
-        this.editorId = editorId;
     }
 
     @Column(name = "purchase_date", columnDefinition = "DATE")
@@ -65,5 +53,15 @@ public class Book implements BookInterface {
     }
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    @ManyToOne(targetEntity = Editor.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "editor_id", referencedColumnName = "id")
+    private Editor editor;
+    public Editor getEditor() {
+        return editor;
+    }
+    public void setEditor(Editor editor) {
+        this.editor = editor;
     }
 }

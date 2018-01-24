@@ -11,7 +11,7 @@ import java.util.List;
 @WebService(name = "EditorClient", serviceName = "EditorService", portName = "EditorPort", targetNamespace = "editor.client.library.nb.com")
 public class EditorService extends AbstractService {
 
-    EditorDaoContract contract = getDaoFactory().getEditorDao();
+    private EditorDaoContract contract = getDaoFactory().getEditorDao();
 
     @WebMethod
     public Editor getEditor(Editor editor) {

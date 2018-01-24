@@ -69,6 +69,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Editor }
+     * 
+     */
+    public Editor createEditor() {
+        return new Editor();
+    }
+
+    /**
      * Create an instance of {@link Work }
      * 
      */
