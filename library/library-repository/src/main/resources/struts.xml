@@ -4,14 +4,33 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
     <constant name="struts.devMode" value="true"/>
+    <constant name="struts.action.extension" value=""/>
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+    <constant name="struts.ui.theme" value="simple"/>
 
     <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="home"/>
+
         <action name="home" class="com.nb.library.webapp.action.HomeAction" method="execute">
-            <result name="success">WEB-INF/index.jsp</result>
+            <result name="success">/WEB-INF/index.jsp</result>
+        </action>
+    </package>
+
+    <package name="user" namespace="/" extends="struts-default">
+        <action name="login" class="com.nb.library.webapp.action.user.LoginAction" method="execute">
+            <result name="success">/WEB-INF/login.jsp</result>
+            <result name="input">/WEB-INF/login.jsp</result>
+        </action>
+    </package>
+
+    <package name="work" namespace="/" extends="struts-default">
+        <action name="work" class="com.nb.library.webapp.action.work.WorkAction" method="execute">
+            <result name="success">/WEB-INF/work/work.jsp</result>
         </action>
 
-        <action name="work" class="com.nb.library.webapp.action.WorkAction" method="execute">
-            <result name="success">WEB-INF/work.jsp</result>
+        <action name="work/*" class="com.nb.library.webapp.action.work.WorkItemAction" method="execute">
+            <param name="work.id">{1}</param>
+            <result name="success">/WEB-INF/work/work_item.jsp</result>
         </action>
     </package>
 </struts>
