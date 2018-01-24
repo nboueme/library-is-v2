@@ -20,7 +20,7 @@
                         <a class="dropdown-item" href="<s:url action="work"/>">Œuvres</a>
                         <a class="dropdown-item" href="<s:url action="author"/>">Auteurs</a>
                         <a class="dropdown-item" href="<s:url value="/"/>">Éditeurs</a>
-                        <a class="dropdown-item" href="<s:url value="/"/>">Genres</a>
+                        <a class="dropdown-item" href="<s:url action="type"/>">Genres</a>
                     </div>
                 </li>
                 <li class="nav-item">

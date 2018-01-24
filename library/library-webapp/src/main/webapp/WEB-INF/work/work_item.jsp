@@ -26,7 +26,7 @@
                 </s:iterator>
             </ul>
 
-            <div>Genre : <s:property value="work.typeWork.type"/></div>
+            <div>Genre : <a href="<s:url action="type/%{work.typeWork.id}"/>"><s:property value="work.typeWork.type"/></a></div>
 
             <div class="mt-md-3 border-bottom">Résumé :</div>
             <div style="text-align: justify;"><s:property value="work.summary"/></div>

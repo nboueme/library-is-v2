@@ -9,9 +9,9 @@ import java.util.Optional;
 
 public interface TypeWorkRepository extends Repository<TypeWork, Integer> {
 
-    @Query("SELECT t FROM type_work t JOIN FETCH t.works WHERE t.id = :type_work_id")
+    @Query("SELECT t FROM type_work t JOIN FETCH t.works w JOIN FETCH w.authors WHERE t.id = :type_work_id")
     Optional<TypeWork> findById(@Param("type_work_id") Integer typeWorkId);
 
-    @Query("SELECT DISTINCT t FROM type_work t JOIN FETCH t.works ORDER BY t.type ASC")
+    @Query("SELECT DISTINCT t FROM type_work t JOIN FETCH t.works w JOIN FETCH w.authors ORDER BY t.type ASC")
     Iterable<TypeWork> findAll();
 }

@@ -44,4 +44,15 @@
             <result name="success">/WEB-INF/author/author_item.jsp</result>
         </action>
     </package>
+
+    <package name="type" namespace="/" extends="struts-default">
+        <action name="type" class="com.nb.library.webapp.action.type.TypeAction" method="execute">
+            <result name="success">/WEB-INF/type/type.jsp</result>
+        </action>
+
+        <action name="type/*" class="com.nb.library.webapp.action.type.TypeItemAction" method="execute">
+            <param name="typeWork.id">{1}</param>
+            <result name="success">/WEB-INF/type/type_item.jsp</result>
+        </action>
+    </package>
 </struts>
