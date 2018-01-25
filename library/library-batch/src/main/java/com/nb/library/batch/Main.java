@@ -39,21 +39,28 @@ public class Main {
             System.out.println(item.getReturnDate());
         }*/
 
-        /*Editor editor = new Editor();
+        Editor editor = new Editor();
         editor.setId(1);
-        System.out.println(managerFactory.getEditorManager().getEditor(editor).getName());
-        for (Editor item : managerFactory.getEditorManager().listEditors()) {
+        Editor existingEditor = managerFactory.getEditorManager().getEditor(editor);
+        System.out.println("- " + existingEditor.getName());
+        for (com.nb.library.client.editor.Book book : existingEditor.getBooks()) {
+            System.out.println(book.getWork().getTitle());
+            for (com.nb.library.client.editor.Author author : book.getWork().getAuthors()) {
+                System.out.println("-> " + author.getFirstName());
+            }
+        }
+        /*for (Editor item : managerFactory.getEditorManager().listEditors()) {
             System.out.println("- " + item.getName());
             for (com.nb.library.client.editor.Book book : item.getBooks()) {
                 System.out.println(book.getWork().getTitle());
             }
         }*/
 
-        for (TypeWork item : managerFactory.getTypeWorkManager().listTypesWorks()) {
+        /*for (TypeWork item : managerFactory.getTypeWorkManager().listTypesWorks()) {
             System.out.println("- " + item.getType());
             for (com.nb.library.client.type.Work work : item.getWorks()) {
                 System.out.println(work.getTitle());
             }
-        }
+        }*/
     }
 }

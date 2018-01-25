@@ -9,9 +9,9 @@ import java.util.Optional;
 
 public interface EditorRepository extends Repository<Editor, Integer> {
 
-    @Query("SELECT e FROM editor e JOIN FETCH e.books b JOIN FETCH b.work w WHERE e.id = :editor_id")
+    @Query("SELECT e FROM editor e JOIN FETCH e.books b JOIN FETCH b.work w JOIN FETCH w.authors WHERE e.id = :editor_id")
     Optional<Editor> findById(@Param("editor_id") Integer editorId);
 
-    @Query("SELECT DISTINCT e FROM editor e JOIN FETCH e.books b JOIN FETCH b.work w ORDER BY e.name ASC")
+    @Query("SELECT DISTINCT e FROM editor e JOIN FETCH e.books b JOIN FETCH b.work w JOIN FETCH w.authors ORDER BY e.name ASC")
     Iterable<Editor> findAll();
 }

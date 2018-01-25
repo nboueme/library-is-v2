@@ -4,6 +4,8 @@ import com.nb.library.entity.WorkInterface;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "work")
@@ -63,5 +65,18 @@ public class Work implements WorkInterface {
     }
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @ManyToMany(targetEntity = Author.class, fetch = FetchType.LAZY)
+    @JoinTable(name = "work_authors",
+            joinColumns = { @JoinColumn(name = "work_id", referencedColumnName = "id", nullable = false, updatable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "author_id", referencedColumnName = "id", nullable = false, updatable = false) })
+    @OrderBy("firstName ASC")
+    private Set<Author> authors = new HashSet<>(0);
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
     }
 }

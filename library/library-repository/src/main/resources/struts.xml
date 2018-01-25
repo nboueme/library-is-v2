@@ -3,11 +3,13 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
+    <!-- Struts constants -->
     <constant name="struts.devMode" value="true"/>
     <constant name="struts.action.extension" value=""/>
     <constant name="struts.enable.SlashesInActionNames" value="true"/>
     <constant name="struts.ui.theme" value="simple"/>
 
+    <!-- ==== Home ===== -->
     <package name="default" namespace="/" extends="struts-default">
         <default-action-ref name="home"/>
 
@@ -16,24 +18,7 @@
         </action>
     </package>
 
-    <package name="user" namespace="/" extends="struts-default">
-        <action name="login" class="com.nb.library.webapp.action.user.LoginAction" method="execute">
-            <result name="success">/WEB-INF/user/login.jsp</result>
-            <result name="input">/WEB-INF/user/login.jsp</result>
-        </action>
-    </package>
-
-    <package name="work" namespace="/" extends="struts-default">
-        <action name="work" class="com.nb.library.webapp.action.work.WorkAction" method="execute">
-            <result name="success">/WEB-INF/work/work.jsp</result>
-        </action>
-
-        <action name="work/*" class="com.nb.library.webapp.action.work.WorkItemAction" method="execute">
-            <param name="work.id">{1}</param>
-            <result name="success">/WEB-INF/work/work_item.jsp</result>
-        </action>
-    </package>
-
+    <!-- ==== Author ===== -->
     <package name="author" namespace="/" extends="struts-default">
         <action name="author" class="com.nb.library.webapp.action.author.AuthorAction" method="execute">
             <result name="success">/WEB-INF/author/author.jsp</result>
@@ -45,6 +30,22 @@
         </action>
     </package>
 
+    <!-- ==== Borrowing ===== -->
+
+
+    <!-- ==== Editor ===== -->
+    <package name="editor" namespace="/" extends="struts-default">
+        <action name="editor" class="com.nb.library.webapp.action.editor.EditorAction" method="execute">
+            <result name="success">/WEB-INF/editor/editor.jsp</result>
+        </action>
+
+        <action name="editor/*" class="com.nb.library.webapp.action.editor.EditorItemAction" method="execute">
+            <param name="editor.id">{1}</param>
+            <result name="success">/WEB-INF/editor/editor_item.jsp</result>
+        </action>
+    </package>
+
+    <!-- ==== Type ===== -->
     <package name="type" namespace="/" extends="struts-default">
         <action name="type" class="com.nb.library.webapp.action.type.TypeAction" method="execute">
             <result name="success">/WEB-INF/type/type.jsp</result>
@@ -53,6 +54,26 @@
         <action name="type/*" class="com.nb.library.webapp.action.type.TypeItemAction" method="execute">
             <param name="typeWork.id">{1}</param>
             <result name="success">/WEB-INF/type/type_item.jsp</result>
+        </action>
+    </package>
+
+    <!-- ==== User ===== -->
+    <package name="user" namespace="/" extends="struts-default">
+        <action name="login" class="com.nb.library.webapp.action.user.LoginAction" method="execute">
+            <result name="success">/WEB-INF/user/login.jsp</result>
+            <result name="input">/WEB-INF/user/login.jsp</result>
+        </action>
+    </package>
+
+    <!-- ==== Work ===== -->
+    <package name="work" namespace="/" extends="struts-default">
+        <action name="work" class="com.nb.library.webapp.action.work.WorkAction" method="execute">
+            <result name="success">/WEB-INF/work/work.jsp</result>
+        </action>
+
+        <action name="work/*" class="com.nb.library.webapp.action.work.WorkItemAction" method="execute">
+            <param name="work.id">{1}</param>
+            <result name="success">/WEB-INF/work/work_item.jsp</result>
         </action>
     </package>
 </struts>
