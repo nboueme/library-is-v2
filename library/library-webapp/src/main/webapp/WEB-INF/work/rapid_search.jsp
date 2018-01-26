@@ -2,14 +2,14 @@
 <html>
 <head>
     <%@ include file="../_include/html_head.jsp" %>
-    <title>Library - Editor item</title>
+    <title>Library - <s:property value="#session.userSession.firstName"/> <s:property value="#session.userSession.lastName"/></title>
 </head>
 <body>
 
 <%@ include file="../_include/header.jsp" %>
 
 <div class="container">
-    <h2 class="mt-md-3">Liste des œuvres de l'éditeur <s:property value="editor.name"/> (<s:property value="editor.books.size"/>)</h2>
+    <h2 class="mt-md-3">Livres trouvés pour "<s:property value="search"/>"</h2>
 
     <table class="table table-striped mt-md-3">
         <thead>
@@ -20,17 +20,18 @@
         </tr>
         </thead>
         <tbody>
-        <s:iterator value="editor.books">
+        <s:iterator value="works">
+
             <tr>
                 <td>
-                    <a href="<s:url action="work/%{work.id}"/>"><img class="img-sm" src="<s:property value="work.imageURL"/>"/></a>
+                    <a href="<s:url action="work/%{id}"/>"><img class="img-sm" src="<s:property value="imageURL"/>"/></a>
                 </td>
                 <td>
-                    <a class="nav-link" href="<s:url action="work/%{work.id}"/>"><s:property value="work.title"/></a>
+                    <a class="nav-link" href="<s:url action="work/%{id}"/>"><s:property value="title"/></a>
                 </td>
                 <td>
                     <nav class="nav flex-column">
-                        <s:iterator value="work.authors">
+                        <s:iterator value="authors">
                             <a class="nav-link" href="<s:url action="author/%{id}"/>"><s:property value="firstName"/> <s:property value="lastName"/></a>
                         </s:iterator>
                     </nav>

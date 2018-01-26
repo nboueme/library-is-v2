@@ -14,7 +14,7 @@
     <div class="row mt-md-3">
 
         <div class="col-sm-auto">
-            <img style="width: 210px;" src="<s:property value="work.imageURL"/>"/>
+            <img class="img-md" src="<s:property value="work.imageURL"/>"/>
         </div>
 
         <div class="col-sm">
@@ -29,7 +29,7 @@
             <div>Genre : <a href="<s:url action="type/%{work.typeWork.id}"/>"><s:property value="work.typeWork.type"/></a></div>
 
             <div class="mt-md-3 border-bottom">Résumé :</div>
-            <div style="text-align: justify;"><s:property value="work.summary"/></div>
+            <div class="text-justify"><s:property value="work.summary"/></div>
         </div>
     </div>
 

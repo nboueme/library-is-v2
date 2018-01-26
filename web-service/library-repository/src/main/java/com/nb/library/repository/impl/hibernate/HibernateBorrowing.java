@@ -7,6 +7,7 @@ import com.nb.library.repository.impl.data.BorrowingRepository;
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,7 +45,7 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     public void update(Borrowing borrowing) {
         Optional<Borrowing> optionalBorrowing = borrowingRepository.findByIdAndUserId(borrowing.getId(), borrowing.getUserId());
         if (optionalBorrowing.isPresent()) {
-            optionalBorrowing.get().setReturnDate(borrowing.getReturnDate());
+            optionalBorrowing.get().setReturnDate(new Date());
             optionalBorrowing.get().setLoaned(borrowing.getLoaned());
             optionalBorrowing.get().setExtended(borrowing.getExtended());
         }

@@ -1,0 +1,13 @@
+.img-sm {
+    width: 95px;
+}
+
+.img-md {
+    width: 210px;
+}
+
+.errorMessage {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}

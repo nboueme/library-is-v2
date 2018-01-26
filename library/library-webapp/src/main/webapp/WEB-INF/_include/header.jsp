@@ -24,11 +24,16 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<s:url action="login"/>">Mes emprunts</a>
+                    <a class="nav-link" href="<s:url action="borrowing"/>">Mes emprunts</a>
                 </li>
+                <s:if test="%{#session.userSession != null}">
+                    <li>
+                        <a class="nav-link" href="<s:url action="logout"/>">Déconnexion</a>
+                    </li>
+                </s:if>
             </ul>
 
-            <s:form class="form-inline my-2 my-lg-0">
+            <s:form action="search" class="form-inline my-2 my-lg-0">
                 <s:textfield class="form-control mr-sm-2" name="search" label="Search" placeholder="Search"/>
                 <s:submit class="btn btn-outline-primary my-2 my-sm-0" value="Search"/>
             </s:form>

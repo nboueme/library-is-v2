@@ -23,7 +23,7 @@
 
             <tr>
                 <td>
-                    <a href="<s:url action="work/%{id}"/>"><img style="width: 95px;" src="<s:property value="imageURL"/>"/></a>
+                    <a href="<s:url action="work/%{id}"/>"><img class="img-sm" src="<s:property value="imageURL"/>"/></a>
                 </td>
                 <td>
                     <a class="nav-link" href="<s:url action="work/%{id}"/>"><s:property value="title"/></a>
