@@ -45,7 +45,7 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     public void update(Borrowing borrowing) {
         Optional<Borrowing> optionalBorrowing = borrowingRepository.findByIdAndUserId(borrowing.getId(), borrowing.getUserId());
         if (optionalBorrowing.isPresent()) {
-            optionalBorrowing.get().setReturnDate(new Date());
+            optionalBorrowing.get().setReturnDate(borrowing.getReturnDate());
             optionalBorrowing.get().setLoaned(borrowing.getLoaned());
             optionalBorrowing.get().setExtended(borrowing.getExtended());
         }
