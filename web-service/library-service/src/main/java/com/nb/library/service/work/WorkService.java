@@ -22,4 +22,8 @@ public class WorkService extends AbstractService {
     public List<Work> listWorks() {
         return contract.findAll();
     }
+
+    public List<Work> listWorksByWord(String word) {
+        return contract.findByWord(word);
+    }
 }

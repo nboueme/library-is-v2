@@ -27,4 +27,12 @@ public class HibernateWork implements WorkDaoContract {
         workRepository.findAll().iterator().forEachRemaining(works::add);
         return works;
     }
+
+    @Override
+    @Transactional
+    public List<Work> findByWord(String word) {
+        List<Work> works = new ArrayList<>(0);
+        workRepository.findByWord("%" + word + "%").iterator().forEachRemaining(works::add);
+        return works;
+    }
 }

@@ -8,4 +8,6 @@ public interface WorkDaoContract {
     Work getWork(Work work);
 
     List<Work> listWorks();
+
+    List<Work> listWorksByWord(String word);
 }

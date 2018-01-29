@@ -1,6 +1,7 @@
 package com.nb.library.service;
 
 import com.nb.library.entity.borrowing.Borrowing;
+import com.nb.library.entity.work.Work;
 import com.nb.library.repository.contract.AuthorDaoContract;
 import com.nb.library.repository.contract.BorrowingDaoContract;
 import com.nb.library.repository.contract.EditorDaoContract;
@@ -24,14 +25,14 @@ public class Test {
         borrowing.setExtended(false);
         borrowingContract.update(borrowing);*/
 
-        borrowing.setUserId(14);
+        /*borrowing.setUserId(14);
         for (Borrowing item : borrowingContract.findAllByUserId(borrowing)) {
             System.out.println(item.getUser().getFirstName() + " " + item.getUser().getLastName() + " for ISBN "  + item.getBookId());
             System.out.println("Book: " + item.getBook().getWork().getTitle());
             System.out.println("Borrowing date: " + item.getBorrowingDate());
             System.out.println("Return date: " + item.getReturnDate());
             System.out.println("--------------------------------------------------");
-        }
+        }*/
 
         /*borrowing.setId(5);
         borrowing.setUserId(14);
@@ -46,5 +47,11 @@ public class Test {
             System.out.println(item.getBorrowingDate());
             System.out.println(item.getReturnDate());
         }*/
+
+        WorkDaoContract workContract = applicationContext.getBean("workDao", WorkDaoContract.class);
+        String word = "française";
+        for (Work work : workContract.findByWord(word)) {
+            System.out.println(work.getTitle());
+        }
     }
 }

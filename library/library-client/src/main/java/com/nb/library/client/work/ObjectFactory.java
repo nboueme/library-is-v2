@@ -24,6 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _ListWorksByWord_QNAME = new QName("work.client.library.nb.com", "listWorksByWord");
+    private final static QName _ListWorksByWordResponse_QNAME = new QName("work.client.library.nb.com", "listWorksByWordResponse");
     private final static QName _GetWorkResponse_QNAME = new QName("work.client.library.nb.com", "getWorkResponse");
     private final static QName _ListWorks_QNAME = new QName("work.client.library.nb.com", "listWorks");
     private final static QName _GetWork_QNAME = new QName("work.client.library.nb.com", "getWork");
@@ -69,6 +71,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ListWorksByWordResponse }
+     * 
+     */
+    public ListWorksByWordResponse createListWorksByWordResponse() {
+        return new ListWorksByWordResponse();
+    }
+
+    /**
+     * Create an instance of {@link ListWorksByWord }
+     * 
+     */
+    public ListWorksByWord createListWorksByWord() {
+        return new ListWorksByWord();
+    }
+
+    /**
      * Create an instance of {@link Editor }
      * 
      */
@@ -106,6 +124,24 @@ public class ObjectFactory {
      */
     public TypeWork createTypeWork() {
         return new TypeWork();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListWorksByWord }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "work.client.library.nb.com", name = "listWorksByWord")
+    public JAXBElement<ListWorksByWord> createListWorksByWord(ListWorksByWord value) {
+        return new JAXBElement<ListWorksByWord>(_ListWorksByWord_QNAME, ListWorksByWord.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListWorksByWordResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "work.client.library.nb.com", name = "listWorksByWordResponse")
+    public JAXBElement<ListWorksByWordResponse> createListWorksByWordResponse(ListWorksByWordResponse value) {
+        return new JAXBElement<ListWorksByWordResponse>(_ListWorksByWordResponse_QNAME, ListWorksByWordResponse.class, null, value);
     }
 
     /**

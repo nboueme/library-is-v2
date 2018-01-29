@@ -11,7 +11,7 @@ public class SearchAction extends AbstractService {
     private String search;
 
     public String execute() {
-        works = getManagerFactory().getWorkManager().listWorks();
+        works = getManagerFactory().getWorkManager().listWorksByWord(search);
 
         return SUCCESS;
     }

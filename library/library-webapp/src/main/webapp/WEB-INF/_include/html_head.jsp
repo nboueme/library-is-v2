@@ -8,4 +8,4 @@
       crossorigin="anonymous">
 <link rel="stylesheet"
       type="text/css"
-      href="<c:url value="/resources/style/custom.css"/>">
+      href="<c:url value="/resources/style/custom.css"/>?cache=<%=System.currentTimeMillis()%>">

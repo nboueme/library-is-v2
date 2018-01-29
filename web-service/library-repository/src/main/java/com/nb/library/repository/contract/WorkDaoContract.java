@@ -8,4 +8,6 @@ public interface WorkDaoContract {
     Work findById(Work work);
 
     List<Work> findAll();
+
+    List<Work> findByWord(String word);
 }

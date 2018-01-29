@@ -15,4 +15,8 @@ public class WorkManagerImpl extends AbstractManager implements WorkManager {
     public List<Work> listWorks() {
         return getDaoFactory().getWorkDao().listWorks();
     }
+
+    public List<Work> listWorksByWord(String word) {
+        return getDaoFactory().getWorkDao().listWorksByWord(word);
+    }
 }

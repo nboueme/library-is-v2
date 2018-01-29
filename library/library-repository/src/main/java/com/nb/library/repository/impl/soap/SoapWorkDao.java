@@ -19,4 +19,8 @@ public class SoapWorkDao implements WorkDaoContract {
     public List<Work> listWorks() {
         return client.listWorks();
     }
+
+    public List<Work> listWorksByWord(String word) {
+        return client.listWorksByWord(word);
+    }
 }
