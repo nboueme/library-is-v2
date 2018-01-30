@@ -31,25 +31,29 @@
                     <tbody>
                     <s:iterator value="borrowings">
                         <s:if test="loaned">
-                            <tr>
+                            <tr class="<s:if test="currentDate > returnDate.toGregorianCalendar().time">table-warning</s:if>">
                                 <td>
                                     <a class="nav-link" href="<s:url action="work/%{book.work.id}"/>"><s:property value="book.work.title"/></a>
                                 </td>
                                 <td>
-                                    <fmt:formatDate value="${borrowingDate.toGregorianCalendar().time}" var="formattedBorrowingDate" type="date" pattern="dd/MM/yyyy"/>
-                                        ${formattedBorrowingDate}
+                                    <div class="block-padding">
+                                        <s:date name="borrowingDate.toGregorianCalendar().time" format="dd MMMM yyyy"/>
+                                    </div>
+                                </td>
+                                <td class="<s:if test="currentDate > returnDate.toGregorianCalendar().time">text-danger text-bold</s:if>">
+                                    <div class="block-padding">
+                                        <s:date name="returnDate.toGregorianCalendar().time" format="dd MMMM yyyy"/>
+                                    </div>
                                 </td>
                                 <td>
-                                    <fmt:formatDate value="${returnDate.toGregorianCalendar().time}" var="formattedReturnDate" type="date" pattern="dd/MM/yyyy"/>
-                                        ${formattedReturnDate}
-                                </td>
-                                <td>
-                                    <s:if test="extended">
-                                        déjà prolongé
-                                    </s:if>
-                                    <s:else>
-                                        <a href="<s:url action="borrowing/update/%{id}"/>">prolonger</a>
-                                    </s:else>
+                                    <div class="block-padding">
+                                        <s:if test="extended">
+                                            déjà prolongé
+                                        </s:if>
+                                        <s:else>
+                                            <a href="<s:url action="borrowing/update/%{id}"/>">prolonger</a>
+                                        </s:else>
+                                    </div>
                                 </td>
                             </tr>
                         </s:if>
@@ -75,12 +79,14 @@
                                     <a class="nav-link" href="<s:url action="work/%{book.work.id}"/>"><s:property value="book.work.title"/></a>
                                 </td>
                                 <td>
-                                    <fmt:formatDate value="${borrowingDate.toGregorianCalendar().time}" var="formattedBorrowingDate" type="date" pattern="dd/MM/yyyy"/>
-                                        ${formattedBorrowingDate}
+                                    <div class="block-padding">
+                                        <s:date name="borrowingDate.toGregorianCalendar().time" format="dd MMMM yyyy"/>
+                                    </div>
                                 </td>
                                 <td>
-                                    <fmt:formatDate value="${returnDate.toGregorianCalendar().time}" var="formattedReturnDate" type="date" pattern="dd/MM/yyyy"/>
-                                        ${formattedReturnDate}
+                                    <div class="block-padding">
+                                        <s:date name="returnDate.toGregorianCalendar().time" format="dd MMMM yyyy"/>
+                                    </div>
                                 </td>
                             </tr>
                         </s:if>

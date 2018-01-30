@@ -11,3 +11,19 @@
     margin-bottom: 0;
     padding-left: 0;
 }
+
+.block-padding {
+    padding: .5rem 1rem;
+}
+
+.block-item {
+    display: block;
+}
+
+.block-item a:hover {
+    text-decoration: none;
+}
+
+.text-bold {
+    font-weight: bold;
+}

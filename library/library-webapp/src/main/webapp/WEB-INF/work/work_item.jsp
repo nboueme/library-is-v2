@@ -39,7 +39,7 @@
         <tr>
             <th scope="col">ISBN</th>
             <th scope="col">Éditeur</th>
-            <th scope="col">Statut</th>
+            <th scope="col">Disponibilité</th>
         </tr>
         </thead>
         <s:iterator value="work.books">
