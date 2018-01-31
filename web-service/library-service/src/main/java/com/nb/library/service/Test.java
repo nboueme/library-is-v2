@@ -1,5 +1,6 @@
 package com.nb.library.service;
 
+import com.nb.library.entity.archive.BorrowingArchive;
 import com.nb.library.entity.borrowing.Borrowing;
 import com.nb.library.entity.work.Work;
 import com.nb.library.repository.contract.AuthorDaoContract;
@@ -9,21 +10,31 @@ import com.nb.library.repository.contract.WorkDaoContract;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Date;
+
 public class Test {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         BorrowingDaoContract borrowingContract = applicationContext.getBean("borrowingDao", BorrowingDaoContract.class);
-        Borrowing borrowing = new Borrowing();
-        /*borrowing.setId(18);
+        /*Borrowing borrowing = new Borrowing();
+        //borrowing.setId(4);
+        borrowing.setBookId(12);
         borrowing.setUserId(14);
-        borrowing.setBookId("2290148172");
         borrowing.setBorrowingDate(new Date());
         borrowing.setReturnDate(new Date());
         borrowing.setLoaned(true);
         borrowing.setExtended(false);
-        borrowingContract.update(borrowing);*/
+        borrowingContract.save(borrowing);*/
+
+        BorrowingArchive borrowingArchive = new BorrowingArchive();
+        borrowingArchive.setUserId(14);
+        for (BorrowingArchive archive : borrowingContract.findArchivesByUserId(borrowingArchive)) {
+            System.out.println(archive.getBook().getWork().getTitle());
+            System.out.println(archive.getBorrowingDate());
+            System.out.println(archive.getReturnDate());
+        }
 
         /*borrowing.setUserId(14);
         for (Borrowing item : borrowingContract.findAllByUserId(borrowing)) {
@@ -48,10 +59,10 @@ public class Test {
             System.out.println(item.getReturnDate());
         }*/
 
-        WorkDaoContract workContract = applicationContext.getBean("workDao", WorkDaoContract.class);
+        /*WorkDaoContract workContract = applicationContext.getBean("workDao", WorkDaoContract.class);
         String word = "française";
         for (Work work : workContract.findByWord(word)) {
             System.out.println(work.getTitle());
-        }
+        }*/
     }
 }

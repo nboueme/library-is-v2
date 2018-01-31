@@ -1,5 +1,6 @@
 package com.nb.library.service.borrowing;
 
+import com.nb.library.entity.archive.BorrowingArchive;
 import com.nb.library.entity.borrowing.Borrowing;
 import com.nb.library.repository.contract.BorrowingDaoContract;
 import com.nb.library.service.AbstractService;
@@ -25,12 +26,22 @@ public class BorrowingService extends AbstractService {
 
     @WebMethod
     public List<Borrowing> listBorrowing(Borrowing borrowing) {
-        return contract.findAllByUserId(borrowing);
+        return contract.findBorrowingsByUserId(borrowing);
+    }
+
+    @WebMethod
+    public List<BorrowingArchive> listArchive(BorrowingArchive archive) {
+        return contract.findArchivesByUserId(archive);
     }
 
     @WebMethod
     public List<Borrowing> getLoanPeriodsExceeded() {
         return contract.findAllByIsLoanedTrue();
+    }
+
+    @WebMethod
+    public Borrowing findByBookId(Borrowing borrowing) {
+        return contract.findByBookId(borrowing);
     }
 
     @WebMethod

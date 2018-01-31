@@ -10,7 +10,17 @@ import java.util.Date;
 public class Book implements BookInterface {
 
     @Id
-    @Column(name = "isbn", nullable = false, unique = true, updatable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true, updatable = false)
+    private Integer id;
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    @Column(name = "isbn")
     private String ISBN;
     public String getISBN() {
         return ISBN;

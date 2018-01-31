@@ -3,6 +3,10 @@ package com.nb.library.entity;
 import java.util.Date;
 
 public interface BookInterface {
+    Integer getId();
+
+    void setId(Integer id);
+
     String getISBN();
 
     void setISBN(String ISBN);

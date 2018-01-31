@@ -1,13 +1,15 @@
-package com.nb.library.entity.borrowing;
+package com.nb.library.entity.archive;
 
-import com.nb.library.entity.BorrowingInterface;
+import com.nb.library.entity.BorrowingArchiveInterface;
+import com.nb.library.entity.borrowing.Book;
+import com.nb.library.entity.borrowing.UserAccount;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "borrowing")
-@Table(name = "borrowing")
-public class Borrowing implements BorrowingInterface {
+@Entity(name = "borrowing_archive")
+@Table(name = "borrowing_archive")
+public class BorrowingArchive implements BorrowingArchiveInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -54,24 +56,6 @@ public class Borrowing implements BorrowingInterface {
     }
     public void setReturnDate(Date returnDate) {
         this.returnDate = returnDate;
-    }
-
-    @Column(name = "is_loaned")
-    private Boolean isLoaned;
-    public Boolean getLoaned() {
-        return isLoaned;
-    }
-    public void setLoaned(Boolean loaned) {
-        isLoaned = loaned;
-    }
-
-    @Column(name = "is_extended")
-    private Boolean isExtended;
-    public Boolean getExtended() {
-        return isExtended;
-    }
-    public void setExtended(Boolean extended) {
-        isExtended = extended;
     }
 
     @ManyToOne(targetEntity = UserAccount.class, fetch = FetchType.LAZY)

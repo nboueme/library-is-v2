@@ -18,5 +18,10 @@ public interface BorrowingRepository extends CrudRepository<Borrowing, Integer> 
     @Query("SELECT b FROM borrowing b JOIN FETCH b.user u JOIN FETCH b.book book JOIN FETCH book.work WHERE b.isLoaned = true")
     Iterable<Borrowing> findAllByIsLoanedTrue();
 
+    @Query("SELECT b FROM borrowing b JOIN FETCH b.user u JOIN FETCH b.book book JOIN FETCH book.work WHERE b.bookId = :book_id")
+    Optional<Borrowing> findByBookId(@Param("book_id") Integer bookId);
+
+    void deleteByBookId(Integer bookId);
+
     void deleteByIdAndUserId(Integer borrowingId, Integer userId);
 }
