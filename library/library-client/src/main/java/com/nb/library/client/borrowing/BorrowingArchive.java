@@ -9,21 +9,19 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java pour borrowing complex type.
+ * <p>Classe Java pour borrowingArchive complex type.
  * 
  * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="borrowing">
+ * &lt;complexType name="borrowingArchive">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="book" type="{borrowing.client.library.nb.com}book" minOccurs="0"/>
  *         &lt;element name="bookId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="borrowingDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
- *         &lt;element name="extended" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
- *         &lt;element name="loaned" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="returnDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="user" type="{borrowing.client.library.nb.com}userAccount" minOccurs="0"/>
  *         &lt;element name="userId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
@@ -36,26 +34,22 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "borrowing", propOrder = {
+@XmlType(name = "borrowingArchive", propOrder = {
     "book",
     "bookId",
     "borrowingDate",
-    "extended",
     "id",
-    "loaned",
     "returnDate",
     "user",
     "userId"
 })
-public class Borrowing {
+public class BorrowingArchive {
 
     protected Book book;
     protected Integer bookId;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar borrowingDate;
-    protected Boolean extended;
     protected Integer id;
-    protected Boolean loaned;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar returnDate;
     protected UserAccount user;
@@ -134,30 +128,6 @@ public class Borrowing {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 extended.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isExtended() {
-        return extended;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 extended.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setExtended(Boolean value) {
-        this.extended = value;
-    }
-
-    /**
      * Obtient la valeur de la propri\u00e9t\u00e9 id.
      * 
      * @return
@@ -179,30 +149,6 @@ public class Borrowing {
      */
     public void setId(Integer value) {
         this.id = value;
-    }
-
-    /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 loaned.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
-     */
-    public Boolean isLoaned() {
-        return loaned;
-    }
-
-    /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 loaned.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
-     */
-    public void setLoaned(Boolean value) {
-        this.loaned = value;
     }
 
     /**

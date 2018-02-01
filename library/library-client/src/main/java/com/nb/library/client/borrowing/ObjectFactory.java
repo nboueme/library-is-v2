@@ -24,14 +24,18 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _ListArchive_QNAME = new QName("borrowing.client.library.nb.com", "listArchive");
+    private final static QName _FindByBookIdResponse_QNAME = new QName("borrowing.client.library.nb.com", "findByBookIdResponse");
+    private final static QName _ListArchiveResponse_QNAME = new QName("borrowing.client.library.nb.com", "listArchiveResponse");
+    private final static QName _DeleteBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "deleteBorrowingResponse");
     private final static QName _UpdateBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "updateBorrowing");
     private final static QName _AddBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "addBorrowingResponse");
     private final static QName _DeleteBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "deleteBorrowing");
     private final static QName _GetBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "getBorrowingResponse");
     private final static QName _GetBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "getBorrowing");
     private final static QName _AddBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "addBorrowing");
-    private final static QName _DeleteBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "deleteBorrowingResponse");
     private final static QName _ListBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "listBorrowing");
+    private final static QName _FindByBookId_QNAME = new QName("borrowing.client.library.nb.com", "findByBookId");
     private final static QName _GetLoanPeriodsExceededResponse_QNAME = new QName("borrowing.client.library.nb.com", "getLoanPeriodsExceededResponse");
     private final static QName _ListBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "listBorrowingResponse");
     private final static QName _UpdateBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "updateBorrowingResponse");
@@ -50,6 +54,30 @@ public class ObjectFactory {
      */
     public DeleteBorrowingResponse createDeleteBorrowingResponse() {
         return new DeleteBorrowingResponse();
+    }
+
+    /**
+     * Create an instance of {@link ListArchiveResponse }
+     * 
+     */
+    public ListArchiveResponse createListArchiveResponse() {
+        return new ListArchiveResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindByBookIdResponse }
+     * 
+     */
+    public FindByBookIdResponse createFindByBookIdResponse() {
+        return new FindByBookIdResponse();
+    }
+
+    /**
+     * Create an instance of {@link ListArchive }
+     * 
+     */
+    public ListArchive createListArchive() {
+        return new ListArchive();
     }
 
     /**
@@ -106,6 +134,14 @@ public class ObjectFactory {
      */
     public GetLoanPeriodsExceeded createGetLoanPeriodsExceeded() {
         return new GetLoanPeriodsExceeded();
+    }
+
+    /**
+     * Create an instance of {@link FindByBookId }
+     * 
+     */
+    public FindByBookId createFindByBookId() {
+        return new FindByBookId();
     }
 
     /**
@@ -173,6 +209,50 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link BorrowingArchive }
+     * 
+     */
+    public BorrowingArchive createBorrowingArchive() {
+        return new BorrowingArchive();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListArchive }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "listArchive")
+    public JAXBElement<ListArchive> createListArchive(ListArchive value) {
+        return new JAXBElement<ListArchive>(_ListArchive_QNAME, ListArchive.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindByBookIdResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "findByBookIdResponse")
+    public JAXBElement<FindByBookIdResponse> createFindByBookIdResponse(FindByBookIdResponse value) {
+        return new JAXBElement<FindByBookIdResponse>(_FindByBookIdResponse_QNAME, FindByBookIdResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListArchiveResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "listArchiveResponse")
+    public JAXBElement<ListArchiveResponse> createListArchiveResponse(ListArchiveResponse value) {
+        return new JAXBElement<ListArchiveResponse>(_ListArchiveResponse_QNAME, ListArchiveResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteBorrowingResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "deleteBorrowingResponse")
+    public JAXBElement<DeleteBorrowingResponse> createDeleteBorrowingResponse(DeleteBorrowingResponse value) {
+        return new JAXBElement<DeleteBorrowingResponse>(_DeleteBorrowingResponse_QNAME, DeleteBorrowingResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UpdateBorrowing }{@code >}}
      * 
      */
@@ -227,21 +307,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteBorrowingResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "deleteBorrowingResponse")
-    public JAXBElement<DeleteBorrowingResponse> createDeleteBorrowingResponse(DeleteBorrowingResponse value) {
-        return new JAXBElement<DeleteBorrowingResponse>(_DeleteBorrowingResponse_QNAME, DeleteBorrowingResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListBorrowing }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "listBorrowing")
     public JAXBElement<ListBorrowing> createListBorrowing(ListBorrowing value) {
         return new JAXBElement<ListBorrowing>(_ListBorrowing_QNAME, ListBorrowing.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindByBookId }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "findByBookId")
+    public JAXBElement<FindByBookId> createFindByBookId(FindByBookId value) {
+        return new JAXBElement<FindByBookId>(_FindByBookId_QNAME, FindByBookId.class, null, value);
     }
 
     /**

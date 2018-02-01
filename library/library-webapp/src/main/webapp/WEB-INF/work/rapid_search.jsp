@@ -9,7 +9,7 @@
 <%@ include file="../_include/header.jsp" %>
 
 <div class="container">
-    <h2 class="mt-md-3">Livres trouvés pour "<s:property value="search"/>"</h2>
+    <h2 class="mt-md-3">Livres trouvés pour "<s:property value="search"/>" (<s:property value="works.size"/>)</h2>
 
     <s:if test="works.size > 0">
     <table class="table table-striped mt-md-3">
@@ -19,6 +19,7 @@
             <th scope="col">Titre</th>
             <th scope="col">Auteur</th>
             <th scope="col">Disponibilité</th>
+            <th scope="col">INFORMATIONS</th>
         </tr>
         </thead>
         <tbody>
@@ -54,8 +55,34 @@
                 </td>
                 <td>
                     <div class="block-padding">
-                        inconnu
+                        <s:set var="isLoaned" value="%{false}"/>
+
+                        <s:iterator value="borrowings" status="borrowing">
+                            <s:iterator value="books" status="book">
+                                <s:if test="books[#book.index].id == borrowings[#borrowing.index].bookId">
+                                    <s:set var="isLoaned" value="%{true}"/>
+                                </s:if>
+                            </s:iterator>
+                        </s:iterator>
+
+                        <s:if test="#isLoaned">
+                            Indisponible
+                        </s:if>
+                        <s:else>
+                            Disponible
+                        </s:else>
                     </div>
+                </td>
+                <td>
+                    <s:iterator value="borrowings" status="borrowing">
+                        <s:iterator value="books" status="book">
+                            <s:if test="books[#book.index].id == bookId">
+                                <p>Borrowing id: <s:property value="borrowings[#borrowing.index].id"/></p>
+                                <p>Book id: <s:property value="borrowings[#borrowing.index].bookId"/></p>
+                                <p>User id: <s:property value="borrowings[#borrowing.index].userId"/></p>
+                            </s:if>
+                        </s:iterator>
+                    </s:iterator>
                 </td>
             </tr>
         </s:iterator>

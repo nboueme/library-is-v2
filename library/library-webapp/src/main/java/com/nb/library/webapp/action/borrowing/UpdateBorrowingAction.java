@@ -27,11 +27,11 @@ public class UpdateBorrowingAction extends AbstractService {
 
         GregorianCalendar calendar = existingBorrowing.getReturnDate().toGregorianCalendar();
         calendar.add(Calendar.WEEK_OF_MONTH, 4);
-        existingBorrowing.setReturnDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar));
+        borrowing.setReturnDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar));
 
-        existingBorrowing.setExtended(true);
+        borrowing.setExtended(true);
 
-        getManagerFactory().getBorrowingManager().updateBorrowing(existingBorrowing);
+        getManagerFactory().getBorrowingManager().updateBorrowing(borrowing);
 
         return SUCCESS;
     }

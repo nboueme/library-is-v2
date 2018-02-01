@@ -46,7 +46,19 @@
             <tr>
                 <td><s:property value="ISBN"/></td>
                 <td><a href="<s:url action="editor/%{editor.id}"/>"><s:property value="editor.name"/></a> (<s:property value="year"/>)</td>
-                <td>inconnu</td>
+                <td>
+                    <s:iterator value="borrowings">
+                        <s:if test="loaned">
+                            <s:set var="isLoaned">true</s:set>
+                        </s:if>
+                    </s:iterator>
+                    <s:if test="#isLoaned">
+                        Indisponible
+                    </s:if>
+                    <s:else>
+                        Disponible
+                    </s:else>
+                </td>
             </tr>
         </s:iterator>
     </table>

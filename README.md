@@ -34,11 +34,11 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 
 
 ### Diagramme de classes
-![](images/class_diagram-v2.png?raw=true)
+![](images/class_diagram-v3.png?raw=true)
 
 
 ### MPD
-![](images/mpd_library-v2.png?raw=true)
+![](images/mpd_library-v3.png?raw=true)
 
 
 ### Déploiement

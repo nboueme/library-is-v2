@@ -19,7 +19,7 @@ public class Main {
         // Add borrowing
         Borrowing borrowing = new Borrowing();
         borrowing.setUserId(14); // Elrond
-        borrowing.setBookId("2290113182");
+        borrowing.setBookId(12);
 
         GregorianCalendar calendar = new GregorianCalendar();
         borrowing.setBorrowingDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar));

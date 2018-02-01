@@ -28,7 +28,6 @@ public class HibernateWork implements WorkDaoContract {
         return works;
     }
 
-    @Override
     @Transactional
     public List<Work> findByWord(String word) {
         List<Work> works = new ArrayList<>(0);

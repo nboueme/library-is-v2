@@ -1,5 +1,6 @@
 package com.nb.library.repository.impl.soap;
 
+import com.nb.library.client.borrowing.BorrowingArchive;
 import com.nb.library.repository.contract.BorrowingDaoContract;
 import com.nb.library.client.borrowing.Borrowing;
 import com.nb.library.client.borrowing.BorrowingClient;
@@ -20,8 +21,16 @@ public class SoapBorrowingDao implements BorrowingDaoContract {
         return client.getBorrowing(borrowing);
     }
 
+    public Borrowing getBorrowingByBookId(Borrowing borrowing) {
+        return client.findByBookId(borrowing);
+    }
+
     public List<Borrowing> listBorrowing(Borrowing borrowing) {
         return client.listBorrowing(borrowing);
+    }
+
+    public List<BorrowingArchive> listArchive(BorrowingArchive archive) {
+        return client.listArchive(archive);
     }
 
     public void updateBorrowing(Borrowing borrowing) {

@@ -21,6 +21,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *       &lt;sequence>
  *         &lt;element name="editor" type="{work.client.library.nb.com}editor" minOccurs="0"/>
  *         &lt;element name="ISBN" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="price" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="purchaseDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="workId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
@@ -37,6 +38,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlType(name = "book", propOrder = {
     "editor",
     "isbn",
+    "id",
     "price",
     "purchaseDate",
     "workId",
@@ -47,6 +49,7 @@ public class Book {
     protected Editor editor;
     @XmlElement(name = "ISBN")
     protected String isbn;
+    protected Integer id;
     protected Double price;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar purchaseDate;
@@ -99,6 +102,30 @@ public class Book {
      */
     public void setISBN(String value) {
         this.isbn = value;
+    }
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 id.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Integer }
+     *     
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Integer }
+     *     
+     */
+    public void setId(Integer value) {
+        this.id = value;
     }
 
     /**

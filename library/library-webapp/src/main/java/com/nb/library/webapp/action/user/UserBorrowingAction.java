@@ -1,6 +1,7 @@
 package com.nb.library.webapp.action.user;
 
 import com.nb.library.client.borrowing.Borrowing;
+import com.nb.library.client.borrowing.BorrowingArchive;
 import com.nb.library.client.user.UserAccount;
 import com.nb.library.webapp.AbstractService;
 import com.nb.library.webapp.utility.Constant;
@@ -13,16 +14,20 @@ public class UserBorrowingAction extends AbstractService {
 
     private List<Borrowing> borrowings;
     private Date currentDate;
+    private List<BorrowingArchive> archives;
 
     public String execute() {
         UserAccount userSession = (UserAccount) ActionContext.getContext().getSession().get(Constant.USER_SESSION);
 
-        Borrowing inputBorrowing = new Borrowing();
-        inputBorrowing.setUserId(userSession.getId());
-
-        borrowings = getManagerFactory().getBorrowingManager().listBorrowing(inputBorrowing);
+        Borrowing borrowing = new Borrowing();
+        borrowing.setUserId(userSession.getId());
+        borrowings = getManagerFactory().getBorrowingManager().listBorrowing(borrowing);
 
         currentDate = new Date();
+
+        BorrowingArchive archive = new BorrowingArchive();
+        archive.setUserId(userSession.getId());
+        archives = getManagerFactory().getBorrowingManager().listArchive(archive);
 
         return SUCCESS;
     }
@@ -33,5 +38,9 @@ public class UserBorrowingAction extends AbstractService {
 
     public Date getCurrentDate() {
         return currentDate;
+    }
+
+    public List<BorrowingArchive> getArchives() {
+        return archives;
     }
 }

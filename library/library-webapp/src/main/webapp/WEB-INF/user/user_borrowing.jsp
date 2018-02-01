@@ -9,7 +9,7 @@
 <%@ include file="../_include/header.jsp" %>
 
 <div class="container">
-    <h2 class="mt-md-3">Liste des emprunts (<s:property value="borrowings.size"/>) de <s:property value="#session.userSession.firstName"/> <s:property value="#session.userSession.lastName"/></h2>
+    <h2 class="mt-md-3">Liste des emprunts de <s:property value="#session.userSession.firstName"/> <s:property value="#session.userSession.lastName"/></h2>
 
     <nav class="mt-md-3">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -26,6 +26,7 @@
                         <th scope="col">Date d'emprunt</th>
                         <th scope="col">Date de retour</th>
                         <th scope="col">Prolongation</th>
+                        <!--th scope="col">INFORMATIONS</th-->
                     </tr>
                     </thead>
                     <tbody>
@@ -55,6 +56,11 @@
                                         </s:else>
                                     </div>
                                 </td>
+                                <!--td>
+                                    <p>Borrowing id: <s:property value="id"/></p>
+                                    <p>Book id: <s:property value="bookId"/></p>
+                                    <p>User id: <s:property value="userId"/></p>
+                                </td-->
                             </tr>
                         </s:if>
                     </s:iterator>
@@ -72,7 +78,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <s:iterator value="borrowings">
+                    <s:iterator value="archives">
                         <s:if test="!loaned">
                             <tr>
                                 <td>

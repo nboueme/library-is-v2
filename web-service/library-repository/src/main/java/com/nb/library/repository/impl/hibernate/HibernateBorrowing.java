@@ -73,7 +73,7 @@ public class HibernateBorrowing implements BorrowingDaoContract {
          */
         Optional<Borrowing> optionalBorrowing = borrowingRepository.findByIdAndUserId(borrowing.getId(), borrowing.getUserId());
         if (optionalBorrowing.isPresent()) {
-            if (borrowing.getLoaned()) {
+            if (borrowing.getLoaned() != null && borrowing.getLoaned()) {
                 BorrowingArchive borrowingArchive = new BorrowingArchive();
                 borrowingArchive.setUserId(optionalBorrowing.get().getUserId());
                 borrowingArchive.setBookId(optionalBorrowing.get().getBookId());
