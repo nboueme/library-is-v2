@@ -132,6 +132,20 @@
                 <artifactId>jstl</artifactId>
                 <version>1.2</version>
             </dependency>
+
+            <!-- Spring Batch -->
+            <dependency>
+                <groupId>org.springframework.batch</groupId>
+                <artifactId>spring-batch-core</artifactId>
+                <version>4.0.0.RELEASE</version>
+            </dependency>
+
+            <!-- Email -->
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>1.6.0</version>
+            </dependency>
             <!-- JSR-250 -->
             <dependency>
                 <groupId>javax.annotation</groupId>

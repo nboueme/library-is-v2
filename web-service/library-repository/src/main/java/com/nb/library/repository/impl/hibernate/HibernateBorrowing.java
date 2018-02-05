@@ -53,9 +53,9 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     }
 
     @Transactional
-    public List<Borrowing> findAllByIsLoanedTrue() {
+    public List<Borrowing> findAllByReturnDateBeforeCurrent() {
         List<Borrowing> borrowings = new ArrayList<>(0);
-        borrowingRepository.findAllByIsLoanedTrue().iterator().forEachRemaining(borrowings::add);
+        borrowingRepository.findAllByReturnDateBeforeCurrent().iterator().forEachRemaining(borrowings::add);
         return borrowings;
     }
 

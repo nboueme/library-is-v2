@@ -14,7 +14,7 @@ public interface BorrowingDaoContract {
 
     List<BorrowingArchive> findArchivesByUserId(BorrowingArchive archive);
 
-    List<Borrowing> findAllByIsLoanedTrue();
+    List<Borrowing> findAllByReturnDateBeforeCurrent();
 
     Borrowing findByBookId(Borrowing borrowing);
 

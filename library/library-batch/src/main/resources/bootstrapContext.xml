@@ -6,6 +6,7 @@
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Include other Spring context files -->
+    <import resource="classpath:/com/nb/library/batch/batchContext.xml"/>
     <import resource="classpath:/com/nb/library/business/businessContext.xml"/>
     <import resource="classpath:/com/nb/library/repository/repositoryContext.xml"/>
 </beans>

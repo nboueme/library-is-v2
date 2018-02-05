@@ -11,6 +11,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Date;
+import java.util.List;
 
 public class Test {
 
@@ -18,6 +19,13 @@ public class Test {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/bootstrapContext.xml");
 
         BorrowingDaoContract borrowingContract = applicationContext.getBean("borrowingDao", BorrowingDaoContract.class);
+
+        List<Borrowing> borrowings = borrowingContract.findAllByReturnDateBeforeCurrent();
+        System.out.println("title\tborrowing date\treturn date (" + borrowings.size() + ")");
+        for (Borrowing borrowing : borrowings) {
+            System.out.println(borrowing.getId() + " " + borrowing.getBook().getWork().getTitle() + "\t" + borrowing.getBorrowingDate() + "\t" + borrowing.getReturnDate());
+        }
+
         /*Borrowing borrowing = new Borrowing();
         //borrowing.setId(4);
         borrowing.setBookId(12);
@@ -28,13 +36,13 @@ public class Test {
         borrowing.setExtended(false);
         borrowingContract.save(borrowing);*/
 
-        BorrowingArchive borrowingArchive = new BorrowingArchive();
+        /*BorrowingArchive borrowingArchive = new BorrowingArchive();
         borrowingArchive.setUserId(14);
         for (BorrowingArchive archive : borrowingContract.findArchivesByUserId(borrowingArchive)) {
             System.out.println(archive.getBook().getWork().getTitle());
             System.out.println(archive.getBorrowingDate());
             System.out.println(archive.getReturnDate());
-        }
+        }*/
 
         /*borrowing.setUserId(14);
         for (Borrowing item : borrowingContract.findAllByUserId(borrowing)) {

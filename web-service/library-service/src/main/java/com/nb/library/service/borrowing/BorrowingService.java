@@ -35,8 +35,8 @@ public class BorrowingService extends AbstractService {
     }
 
     @WebMethod
-    public List<Borrowing> getLoanPeriodsExceeded() {
-        return contract.findAllByIsLoanedTrue();
+    public List<Borrowing> listBorrowingByReturnDateBeforeCurrent() {
+        return contract.findAllByReturnDateBeforeCurrent();
     }
 
     @WebMethod

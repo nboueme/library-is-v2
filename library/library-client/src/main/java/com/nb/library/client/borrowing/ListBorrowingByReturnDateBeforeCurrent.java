@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour getLoanPeriodsExceeded complex type.
+ * <p>Classe Java pour listBorrowingByReturnDateBeforeCurrent complex type.
  * 
  * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="getLoanPeriodsExceeded">
+ * &lt;complexType name="listBorrowingByReturnDateBeforeCurrent">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getLoanPeriodsExceeded")
-public class GetLoanPeriodsExceeded {
+@XmlType(name = "listBorrowingByReturnDateBeforeCurrent")
+public class ListBorrowingByReturnDateBeforeCurrent {
 
 
 }

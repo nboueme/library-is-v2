@@ -30,30 +30,6 @@ public interface BorrowingClient {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "updateBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowing")
-    @ResponseWrapper(localName = "updateBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowingResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingResponse")
-    public void updateBorrowing(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Borrowing arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "deleteBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.DeleteBorrowing")
-    @ResponseWrapper(localName = "deleteBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.DeleteBorrowingResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingResponse")
-    public void deleteBorrowing(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Borrowing arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
     @RequestWrapper(localName = "addBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowing")
     @ResponseWrapper(localName = "addBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowingResponse")
     @Action(input = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingResponse")
@@ -93,15 +69,18 @@ public interface BorrowingClient {
 
     /**
      * 
+     * @param arg0
      * @return
-     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
+     *     returns java.util.List<com.nb.library.client.borrowing.BorrowingArchive>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getLoanPeriodsExceeded", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceeded")
-    @ResponseWrapper(localName = "getLoanPeriodsExceededResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetLoanPeriodsExceededResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getLoanPeriodsExceededResponse")
-    public List<Borrowing> getLoanPeriodsExceeded();
+    @RequestWrapper(localName = "listArchive", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListArchive")
+    @ResponseWrapper(localName = "listArchiveResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListArchiveResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listArchiveRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listArchiveResponse")
+    public List<BorrowingArchive> listArchive(
+        @WebParam(name = "arg0", targetNamespace = "")
+        BorrowingArchive arg0);
 
     /**
      * 
@@ -121,16 +100,37 @@ public interface BorrowingClient {
     /**
      * 
      * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "updateBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowing")
+    @ResponseWrapper(localName = "updateBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowingResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingResponse")
+    public void updateBorrowing(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Borrowing arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "deleteBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.DeleteBorrowing")
+    @ResponseWrapper(localName = "deleteBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.DeleteBorrowingResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingResponse")
+    public void deleteBorrowing(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Borrowing arg0);
+
+    /**
+     * 
      * @return
-     *     returns java.util.List<com.nb.library.client.borrowing.BorrowingArchive>
+     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listArchive", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListArchive")
-    @ResponseWrapper(localName = "listArchiveResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListArchiveResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listArchiveRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listArchiveResponse")
-    public List<BorrowingArchive> listArchive(
-        @WebParam(name = "arg0", targetNamespace = "")
-        BorrowingArchive arg0);
+    @RequestWrapper(localName = "listBorrowingByReturnDateBeforeCurrent", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingByReturnDateBeforeCurrent")
+    @ResponseWrapper(localName = "listBorrowingByReturnDateBeforeCurrentResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingByReturnDateBeforeCurrentResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingByReturnDateBeforeCurrentRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingByReturnDateBeforeCurrentResponse")
+    public List<Borrowing> listBorrowingByReturnDateBeforeCurrent();
 
 }

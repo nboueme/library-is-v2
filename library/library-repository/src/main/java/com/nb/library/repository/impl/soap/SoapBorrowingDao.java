@@ -33,15 +33,15 @@ public class SoapBorrowingDao implements BorrowingDaoContract {
         return client.listArchive(archive);
     }
 
+    public List<Borrowing> listBorrowingByPeriodsExceeded() {
+        return client.listBorrowingByReturnDateBeforeCurrent();
+    }
+
     public void updateBorrowing(Borrowing borrowing) {
         client.updateBorrowing(borrowing);
     }
 
     public void deleteBorrowing(Borrowing borrowing) {
         client.deleteBorrowing(borrowing);
-    }
-
-    public List<Borrowing> getLoanPeriodsExceeded() {
-        return client.getLoanPeriodsExceeded();
     }
 }

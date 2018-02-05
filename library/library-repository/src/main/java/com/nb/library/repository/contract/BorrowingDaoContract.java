@@ -16,9 +16,9 @@ public interface BorrowingDaoContract {
 
     List<BorrowingArchive> listArchive(BorrowingArchive archive);
 
+    List<Borrowing> listBorrowingByPeriodsExceeded();
+
     void updateBorrowing(Borrowing borrowing);
 
     void deleteBorrowing(Borrowing borrowing);
-
-    List<Borrowing> getLoanPeriodsExceeded();
 }

@@ -28,18 +28,18 @@ public class ObjectFactory {
     private final static QName _FindByBookIdResponse_QNAME = new QName("borrowing.client.library.nb.com", "findByBookIdResponse");
     private final static QName _ListArchiveResponse_QNAME = new QName("borrowing.client.library.nb.com", "listArchiveResponse");
     private final static QName _DeleteBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "deleteBorrowingResponse");
+    private final static QName _ListBorrowingByReturnDateBeforeCurrent_QNAME = new QName("borrowing.client.library.nb.com", "listBorrowingByReturnDateBeforeCurrent");
     private final static QName _UpdateBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "updateBorrowing");
     private final static QName _AddBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "addBorrowingResponse");
     private final static QName _DeleteBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "deleteBorrowing");
     private final static QName _GetBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "getBorrowingResponse");
     private final static QName _GetBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "getBorrowing");
     private final static QName _AddBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "addBorrowing");
+    private final static QName _ListBorrowingByReturnDateBeforeCurrentResponse_QNAME = new QName("borrowing.client.library.nb.com", "listBorrowingByReturnDateBeforeCurrentResponse");
     private final static QName _ListBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "listBorrowing");
     private final static QName _FindByBookId_QNAME = new QName("borrowing.client.library.nb.com", "findByBookId");
-    private final static QName _GetLoanPeriodsExceededResponse_QNAME = new QName("borrowing.client.library.nb.com", "getLoanPeriodsExceededResponse");
     private final static QName _ListBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "listBorrowingResponse");
     private final static QName _UpdateBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "updateBorrowingResponse");
-    private final static QName _GetLoanPeriodsExceeded_QNAME = new QName("borrowing.client.library.nb.com", "getLoanPeriodsExceeded");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.nb.library.client.borrowing
@@ -54,6 +54,14 @@ public class ObjectFactory {
      */
     public DeleteBorrowingResponse createDeleteBorrowingResponse() {
         return new DeleteBorrowingResponse();
+    }
+
+    /**
+     * Create an instance of {@link ListBorrowingByReturnDateBeforeCurrent }
+     * 
+     */
+    public ListBorrowingByReturnDateBeforeCurrent createListBorrowingByReturnDateBeforeCurrent() {
+        return new ListBorrowingByReturnDateBeforeCurrent();
     }
 
     /**
@@ -129,27 +137,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetLoanPeriodsExceeded }
-     * 
-     */
-    public GetLoanPeriodsExceeded createGetLoanPeriodsExceeded() {
-        return new GetLoanPeriodsExceeded();
-    }
-
-    /**
      * Create an instance of {@link FindByBookId }
      * 
      */
     public FindByBookId createFindByBookId() {
         return new FindByBookId();
-    }
-
-    /**
-     * Create an instance of {@link GetLoanPeriodsExceededResponse }
-     * 
-     */
-    public GetLoanPeriodsExceededResponse createGetLoanPeriodsExceededResponse() {
-        return new GetLoanPeriodsExceededResponse();
     }
 
     /**
@@ -166,6 +158,14 @@ public class ObjectFactory {
      */
     public UpdateBorrowingResponse createUpdateBorrowingResponse() {
         return new UpdateBorrowingResponse();
+    }
+
+    /**
+     * Create an instance of {@link ListBorrowingByReturnDateBeforeCurrentResponse }
+     * 
+     */
+    public ListBorrowingByReturnDateBeforeCurrentResponse createListBorrowingByReturnDateBeforeCurrentResponse() {
+        return new ListBorrowingByReturnDateBeforeCurrentResponse();
     }
 
     /**
@@ -253,6 +253,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListBorrowingByReturnDateBeforeCurrent }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "listBorrowingByReturnDateBeforeCurrent")
+    public JAXBElement<ListBorrowingByReturnDateBeforeCurrent> createListBorrowingByReturnDateBeforeCurrent(ListBorrowingByReturnDateBeforeCurrent value) {
+        return new JAXBElement<ListBorrowingByReturnDateBeforeCurrent>(_ListBorrowingByReturnDateBeforeCurrent_QNAME, ListBorrowingByReturnDateBeforeCurrent.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link UpdateBorrowing }{@code >}}
      * 
      */
@@ -307,6 +316,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListBorrowingByReturnDateBeforeCurrentResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "listBorrowingByReturnDateBeforeCurrentResponse")
+    public JAXBElement<ListBorrowingByReturnDateBeforeCurrentResponse> createListBorrowingByReturnDateBeforeCurrentResponse(ListBorrowingByReturnDateBeforeCurrentResponse value) {
+        return new JAXBElement<ListBorrowingByReturnDateBeforeCurrentResponse>(_ListBorrowingByReturnDateBeforeCurrentResponse_QNAME, ListBorrowingByReturnDateBeforeCurrentResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListBorrowing }{@code >}}
      * 
      */
@@ -325,15 +343,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLoanPeriodsExceededResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "getLoanPeriodsExceededResponse")
-    public JAXBElement<GetLoanPeriodsExceededResponse> createGetLoanPeriodsExceededResponse(GetLoanPeriodsExceededResponse value) {
-        return new JAXBElement<GetLoanPeriodsExceededResponse>(_GetLoanPeriodsExceededResponse_QNAME, GetLoanPeriodsExceededResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListBorrowingResponse }{@code >}}
      * 
      */
@@ -349,15 +358,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "updateBorrowingResponse")
     public JAXBElement<UpdateBorrowingResponse> createUpdateBorrowingResponse(UpdateBorrowingResponse value) {
         return new JAXBElement<UpdateBorrowingResponse>(_UpdateBorrowingResponse_QNAME, UpdateBorrowingResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetLoanPeriodsExceeded }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "getLoanPeriodsExceeded")
-    public JAXBElement<GetLoanPeriodsExceeded> createGetLoanPeriodsExceeded(GetLoanPeriodsExceeded value) {
-        return new JAXBElement<GetLoanPeriodsExceeded>(_GetLoanPeriodsExceeded_QNAME, GetLoanPeriodsExceeded.class, null, value);
     }
 
 }
