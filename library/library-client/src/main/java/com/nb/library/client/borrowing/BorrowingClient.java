@@ -84,6 +84,18 @@ public interface BorrowingClient {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listBorrowingByReturnDateBeforeCurrent", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingByReturnDateBeforeCurrent")
+    @ResponseWrapper(localName = "listBorrowingByReturnDateBeforeCurrentResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingByReturnDateBeforeCurrentResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingByReturnDateBeforeCurrentRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingByReturnDateBeforeCurrentResponse")
+    public List<Borrowing> listBorrowingByReturnDateBeforeCurrent();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns com.nb.library.client.borrowing.Borrowing
@@ -120,17 +132,5 @@ public interface BorrowingClient {
     public void deleteBorrowing(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listBorrowingByReturnDateBeforeCurrent", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingByReturnDateBeforeCurrent")
-    @ResponseWrapper(localName = "listBorrowingByReturnDateBeforeCurrentResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingByReturnDateBeforeCurrentResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingByReturnDateBeforeCurrentRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingByReturnDateBeforeCurrentResponse")
-    public List<Borrowing> listBorrowingByReturnDateBeforeCurrent();
 
 }

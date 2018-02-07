@@ -2,6 +2,7 @@ version: '3.1'
 services:
   database:
     image: postgres
+    container_name: library_database
     restart: always
     hostname: 127.0.0.1
     volumes:
@@ -13,3 +14,17 @@ services:
       - POSTGRES_DB=app_library
       - POSTGRES_USER=admin_ocp
       - POSTGRES_PASSWORD=Shangri_La
+  web-service:
+    image: oracle/glassfish
+    container_name: library_services
+    restart: always
+    hostname: 127.0.0.1
+    volumes:
+      - ./datasource.properties:/datasource.properties
+      - ./web-service/library-service/target/library.war:/glassfish5/glassfish/domains/domain1/autodeploy/library.war
+    ports:
+      - 4848:4848
+      - 8080:8080
+      - 8181:8181
+    environment:
+      - ADMIN_PASSWORD=Eldorado
