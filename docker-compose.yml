@@ -16,7 +16,7 @@ services:
       - POSTGRES_PASSWORD=Shangri_La
   web-service:
     image: oracle/glassfish
-    container_name: library_services
+    container_name: library_web-service
     restart: always
     hostname: 127.0.0.1
     volumes:
@@ -24,7 +24,21 @@ services:
       - ./web-service/library-service/target/library.war:/glassfish5/glassfish/domains/domain1/autodeploy/library.war
     ports:
       - 4848:4848
-      - 8080:8080
+      - 8081:8080
       - 8181:8181
+    environment:
+      - ADMIN_PASSWORD=Eldorado
+  web-application:
+    image: oracle/glassfish
+    container_name: library_web-application
+    restart: always
+    hostname: 127.0.0.1
+    volumes:
+      - ./images:/images
+      - ./library/library-webapp/target/Library.war:/glassfish5/glassfish/domains/domain1/autodeploy/Library.war
+    ports:
+      - 4949:4848
+      - 80:8080
+      - 8282:8181
     environment:
       - ADMIN_PASSWORD=Eldorado

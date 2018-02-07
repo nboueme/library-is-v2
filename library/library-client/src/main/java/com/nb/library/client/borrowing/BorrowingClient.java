@@ -40,6 +40,18 @@ public interface BorrowingClient {
     /**
      * 
      * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "updateBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowing")
+    @ResponseWrapper(localName = "updateBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowingResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingResponse")
+    public void updateBorrowing(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Borrowing arg0);
+
+    /**
+     * 
+     * @param arg0
      * @return
      *     returns com.nb.library.client.borrowing.Borrowing
      */
@@ -106,18 +118,6 @@ public interface BorrowingClient {
     @ResponseWrapper(localName = "findByBookIdResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.FindByBookIdResponse")
     @Action(input = "borrowing.client.library.nb.com/BorrowingClient/findByBookIdRequest", output = "borrowing.client.library.nb.com/BorrowingClient/findByBookIdResponse")
     public Borrowing findByBookId(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Borrowing arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "updateBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowing")
-    @ResponseWrapper(localName = "updateBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.UpdateBorrowingResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/updateBorrowingResponse")
-    public void updateBorrowing(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
 
