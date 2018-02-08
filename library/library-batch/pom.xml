@@ -53,6 +53,7 @@
     <!-- Build -->
     <!-- =============================================================== -->
     <build>
+        <finalName>batch</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

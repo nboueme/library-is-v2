@@ -74,7 +74,7 @@
     <!-- Build -->
     <!-- =============================================================== -->
     <build>
-        <finalName>Library</finalName>
+        <finalName>library</finalName>
 
         <plugins>
             <plugin>

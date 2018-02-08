@@ -27,18 +27,6 @@ public interface AuthorClient {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<com.nb.library.client.author.Author>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listAuthors", targetNamespace = "author.client.library.nb.com", className = "com.nb.library.client.author.ListAuthors")
-    @ResponseWrapper(localName = "listAuthorsResponse", targetNamespace = "author.client.library.nb.com", className = "com.nb.library.client.author.ListAuthorsResponse")
-    @Action(input = "author.client.library.nb.com/AuthorClient/listAuthorsRequest", output = "author.client.library.nb.com/AuthorClient/listAuthorsResponse")
-    public List<Author> listAuthors();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns com.nb.library.client.author.Author
@@ -51,5 +39,17 @@ public interface AuthorClient {
     public Author getAuthor(
         @WebParam(name = "arg0", targetNamespace = "")
         Author arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.nb.library.client.author.Author>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listAuthors", targetNamespace = "author.client.library.nb.com", className = "com.nb.library.client.author.ListAuthors")
+    @ResponseWrapper(localName = "listAuthorsResponse", targetNamespace = "author.client.library.nb.com", className = "com.nb.library.client.author.ListAuthorsResponse")
+    @Action(input = "author.client.library.nb.com/AuthorClient/listAuthorsRequest", output = "author.client.library.nb.com/AuthorClient/listAuthorsResponse")
+    public List<Author> listAuthors();
 
 }

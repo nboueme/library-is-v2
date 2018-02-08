@@ -10,6 +10,7 @@
   <name>library-batch</name>
   <url>http://maven.apache.org</url>
   <build>
+    <finalName>batch</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>

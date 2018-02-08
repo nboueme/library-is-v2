@@ -24,7 +24,7 @@
     </bean>
 
     <!-- ==== External properties file ===== -->
-    <context:property-placeholder location="file://#{systemProperties['user.home']}/Documents/java/javaee/library-is/batch.properties" />
+    <context:property-placeholder location="file:///app/batch.properties" />
 
     <!-- ==== JavaMailSender configuration ===== -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
