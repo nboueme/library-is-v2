@@ -26,8 +26,6 @@ services:
       - 4848:4848
       - 8081:8080
       - 8181:8181
-    environment:
-      - ADMIN_PASSWORD=Eldorado
   batch:
     image: nboueme/library-batch
     container_name: library_batch
@@ -43,5 +41,3 @@ services:
       - 4949:4848
       - 80:8080
       - 8282:8181
-    environment:
-      - ADMIN_PASSWORD=Eldorado
