@@ -12,8 +12,9 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 - GlassFish 5.0
 - JDK8 version 162
 - PostgreSQL 10.1
-- Spring Framework 5.0.2.RELEASE
+- Spring Batch 4.0.0.RELEASE
 - Spring Data 2.0.2.RELEASE
+- Spring Framework 5.0.2.RELEASE
 - Struts2 2.5.14.1
 
 
@@ -23,7 +24,7 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 
 - `library-service` : module contenant le web-service
 - `library-repository` : module contenant la persistance et le pattern DAO
-- `library-model` : module contenant les entités de la solution
+- `library-entity` : module contenant les entités de la solution
 
 
 ### Projet Maven 2 - application web et batch
@@ -33,7 +34,7 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 - `library-webapp` : module contenant les vues et ses contrôleurs
 - `library-batch` : module contenant un batch qui envoie un mail de relance
 - `library-business` : module contenant la logique métier
-- `library-repository` : module contenant la persistance et le pattern DAO, appel le service web
+- `library-repository` : module contenant le pattern DAO, appelle le service web
 - `library-client` : module contenant les entités et classes auto-générées
 
 
