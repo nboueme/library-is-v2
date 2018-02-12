@@ -3,6 +3,8 @@ package com.nb.library.batch.batch;
 import com.nb.library.batch.service.AbstractService;
 import com.nb.library.batch.service.EmailService;
 import com.nb.library.client.borrowing.Borrowing;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
@@ -15,6 +17,9 @@ import java.util.List;
 import static java.time.temporal.ChronoUnit.DAYS;
 
 public class BatchTasklet extends AbstractService implements Tasklet {
+
+    //private static final Logger logger = LogManager.getLogger(BatchTasklet.class.getName());
+    private static final Log LOGGER = LogFactory.getLog(BatchTasklet.class);
 
     @Override
     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
@@ -43,6 +48,7 @@ public class BatchTasklet extends AbstractService implements Tasklet {
                     + borrowingDate.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 
             service.sendSimpleMessage(to, subject, text);
+            LOGGER.info("Message correctly sent to the user: " + borrowing.getUser().getFirstName() + " " + borrowing.getUser().getLastName());
         }
 
         return RepeatStatus.FINISHED;

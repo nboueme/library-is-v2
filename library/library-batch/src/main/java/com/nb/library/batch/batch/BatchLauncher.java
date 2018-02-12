@@ -1,5 +1,7 @@
 package com.nb.library.batch.batch;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -19,6 +21,8 @@ public class BatchLauncher {
     @Resource
     private JobLauncher jobLauncher;
 
+    private Log LOGGER = LogFactory.getLog(BatchTasklet.class);
+
     public void run() {
         JobParameters parameters = new JobParametersBuilder()
                 .addLong("currentTime", System.currentTimeMillis())
@@ -26,10 +30,11 @@ public class BatchLauncher {
 
         try {
             jobLauncher.run(scheduledJob, parameters);
-        } catch (JobExecutionAlreadyRunningException e) {
-        } catch (JobRestartException e) {
-        } catch (JobInstanceAlreadyCompleteException e) {
-        } catch (JobParametersInvalidException e) {
+        } catch (JobExecutionAlreadyRunningException |
+                JobInstanceAlreadyCompleteException |
+                JobRestartException |
+                JobParametersInvalidException e) {
+            LOGGER.error(e.getMessage());
         }
     }
 }

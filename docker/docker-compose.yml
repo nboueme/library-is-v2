@@ -29,7 +29,6 @@ services:
   batch:
     image: nboueme/library-batch
     container_name: library_batch
-    restart: always
   web-application:
     image: shinyay/docker-glassfish5
     container_name: library_web-application
