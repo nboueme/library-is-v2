@@ -10,3 +10,6 @@
 
 # Properties
 *.properties
+
+# postgres
+docker/database/app/data 

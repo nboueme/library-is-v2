@@ -8,6 +8,7 @@ services:
     volumes:
       - ./database/app/scripts/01-create_db_app_library.sql:/docker-entrypoint-initdb.d/01.sql
       - ./database/app/scripts/02-insert_data_app_library.sql:/docker-entrypoint-initdb.d/02.sql
+      - ./database/app/data:/var/lib/postgresql/data
     ports:
       - 5432:5432
     environment:
