@@ -1,3 +1,4 @@
+
 ## Développez le nouveau SI de la bibliothèque d’une grande ville
 
 Ceci est le dépôt associé au projet [_Développez le nouveau système d’information de la bibliothèque d’une grande ville_](https://openclassrooms.com/projects/developpez-le-nouveau-systeme-d-information-de-la-bibliotheque-d-une-grande-ville)
@@ -47,6 +48,8 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 
 
 ### Déploiement
+
+Attribuer comme adresse IP LAN fixe à la machine hôte, celle qui va héberger les conteneurs Docker du projet : `192.168.0.23`.
 
 Dans le dépôt, créer un fichier `datasource.properties` dans le répertoire `docker/web-service/app/` avec les paramètres suivants :
 

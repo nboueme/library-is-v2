@@ -29,6 +29,21 @@ public interface WorkClient {
      * 
      * @param arg0
      * @return
+     *     returns java.util.List<com.nb.library.client.work.Work>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listWorksByWord", targetNamespace = "work.client.library.nb.com", className = "com.nb.library.client.work.ListWorksByWord")
+    @ResponseWrapper(localName = "listWorksByWordResponse", targetNamespace = "work.client.library.nb.com", className = "com.nb.library.client.work.ListWorksByWordResponse")
+    @Action(input = "work.client.library.nb.com/WorkClient/listWorksByWordRequest", output = "work.client.library.nb.com/WorkClient/listWorksByWordResponse")
+    public List<Work> listWorksByWord(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
      *     returns com.nb.library.client.work.Work
      */
     @WebMethod
@@ -51,20 +66,5 @@ public interface WorkClient {
     @ResponseWrapper(localName = "listWorksResponse", targetNamespace = "work.client.library.nb.com", className = "com.nb.library.client.work.ListWorksResponse")
     @Action(input = "work.client.library.nb.com/WorkClient/listWorksRequest", output = "work.client.library.nb.com/WorkClient/listWorksResponse")
     public List<Work> listWorks();
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<com.nb.library.client.work.Work>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listWorksByWord", targetNamespace = "work.client.library.nb.com", className = "com.nb.library.client.work.ListWorksByWord")
-    @ResponseWrapper(localName = "listWorksByWordResponse", targetNamespace = "work.client.library.nb.com", className = "com.nb.library.client.work.ListWorksByWordResponse")
-    @Action(input = "work.client.library.nb.com/WorkClient/listWorksByWordRequest", output = "work.client.library.nb.com/WorkClient/listWorksByWordResponse")
-    public List<Work> listWorksByWord(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
 
 }
