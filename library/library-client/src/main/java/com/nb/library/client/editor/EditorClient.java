@@ -27,18 +27,6 @@ public interface EditorClient {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<com.nb.library.client.editor.Editor>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listEditors", targetNamespace = "editor.client.library.nb.com", className = "com.nb.library.client.editor.ListEditors")
-    @ResponseWrapper(localName = "listEditorsResponse", targetNamespace = "editor.client.library.nb.com", className = "com.nb.library.client.editor.ListEditorsResponse")
-    @Action(input = "editor.client.library.nb.com/EditorClient/listEditorsRequest", output = "editor.client.library.nb.com/EditorClient/listEditorsResponse")
-    public List<Editor> listEditors();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns com.nb.library.client.editor.Editor
@@ -51,5 +39,17 @@ public interface EditorClient {
     public Editor getEditor(
         @WebParam(name = "arg0", targetNamespace = "")
         Editor arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.nb.library.client.editor.Editor>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listEditors", targetNamespace = "editor.client.library.nb.com", className = "com.nb.library.client.editor.ListEditors")
+    @ResponseWrapper(localName = "listEditorsResponse", targetNamespace = "editor.client.library.nb.com", className = "com.nb.library.client.editor.ListEditorsResponse")
+    @Action(input = "editor.client.library.nb.com/EditorClient/listEditorsRequest", output = "editor.client.library.nb.com/EditorClient/listEditorsResponse")
+    public List<Editor> listEditors();
 
 }

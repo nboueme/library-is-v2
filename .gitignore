@@ -11,5 +11,8 @@
 # Properties
 *.properties
 
-# postgres
+# Docker
 docker/database/app/data 
+docker/web-service/app/logs
+docker/web-application/app/logs
+docker/batch/app/logs

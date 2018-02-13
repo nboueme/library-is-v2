@@ -49,7 +49,9 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 
 ### Déploiement
 
-Attribuer comme adresse IP LAN fixe à la machine hôte, celle qui va héberger les conteneurs Docker du projet : `192.168.0.23`.
+Si jamais vous souhaitez compiler vous même l'application web ou le batch, à la machine hôte, celle qui va héberger les conteneurs Docker du projet :
+- attribuer une adresse IP LAN fixe de votre choix
+- créer un alias `web-service` dans le fichier `/etc/hosts` à cet IP
 
 Dans le dépôt, créer un fichier `datasource.properties` dans le répertoire `docker/web-service/app/` avec les paramètres suivants :
 
@@ -67,7 +69,6 @@ mail.host=smtp.gmail.com
 mail.port=587
 mail.username=USER_NAME
 mail.password=USER_PASSWORD
-
 batch.cron=CRON_VALUE
 ```
 
@@ -89,3 +90,5 @@ Se placer dans le dossier `docker` du dépôt du projet et exécuter les command
 - `docker-compose -p library up -d batch` pour déployer le batch
 
 Les identifiants d'accès aux serveurs GlassFish sont `admin` avec pour mot de passe `glassfish`.
+
+L'application web est désormais disponible via l'URL suivante : [`http://localhost/`](http://localhost/)

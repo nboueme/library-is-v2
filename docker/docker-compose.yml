@@ -23,9 +23,10 @@ services:
     volumes:
       - ./web-service/app/datasource.properties:/datasource.properties
       - ./web-service/app/library.war:/glassfish5/glassfish/domains/domain1/autodeploy/library.war
+      - ./web-service/app/logs:/glassfish5/glassfish/domains/domain1/logs
     ports:
       - 4848:4848
-      - 8081:8080
+      - 8080:8080
       - 8181:8181
   batch:
     image: nboueme/library-batch
@@ -37,6 +38,7 @@ services:
     volumes:
       - ./share/images:/images
       - ./web-application/app/Library.war:/glassfish5/glassfish/domains/domain1/autodeploy/Library.war
+      - ./web-application/app/logs:/glassfish5/glassfish/domains/domain1/logs
     ports:
       - 4949:4848
       - 80:8080
