@@ -8,7 +8,7 @@ services:
     volumes:
       - ./database/app/scripts/01-create_db_app_library.sql:/docker-entrypoint-initdb.d/01.sql
       - ./database/app/scripts/02-insert_data_app_library.sql:/docker-entrypoint-initdb.d/02.sql
-      - ./database/app/data:/var/lib/postgresql/data
+      - ./database/data:/var/lib/postgresql/data
     ports:
       - 5432:5432
     environment:
@@ -23,7 +23,7 @@ services:
     volumes:
       - ./web-service/app/datasource.properties:/datasource.properties
       - ./web-service/app/library.war:/glassfish5/glassfish/domains/domain1/autodeploy/library.war
-      - ./web-service/app/logs:/glassfish5/glassfish/domains/domain1/logs
+      - ./web-service/logs:/glassfish5/glassfish/domains/domain1/logs
     ports:
       - 4848:4848
       - 8080:8080
@@ -31,6 +31,8 @@ services:
   batch:
     image: nboueme/library-batch
     container_name: library_batch
+    volumes:
+      - ./batch/logs:/logs
   web-application:
     image: shinyay/docker-glassfish5
     container_name: library_web-application
@@ -38,7 +40,7 @@ services:
     volumes:
       - ./share/images:/images
       - ./web-application/app/Library.war:/glassfish5/glassfish/domains/domain1/autodeploy/Library.war
-      - ./web-application/app/logs:/glassfish5/glassfish/domains/domain1/logs
+      - ./web-application/logs:/glassfish5/glassfish/domains/domain1/logs
     ports:
       - 4949:4848
       - 80:8080

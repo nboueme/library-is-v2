@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="info">
-    <Properties>
-        <Property name="filename">target/test.log</Property>
-    </Properties>
-    <ThresholdFilter level="trace"/>
-
     <Appenders>
         <Console name="STDOUT">
             <PatternLayout pattern="%highlight{%-5level} [%t] %c : %m%n"/>
         </Console>
+        <File name="BATCH" fileName="/logs/batch.log">
+        <!--File name="BATCH" fileName="/Users/nicolasboueme/Documents/java/javaee/library-is/docker/batch/app/logs/batch.log"-->
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </File>
+        <Async name="Async">
+            <AppenderRef ref="BATCH"/>
+        </Async>
     </Appenders>
 
     <Loggers>
-        <Logger name="com.nb.library.batch" level="debug" additivity="false">
+        <Root name="com.nb.library.batch" level="info" additivity="false">
             <AppenderRef ref="STDOUT"/>
-        </Logger>
-
-        <Root level="debug">
-            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="Async"/>
         </Root>
     </Loggers>
-
 </Configuration>

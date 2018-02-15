@@ -86,7 +86,7 @@ Se placer dans le dossier `docker` du dépôt du projet et exécuter les command
 - `docker-compose -p library up -d database` pour déployer la base de données
 - `docker-compose -p library up -d web-service` pour déployer le service web
 - `docker-compose -p library up -d web-application` pour déployer l'application web
-- `docker build -t nboueme/library-batch` pour créer l'image de déploiement du batch
+- `docker build -t nboueme/library-batch batch` pour créer l'image de déploiement du batch
 - `docker-compose -p library up -d batch` pour déployer le batch
 
 Les identifiants d'accès aux serveurs GlassFish sont `admin` avec pour mot de passe `glassfish`.

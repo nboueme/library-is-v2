@@ -19,7 +19,7 @@
             <th scope="col">Titre</th>
             <th scope="col">Auteur</th>
             <th scope="col">Disponibilité</th>
-            <th scope="col">INFORMATIONS</th>
+            <!--th scope="col">INFORMATIONS</th-->
         </tr>
         </thead>
         <tbody>
@@ -73,7 +73,7 @@
                         </s:else>
                     </div>
                 </td>
-                <td>
+                <!--td>
                     <s:iterator value="borrowings" status="borrowing">
                         <s:iterator value="books" status="book">
                             <s:if test="books[#book.index].id == bookId">
@@ -83,7 +83,7 @@
                             </s:if>
                         </s:iterator>
                     </s:iterator>
-                </td>
+                </td-->
             </tr>
         </s:iterator>
         </s:if>

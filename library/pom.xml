@@ -133,12 +133,6 @@
                 <version>1.2</version>
             </dependency>
 
-            <dependency>
-                <groupId>commons-logging</groupId>
-                <artifactId>commons-logging</artifactId>
-                <version>1.2</version>
-            </dependency>
-
             <!-- Spring Batch -->
             <dependency>
                 <groupId>org.springframework.batch</groupId>
