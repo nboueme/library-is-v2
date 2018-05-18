@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints
+        xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+        version="2.0">
+    <endpoint
+            name="author"
+            implementation="com.nb.library.service.author.AuthorService"
+            url-pattern="/author"/>
+    <endpoint
+            name="borrowing"
+            implementation="com.nb.library.service.borrowing.BorrowingService"
+            url-pattern="/borrowing"/>
+    <endpoint
+            name="editor"
+            implementation="com.nb.library.service.editor.EditorService"
+            url-pattern="/editor"/>
+    <endpoint
+            name="type"
+            implementation="com.nb.library.service.type.TypeWorkService"
+            url-pattern="/type"/>
+    <endpoint
+            name="user"
+            implementation="com.nb.library.service.user.UserService"
+            url-pattern="/user"/>
+    <endpoint
+            name="work"
+            implementation="com.nb.library.service.work.WorkService"
+            url-pattern="/work"/>
+</endpoints>
