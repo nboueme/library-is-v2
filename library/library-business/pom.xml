@@ -9,7 +9,7 @@
     <parent>
         <artifactId>library</artifactId>
         <groupId>com.nb.library</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.1</version>
     </parent>
 
     <!-- ===== Maven information ===== -->
