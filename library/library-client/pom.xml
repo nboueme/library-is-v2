@@ -44,13 +44,21 @@
                 </executions>
                 <configuration>
                     <sourceDestDir>${project.basedir}/src/main/java</sourceDestDir>
-                    <wsdlUrls>
+                    <!--wsdlUrls>
                         <wsdlUrl>http://web-service:8080/library/AuthorService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/BorrowingService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/EditorService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/TypeWorkService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/UserService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/WorkService?wsdl</wsdlUrl>
+                    </wsdlUrls-->
+                    <wsdlUrls>
+                        <wsdlUrl>http://localhost:8080/library/AuthorService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/BorrowingService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/EditorService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/TypeWorkService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/UserService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://localhost:8080/library/WorkService?wsdl</wsdlUrl>
                     </wsdlUrls>
                 </configuration>
             </plugin>

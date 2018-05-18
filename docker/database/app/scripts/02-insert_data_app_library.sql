@@ -281,19 +281,19 @@ BEGIN TRANSACTION;
 --- ================================================================================
 --- borrowing
 --- ================================================================================
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (1, 7, 14, '2017-12-27 18:02:44.000000', '2018-02-21', true, true);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (2, 24, 14, '2017-12-27 18:11:43.000000', '2018-01-24', true, false);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (3, 6, 14, '2017-12-27 18:11:43.000000', '2018-02-21', true, true);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (4, 26, 5, '2017-12-27 18:17:04.000000', '2018-02-21', true, true);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (6, 19, 2, '2017-12-27 18:21:01.000000', '2018-01-24', true, false);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (5, 9, 13, '2017-12-27 18:17:04.000000', '2018-01-24', true, false);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (8, 23, 7, '2017-12-27 18:21:01.000000', '2018-01-24', true, false);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (7, 4, 3, '2017-12-27 18:21:01.000000', '2018-01-24', true, false);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (9, 8, 7, '2017-12-27 18:21:01.000000', '2018-01-24', true, false);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (10, 17, 8, '2017-12-27 18:21:01.000000', '2018-02-21', true, true);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (11, 15, 10, '2017-12-27 18:21:01.000000', '2018-02-21', true, true);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (12, 12, 14, '2018-01-31 22:55:33.301000', '2018-02-28', true, false);
-	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (13, 1, 14, '2018-01-19 16:45:01.000000', '2018-02-16', true, false);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (1, 7, 14, '2018-04-19 18:02:44.000000', '2018-06-14', true, true);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (2, 24, 14, '2018-04-19 18:11:43.000000', '2018-05-17', true, false);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (3, 6, 14, '2018-04-19 18:11:43.000000', '2018-06-14', true, true);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (4, 26, 5, '2018-04-19 18:17:04.000000', '2018-06-14', true, true);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (6, 19, 2, '2018-04-19 18:21:01.000000', '2018-05-17', true, false);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (5, 9, 13, '2018-04-19 18:17:04.000000', '2018-05-17', true, false);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (8, 23, 7, '2018-04-19 18:21:01.000000', '2018-05-17', true, false);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (7, 4, 3, '2018-04-19 18:21:01.000000', '2018-05-17', true, false);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (9, 8, 7, '2018-04-19 18:21:01.000000', '2018-05-17', true, false);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (10, 17, 8, '2018-04-19 18:21:01.000000', '2018-06-14', true, true);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (11, 15, 10, '2018-04-19 18:21:01.000000', '2018-06-14', true, true);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (12, 12, 14, '2018-05-17 22:55:33.301000', '2018-06-14', true, false);
+	INSERT INTO public.borrowing (id, book_id, user_id, borrowing_date, return_date, is_loaned, is_extended) VALUES (13, 1, 14, '2018-05-17 16:45:01.000000', '2018-06-14', true, false);
 
 	ALTER SEQUENCE borrowing_id_seq RESTART WITH 14;
 

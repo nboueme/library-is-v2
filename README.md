@@ -1,18 +1,18 @@
 
-## Développez le nouveau SI de la bibliothèque d’une grande ville
+## Améliorez le système d’information de la bibliothèque
 
-Ceci est le dépôt associé au projet [_Développez le nouveau système d’information de la bibliothèque d’une grande ville_](https://openclassrooms.com/projects/developpez-le-nouveau-systeme-d-information-de-la-bibliotheque-d-une-grande-ville)
+Ceci est le dépôt associé au projet [_Améliorez le système d’information de la bibliothèque_](https://openclassrooms.com/projects/ameliorez-le-systeme-d-information-de-la-bibliotheque)
 sur [_OpenClassrooms_](https://www.openclassrooms.com).
 
 
 ### Technologies
 
-- Apache Maven 3.5.2
+- Apache Maven 3.5.3
 - Bootstrap 4.0.0
-- Docker 17.12.0-ce-mac49
+- Docker 18.03.1-ce-mac65
 - GlassFish 5.0
-- JDK8 version 162
-- PostgreSQL 10.1
+- JDK8 version 172
+- PostgreSQL 10.3
 - Spring Batch 4.0.0.RELEASE
 - Spring Data 2.0.2.RELEASE
 - Spring Framework 5.0.2.RELEASE
