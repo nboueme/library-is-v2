@@ -48,9 +48,12 @@
                                 </td>
                                 <td>
                                     <div class="block-padding">
-                                        <s:if test="extended">
+                                        <s:if test="extended && currentDate < returnDate.toGregorianCalendar().time">
                                             déjà prolongé
                                         </s:if>
+                                        <s:elseif test="currentDate >= returnDate.toGregorianCalendar().time">
+                                            livre à rendre
+                                        </s:elseif>
                                         <s:else>
                                             <a href="<s:url action="borrowing/update/%{id}"/>">prolonger</a>
                                         </s:else>

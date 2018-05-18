@@ -68,8 +68,12 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     @Transactional
     public void update(Borrowing borrowing) {
         /* SI un emprunt existe dans la table borrowing avec pour id et user_id passé via l'objet borrowing
-         * ALORS on sauvegarde l'emprunt dans la table borrowing_archive et on supprime l'emprunt de la table borrowing
-         * SINON on met à jour l'emprunt dans la table borrowing
+         * ALORS
+         *   SI l'emprunt reçu en paramètre n'a pas le status "emprunté" (ni null, ni true)
+         *   ALORS on sauvegarde  l'emprunt dans la table borrowing_archive et on supprime l'emprunt de la table borrowing
+         *   SINON
+         *     SI l'emprunt n'a jamais été prolongé et que la date de retour est supérieure à la date courrante
+         *     ALORS on met à jour l'emprunt dans la table borrowing
          */
         Optional<Borrowing> optionalBorrowing = borrowingRepository.findByIdAndUserId(borrowing.getId(), borrowing.getUserId());
         if (optionalBorrowing.isPresent()) {
@@ -82,8 +86,11 @@ public class HibernateBorrowing implements BorrowingDaoContract {
                 borrowingArchiveRepository.save(borrowingArchive);
                 borrowingRepository.deleteByBookId(optionalBorrowing.get().getBookId());
             } else {
-                optionalBorrowing.get().setReturnDate(borrowing.getReturnDate());
-                optionalBorrowing.get().setExtended(borrowing.getExtended());
+                Date currentDate = new Date();
+                if (!optionalBorrowing.get().getExtended() && optionalBorrowing.get().getReturnDate().after(currentDate)) {
+                    optionalBorrowing.get().setReturnDate(borrowing.getReturnDate());
+                    optionalBorrowing.get().setExtended(borrowing.getExtended());
+                }
             }
         }
     }

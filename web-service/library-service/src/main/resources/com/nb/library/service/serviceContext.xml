@@ -8,8 +8,8 @@
             http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- ==== External properties file ===== -->
-    <!--context:property-placeholder location="file://#{systemProperties['user.home']}/Documents/java/javaee/library-is/datasource.properties" /-->
-    <context:property-placeholder location="file:///datasource.properties" />
+    <!--context:property-placeholder location="file://#{systemProperties['user.home']}/Documents/java/javaee/library-is-v2/datasource.properties"/-->
+    <context:property-placeholder location="file:///datasource.properties"/>
 
     <!-- ==== DataSource ===== -->
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
