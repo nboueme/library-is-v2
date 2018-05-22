@@ -75,7 +75,7 @@ BEGIN TRANSACTION;
 	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (10, 7, 'Le Hobbit', 'Bilbo, comme tous les hobbits, est un petit être paisible et sans histoire. Son quotidien est bouleversé un beau jour, lorsque Grandalf le magicien et treize nains barbus l''entraînent dans un voyage périlleux.
 	C''est le début d''une grande aventure, d''une fantastique quête au trésor semée d''embûches et d''épreuves, qui mènera Bilbo jusqu''à la Montagne Solitaire gardée par le dragon Smaug ...
 
-	Prélude au Seigneur des anneaux, Bilbo le Hobbit a été vendu à des millions d''exemplaires depuis sa publication en 1937, s''imposant comme l''un des livres les plus aimés et les plus influents du XXᵉ siècle. 
+	Prélude au Seigneur des anneaux, Bilbo le Hobbit a été vendu à des millions d''exemplaires depuis sa publication en 1937, s''imposant comme l''un des livres les plus aimés et les plus influents du XXᵉ siècle.
 	C ‘est l’histoire d’un hobbit qui se nommant Bilbo Saquet. Bilbo menait une vie paisible sans imprévue dans son trou à Hobbitbourg. Un jour, un magicien nommé Gandalf le Gris se présenta chez lui en disant qu’il cherchait quelqu’un pour prendre part à une aventure, Bilbo refusa. Quelques jours plus tard, 13 nains et Gandalf se présentèrent chez lui. Ils lui parlèrent d’Érébor, la cité naine. Le Hobbit a dû affronter plusieurs ennemis, dont le gobelins de Gobbelinville , les Orques de Dol guldure, les Elfes de la forêt noire ainsi que Smaug , le dragon tueur de nains. Vont-ils récupérer Érébor et tuer le dragon ou mourir brulés, écrasés ou décapités par leurs nombreux ennemis.', '2017-12-27 16:29:12', null, '/images/book/book-10.jpg');
 	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (11, 1, 'Les androïdes rêvent-ils de moutons électriques ?', 'Le mouton n''était pas mal, avec sa laine et ses bêlements plus vrais que nature - les voisins n''y ont vu que du feu. Mais il arrive en fin de carrière : ses circuits fatigués ne maintiendront plus longtemps l''illusion de la vie. Il va falloir le remplacer. Pas par un autre simulacre, non, par un véritable animal. Deckard en rêve, seulement ce n''est pas avec ses maigres primes que lui rapporte la chasse aux androïdes qu''il parviendra à mettre assez de côté. Holden, c''est lui qui récupère toujours les boulots les plus lucratifs - normal, c''est le meilleur. Mais ce coup-ci,ça n''a pas suffi. Face aux Nexus-6 de dernière génération, même Holden s''est fait avoir. alors, quand on propose à Deckard de reprendre la mission, il serre les dents et signe. De toute façon, qu''a-t-il à perdre ?', '2017-12-27 17:05:13', null, '/images/book/book-11.jpg');
 	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (12, 1, 'Le dieu venu du Centaure', 'Que la Terre, en ce lointain futur, soit chaque jour un peu plus torride - bientôt il faudra fuir la planète! -, c''est là une réalité indubitable. Le doute, en revanche, règne sur l''identité des êtres. Qui est qui?
@@ -90,7 +90,7 @@ BEGIN TRANSACTION;
 	Une situation embarrassante dans un monde où les campus sont assiégés depuis vingt ans et où le défaut de papiers d''identité suffit à vous envoyer au bagne. Mais c''est un Six. Ses gènes sont spéciaux. Il a des nerfs d''acier. Et si le monde entier a basculé dans la folie ou dans l''absurde, il va le remettre à l''endroit. Sous l''œil blasé du policier sentimental.', '2017-12-27 17:05:13', null, '/images/book/book-14.jpg');
 	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (15, 8, 'Shining', 'Quand on propose à Jack Torrance, ancien professeur et ancien alcoolique, un poste de gardien pour l''hiver à l''hôtel Overlook dans les montagnes du Colorado, il croit tenir là une chance de se racheter aux yeux de sa famille.
 
-	Il s''y installe avec Wendy, sa femme, et leur fils Danny, en espérant profiter de cette occasion pour écrire la pièce de théâtre qui le révélera au monde.Mais les démons de l''hôtel trouvent en Jack une proie presque trop facile pour poursuivre leur œuvre de mal, et il faudra le courage et le sixième sens étrange de son fils pour sauver in extremis ce qui pourra l''être. 
+	Il s''y installe avec Wendy, sa femme, et leur fils Danny, en espérant profiter de cette occasion pour écrire la pièce de théâtre qui le révélera au monde.Mais les démons de l''hôtel trouvent en Jack une proie presque trop facile pour poursuivre leur œuvre de mal, et il faudra le courage et le sixième sens étrange de son fils pour sauver in extremis ce qui pourra l''être.
 
 	Car Danny possède ce don de lumière de même que l''ancien cuisinier de l''hôtel, Dick Hallorann, et la conjugaison des deux fera reculer les forces du mal. Pendant un certain temps...
 
@@ -99,7 +99,7 @@ BEGIN TRANSACTION;
 
 	" Une mère puritaine, obsédée par le diable et le péché ; des camarades de classe dont elle est le souffre-douleur : Carrie est profondément malheureuse, laide, toujours perdante.
 
-	Mais à seize ans resurgit en elle le souvenir d''un « don » étrange qui avait marqué fugitivement son enfance : de par sa seule volonté elle pouvait faire se déplacer des objets à distance. Et ce pouvoir réapparaît aujourd''hui, plus impérieux, plus impatient... 
+	Mais à seize ans resurgit en elle le souvenir d''un « don » étrange qui avait marqué fugitivement son enfance : de par sa seule volonté elle pouvait faire se déplacer des objets à distance. Et ce pouvoir réapparaît aujourd''hui, plus impérieux, plus impatient...
 
 	Une surprise bouleverse soudain la vie de Carrie : lorsqu''elle est invitée au bal de l''école par Tommy Ross, le boy-friend d''une de ses ennemies, n''est-ce pas un piège plus cruel encore que les autres ? ', '2017-12-27 17:13:53', null, '/images/book/book-16.jpg');
 	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (17, 9, 'Simetierre', 'La famille Creed (Louis, médecin, sa femme Rachel, leur fille Ellie, le bébé Gage et leur chat, Church) viennent emménager dans la petite ville de Ludlow, dans une grande maison ancienne. Louis fait la connaissance du vieux Jud Crandall, son voisin d''en face, qui lui montre le quartier et particulièrement un petit cimetière aux animaux avec sa pancarte mal orthographiée créé par les enfants de la ville. Un jour, le chat se fait écraser. Creed décide de l''enterrer avant que les enfants ne découvrent le désastre, et demande de l''aide à Jud. Pendant qu''ils enterrent le chat, le vieil homme lui raconte à demi-mots une légende qui court sur ce cimetière. Puis le chat revient. Vivant. Mais pas tout à fait le même. Et c''est alors qu''un nouveau drame surgit. Simetierre est sans aucun doute le livre le plus terrifiant que King ait jamais écrit, et c''est, dans ce sens, son livre le plus réussi. Parfaitement insupportable, c''est un roman en forme de cauchemar absolu. --Lisa B--', '2017-12-27 17:13:53', null, '/images/book/book-17.jpg');
@@ -109,7 +109,7 @@ BEGIN TRANSACTION;
 	Ils se trompaient: même dans les petites villes paisibles, les monstres guettent, tapis dans l''ombre…', '2017-12-27 17:13:53', null, '/images/book/book-18.jpg');
 	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (19, 18, 'Viou', 'Nous sommes en 1946. Enfant secrète et passionnée, la petite Sylvie, surmonnée Viou, lutte pour retrouver le souvenir de son père, mort deux plus tôt, lors des combats de la Libération. Mais le choc a laissé un blanc dans sa tête. Sa mère, ayant du prendre un travail à Paris, l''a confié provisoirement à ses grands-parents paternels qui habitent Le Puy. Entre sa grand-mère, femme pieuse et autère que rien ne distrait de la mèmoire de son fils disparu, et son grand-père malicieux, mais lointain, la fillette, âgée de huit ans, s''efforce d''affirmer à la fois son caractère et son goût dévorant de la vie.
 	Avec un art d''une discrétion incomparable, Henri Troyat évoque, par petite touches, les pensées et les sentiments de cette enfant singulière qui transforme en lumière tout le gris de l''existence. La sensibilité, l''ironie, la tendresse de l''auteur sont telles dans la peinture de ce monde puéril que le lecteur, peu à peu, rajeunit, devient lui-même Viou et se retrouve plongé, comme par magie, dans les exaltations et les angoisses de l''âge tendre.', '2017-12-27 17:21:50', null, '/images/book/book-19.jpg');
-	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (20, 18, 'La neige en deuil', 'Poignante et terrible confrontation de deux hommes, de deux idéaux, la neige en deuil place une tragédie de l''honneur dans le cadre splendide et inhumain des Alpes. Un grand avion venant des Indes s''est écrasé sur un pic neigeux. Les passions humaines les plus diverses éclatent devant le danger d''une expédition de secours. 
+	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (20, 18, 'La neige en deuil', 'Poignante et terrible confrontation de deux hommes, de deux idéaux, la neige en deuil place une tragédie de l''honneur dans le cadre splendide et inhumain des Alpes. Un grand avion venant des Indes s''est écrasé sur un pic neigeux. Les passions humaines les plus diverses éclatent devant le danger d''une expédition de secours.
 
 	Ce roman a valu à son auteur le Grand prix du Prince Rainier de Monaco.', '2017-12-27 17:21:50', null, '/images/book/book-20.jpg');
 	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (21, 18, 'Aliocha', 'Fils d''immigrés russes blancs, Aliocha souffre de se sentir différent des autres élèves de son école. C''est tout ce que représentent ses parents qu''il stigmatise : leur gêne financière, leur attachement viscéral à une lointaine Russie. Le pays, la culture ou la langue, Aliocha les a radiés de sa mémoire et rejette l''héritage aux couleurs fanées dont ses parents l''abreuvent.
@@ -118,7 +118,7 @@ BEGIN TRANSACTION;
 
 	. Entre eux naît une amitié indéfectible, fondée sur une admiration réciproque et faite d''échanges intellectuels passionnés. Modèle et miroir l''un de l''autre, Aliocha et Thierry découvrent ensemble au cours de ces quelques mois les chemins ensoleillés de leurs jeunes années.
 
-	Ainsi, Aliocha, fort de cette nouvelle amitié, comprendra peu à peu le trésor que recèle sa double identité. 
+	Ainsi, Aliocha, fort de cette nouvelle amitié, comprendra peu à peu le trésor que recèle sa double identité.
 
 	Dans la formidable production d''Henri Troyat, Aliocha apparaît comme un hommage plein de nostalgie et de pudeur au jeune garçon qu''il fut. Il est sans conteste le plus attachant de ses romans. --Lenaïc Gravis et Jocelyn Blériot', '2017-12-27 17:21:50', null, '/images/book/book-21.jpg');
 	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (22, 18, 'La Lumière des justes', 'Au milieu du XXème siècle, Henri Troyat, romancier français né à Moscou, lauréat du Prix Goncourt en 1938 pour L''Araigne, redécouvre sa Russie natale. Il vient d''écrire une biographie de Pouchkine et un grand roman qui retrace la révolution russe. Il a pris conscience que ce cataclysme est l''aboutissement d''une histoire longue, complexe et tumultueuse. Pour la comprendre et incarner la richesse et les contradictions du somptueux XIXème siècle russe, il choisit deux héros, deux aristocrates venant de deux mondes opposés : Nicolas Ozareff, le barine russe, et Sophie de Champlitte, fille du XVIIIème siècle français et de sa passion de la liberté. Ils se rencontrent à Paris en 1814, après la chute de Napoléon. La vie les entraîne à Saint-Pétersbourg et jusqu''en Sibérie... La Lumière des Justes demeure aujourd''hui un des sommets du roman historique et une des plus belles réussites d''Henri Troyat.', '2017-12-27 17:21:50', null, '/images/book/book-22.jpg');
@@ -138,17 +138,17 @@ BEGIN TRANSACTION;
 	La route continue.', '2017-12-27 17:29:21', null, '/images/book/book-23.jpg');
 	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (24, 18, 'Bélibaste', 'La riche famille de Guillaume Bélibaste soutient les derniers " Parfaits", propagateurs clandestins de l''hérésie cathare. En ce début du XIVe siècle, il n''en reste plus guère...
 
-	Un jour d''automne, Guillaume est obligé de tuer un berger qui menaçait de le dénoncer à l''Inquisition. Désormais proscrit, il n''a d''autre choix que de rejoindre, à contrecœur, les errants mystiques. 
+	Un jour d''automne, Guillaume est obligé de tuer un berger qui menaçait de le dénoncer à l''Inquisition. Désormais proscrit, il n''a d''autre choix que de rejoindre, à contrecœur, les errants mystiques.
 
 	Mais comment mener cette vie ascétique lorsqu''on n''a pas la foi?', '2017-12-27 17:29:21', null, '/images/book/book-24.jpg');
-	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (25, 18, 'Le Voyage d''Anna', 'Novembre 1620 : Prague la protestante est mise à sac par les troupes catholiques. 
+	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (25, 18, 'Le Voyage d''Anna', 'Novembre 1620 : Prague la protestante est mise à sac par les troupes catholiques.
 
 	Anna, une servante, recueille l''enfant de son maître, massacré sous ses yeux. Elle ne sait pas encore que sa vie vient de prendre un cours radicalement nouveau.
 
 	Fuyant Prague avec le petit miraculé, elle rencontrera, dans la tourmente de la guerre, la rage et la beauté de vivre, le secret des forêts, la folie et l''amour des gens inoubliables.
 
 	Un roman riche en péripéties et en rebondissements, dans lequel Henri Gougaud nous prouve une fois de plus son immense talent de conteur.', '2017-12-27 17:29:21', null, '/images/book/book-25.jpg');
-	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (26, 18, 'L''enfant de la neige', 'XIIIᵉ siècle. Jaufré, un enfant abandonné devenu troubadour, revient chez lui, à Pamiers, en Languedoc. Il y retrouve sa nourrice Thomette, son demi-frère Alexis, le père abbé Aymar qui l''a élevé, le luthier qui l''a initié à la musique et tout un petit peuple haut en couleur. 
+	INSERT INTO public.work (id, type_work_id, title, summary, created_at, updated_at, image_url) VALUES (26, 18, 'L''enfant de la neige', 'XIIIᵉ siècle. Jaufré, un enfant abandonné devenu troubadour, revient chez lui, à Pamiers, en Languedoc. Il y retrouve sa nourrice Thomette, son demi-frère Alexis, le père abbé Aymar qui l''a élevé, le luthier qui l''a initié à la musique et tout un petit peuple haut en couleur.
 	Dans cette ville où rôde l''Inquisition, Jaufré va découvrir l''amour et un mystérieux manuscrit hérétique dans les combles de l''église. Vont alors peu à peu se dévoiler les énigmes qui hantent les ruines du château fort, les caves du monastère et l''esprit des gens.
 	Henri Gougaud nous offre un exceptionnel roman initiatique, qui nous plonge au cœur du Moyen Âge, cette période de ténèbres et d''espérance, pas si éloignée de notre monde actuel.', '2017-12-27 17:29:21', null, '/images/book/book-26.jpg');
 
@@ -263,6 +263,20 @@ BEGIN TRANSACTION;
 	INSERT INTO public.user_account (id, title, first_name, last_name, birth_date, address, postal_code, city, phone_number, email, password, image_url, role, created_at, updated_at) VALUES (16, 'M', 'Meriadoc', 'Brandebouc', null, null, null, null, null, 'lotr_meriadoc@gmail.com', '$2a$10$Zn6XP0k7X1QwpTLiciAOD.q51d4iPhIT7CA0QDhmrTj2nCKW/C3yu', '/images/user/user-0.png', 'user', '2017-12-27 17:57:53', null);
 
 	ALTER SEQUENCE user_account_id_seq RESTART WITH 17;
+
+
+
+--- ================================================================================
+--- reservation
+--- ================================================================================
+	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (6, 1, '2018-05-22 18:11:43.000000');
+	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (12, 1, '2018-05-21 18:11:43.000000');
+	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (9, 5, '2018-05-22 18:11:43.000000');
+	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (6, 5, '2018-05-21 18:11:43.000000');
+	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (11, 3, '2018-05-22 18:11:43.000000');
+	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (9, 3, '2018-05-21 18:11:43.000000');
+	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (12, 6, '2018-05-22 18:11:43.000000');
+	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (11, 6, '2018-05-21 18:11:43.000000');
 
 
 

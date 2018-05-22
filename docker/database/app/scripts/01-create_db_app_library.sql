@@ -101,6 +101,14 @@ CREATE UNIQUE INDEX user_account_email_uindex
  ON public.user_account
  ( email ASC );
 
+CREATE TABLE public.reservation (
+                user_id INTEGER NOT NULL,
+                work_id INTEGER NOT NULL,
+                reservation_date TIMESTAMP(0) DEFAULT current_timestamp NOT NULL,
+                CONSTRAINT reservation_pk PRIMARY KEY (user_id, work_id)
+);
+
+
 CREATE SEQUENCE public.borrowing_archive_id_seq;
 
 CREATE TABLE public.borrowing_archive (
@@ -163,6 +171,13 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
+ALTER TABLE public.reservation ADD CONSTRAINT work_reservation_fk
+FOREIGN KEY (work_id)
+REFERENCES public.work (id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
 ALTER TABLE public.book ADD CONSTRAINT editor_book_fk
 FOREIGN KEY (editor_id)
 REFERENCES public.editor (id)
@@ -192,6 +207,13 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.borrowing_archive ADD CONSTRAINT user_account_borrowing_archive_fk
+FOREIGN KEY (user_id)
+REFERENCES public.user_account (id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE public.reservation ADD CONSTRAINT user_account_reservation_fk
 FOREIGN KEY (user_id)
 REFERENCES public.user_account (id)
 ON DELETE NO ACTION
