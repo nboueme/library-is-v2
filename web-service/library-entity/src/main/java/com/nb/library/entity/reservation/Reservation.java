@@ -1,20 +1,27 @@
 package com.nb.library.entity.reservation;
 
-import com.nb.library.entity.ReservationInterface;
-
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Objects;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity(name = "reservation")
 @Table(name = "reservation")
-public class Reservation implements ReservationInterface {
+public class Reservation {
 
-    @EmbeddedId
-    private ReservationId id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, unique = true, updatable = false)
+    private Integer id;
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-    @MapsId("userId")
-    @ManyToOne(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    @OneToOne(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserAccount user;
     public UserAccount getUser() {
         return user;
@@ -23,14 +30,16 @@ public class Reservation implements ReservationInterface {
         this.user = user;
     }
 
-    @MapsId("workId")
-    @ManyToOne(targetEntity = Work.class, fetch = FetchType.LAZY)
-    private Work work;
-    public Work getWork() {
-        return work;
+    @ManyToMany(targetEntity = Work.class, fetch = FetchType.LAZY)
+    @JoinTable(name = "reservation_work",
+            joinColumns = { @JoinColumn(name = "reservation_id", referencedColumnName = "id", nullable = false, updatable = false) },
+            inverseJoinColumns = { @JoinColumn(name = "work_id", referencedColumnName = "id", nullable = false, updatable = false) })
+    private Set<Work> works = new HashSet<>(0);
+    public Set<Work> getWorks() {
+        return works;
     }
-    public void setWork(Work work) {
-        this.work = work;
+    public void setWorks(Set<Work> works) {
+        this.works = works;
     }
 
     @Column(name = "reservation_date", columnDefinition = "DATE")
@@ -40,30 +49,5 @@ public class Reservation implements ReservationInterface {
     }
     public void setReservationDate(Date reservationDate) {
         this.reservationDate = reservationDate;
-    }
-
-    private Reservation() {}
-
-    public Reservation(UserAccount user, Work work) {
-        this.user = user;
-        this.work = work;
-        this.id = new ReservationId(user.getId(), work.getId());
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-
-        if (o == null || getClass() != o.getClass())
-            return false;
-
-        Reservation that = (Reservation) o;
-        return Objects.equals(user, that.user) &&
-                Objects.equals(work, that.work);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(user, work);
     }
 }

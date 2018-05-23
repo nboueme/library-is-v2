@@ -269,14 +269,30 @@ BEGIN TRANSACTION;
 --- ================================================================================
 --- reservation
 --- ================================================================================
-	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (6, 1, '2018-05-22 18:11:43.000000');
-	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (12, 1, '2018-05-21 18:11:43.000000');
-	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (9, 5, '2018-05-22 18:11:43.000000');
-	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (6, 5, '2018-05-21 18:11:43.000000');
-	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (11, 3, '2018-05-22 18:11:43.000000');
-	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (9, 3, '2018-05-21 18:11:43.000000');
-	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (12, 6, '2018-05-22 18:11:43.000000');
-	INSERT INTO public.reservation (user_id, work_id, reservation_date) VALUES (11, 6, '2018-05-21 18:11:43.000000');
+	INSERT INTO public.reservation (id, user_id, reservation_date) VALUES (1, 6, '2018-05-22 18:11:43.000000');
+	INSERT INTO public.reservation (id, user_id, reservation_date) VALUES (2, 12, '2018-05-21 18:11:43.000000');
+	INSERT INTO public.reservation (id, user_id, reservation_date) VALUES (3, 9, '2018-05-22 18:11:43.000000');
+	INSERT INTO public.reservation (id, user_id, reservation_date) VALUES (4, 6, '2018-05-21 18:11:43.000000');
+	INSERT INTO public.reservation (id, user_id, reservation_date) VALUES (5, 11, '2018-05-22 18:11:43.000000');
+	INSERT INTO public.reservation (id, user_id, reservation_date) VALUES (6, 9, '2018-05-21 18:11:43.000000');
+	INSERT INTO public.reservation (id, user_id, reservation_date) VALUES (7, 12, '2018-05-22 18:11:43.000000');
+	INSERT INTO public.reservation (id, user_id, reservation_date) VALUES (8, 11, '2018-05-21 18:11:43.000000');
+
+	ALTER SEQUENCE reservation_id_seq RESTART WITH 9;
+
+
+
+--- ================================================================================
+--- reservation_work
+--- ================================================================================
+	INSERT INTO public.reservation_work (reservation_id, work_id) VALUES (1, 1);
+	INSERT INTO public.reservation_work (reservation_id, work_id) VALUES (2, 1);
+	INSERT INTO public.reservation_work (reservation_id, work_id) VALUES (3, 5);
+	INSERT INTO public.reservation_work (reservation_id, work_id) VALUES (4, 5);
+	INSERT INTO public.reservation_work (reservation_id, work_id) VALUES (5, 3);
+	INSERT INTO public.reservation_work (reservation_id, work_id) VALUES (6, 3);
+	INSERT INTO public.reservation_work (reservation_id, work_id) VALUES (7, 6);
+	INSERT INTO public.reservation_work (reservation_id, work_id) VALUES (8, 6);
 
 
 

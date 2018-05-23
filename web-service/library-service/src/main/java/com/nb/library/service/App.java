@@ -11,9 +11,8 @@ public class App {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bootstrapContext.xml");
         ReservationDaoContract reservationDao = applicationContext.getBean("reservationDao", ReservationDaoContract.class);
 
-        System.out.println("User ID\tWork ID\tReservation date");
         for (Reservation reservation: reservationDao.findAll()) {
-            System.out.println(reservation.getUser().getId() + "\t\t" + reservation.getWork().getId() + "\t\t" + reservation.getReservationDate());
+            System.out.println(reservation.getUser().getId() + "\t\t" + reservation.getWorks().iterator().next().getId() + "\t\t" + reservation.getReservationDate());
         }
     }
 }

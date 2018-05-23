@@ -9,6 +9,7 @@
     <bean id="authorDao" class="com.nb.library.repository.impl.soap.SoapAuthorDao"/>
     <bean id="borrowingDao" class="com.nb.library.repository.impl.soap.SoapBorrowingDao"/>
     <bean id="editorDao" class="com.nb.library.repository.impl.soap.SoapEditorDao"/>
+    <bean id="reservationDao" class="com.nb.library.repository.impl.soap.SoapReservationDao"/>
     <bean id="typeWorkDao" class="com.nb.library.repository.impl.soap.SoapTypeWorkDao"/>
     <bean id="userDao" class="com.nb.library.repository.impl.soap.SoapUserDao"/>
     <bean id="workDao" class="com.nb.library.repository.impl.soap.SoapWorkDao"/>
@@ -18,6 +19,7 @@
         <property name="authorDao" ref="authorDao"/>
         <property name="borrowingDao" ref="borrowingDao"/>
         <property name="editorDao" ref="editorDao"/>
+        <property name="reservationDao" ref="reservationDao"/>
         <property name="typeWorkDao" ref="typeWorkDao"/>
         <property name="userDao" ref="userDao"/>
         <property name="workDao" ref="workDao"/>
