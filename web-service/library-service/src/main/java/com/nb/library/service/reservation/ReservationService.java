@@ -1,6 +1,8 @@
 package com.nb.library.service.reservation;
 
 import com.nb.library.entity.reservation.Reservation;
+import com.nb.library.entity.reservation.UserAccount;
+import com.nb.library.entity.reservation.Work;
 import com.nb.library.repository.contract.ReservationDaoContract;
 import com.nb.library.service.AbstractService;
 
@@ -14,7 +16,12 @@ public class ReservationService extends AbstractService {
     private ReservationDaoContract contract = getDaoFactory().getReservationDao();
 
     @WebMethod
-    public List<Reservation> listReservations() {
-        return contract.findAll();
+    public List<Reservation> listReservationsByWork(Work work) {
+        return contract.findAllByWorkId(work);
+    }
+
+    @WebMethod
+    public List<Reservation> listReservationsByUser(UserAccount user) {
+        return contract.findAllByUserId(user);
     }
 }

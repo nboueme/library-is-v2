@@ -27,21 +27,6 @@ public interface WorkClient {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns com.nb.library.client.work.Work
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getWork", targetNamespace = "work.client.library.nb.com", className = "com.nb.library.client.work.GetWork")
-    @ResponseWrapper(localName = "getWorkResponse", targetNamespace = "work.client.library.nb.com", className = "com.nb.library.client.work.GetWorkResponse")
-    @Action(input = "work.client.library.nb.com/WorkClient/getWorkRequest", output = "work.client.library.nb.com/WorkClient/getWorkResponse")
-    public Work getWork(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Work arg0);
-
-    /**
-     * 
      * @return
      *     returns java.util.List<com.nb.library.client.work.Work>
      */
@@ -66,5 +51,20 @@ public interface WorkClient {
     public List<Work> listWorksByWord(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns com.nb.library.client.work.Work
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getWork", targetNamespace = "work.client.library.nb.com", className = "com.nb.library.client.work.GetWork")
+    @ResponseWrapper(localName = "getWorkResponse", targetNamespace = "work.client.library.nb.com", className = "com.nb.library.client.work.GetWorkResponse")
+    @Action(input = "work.client.library.nb.com/WorkClient/getWorkRequest", output = "work.client.library.nb.com/WorkClient/getWorkResponse")
+    public Work getWork(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Work arg0);
 
 }
