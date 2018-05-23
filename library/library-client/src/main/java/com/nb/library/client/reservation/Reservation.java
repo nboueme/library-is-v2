@@ -1,11 +1,8 @@
 
 package com.nb.library.client.reservation;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -24,7 +21,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="reservationDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="user" type="{reservation.client.library.nb.com}userAccount" minOccurs="0"/>
- *         &lt;element name="works" type="{reservation.client.library.nb.com}work" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="work" type="{reservation.client.library.nb.com}work" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,7 +35,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "id",
     "reservationDate",
     "user",
-    "works"
+    "work"
 })
 public class Reservation {
 
@@ -46,8 +43,7 @@ public class Reservation {
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar reservationDate;
     protected UserAccount user;
-    @XmlElement(nillable = true)
-    protected List<Work> works;
+    protected Work work;
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 id.
@@ -122,32 +118,27 @@ public class Reservation {
     }
 
     /**
-     * Gets the value of the works property.
+     * Obtient la valeur de la propri\u00e9t\u00e9 work.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the works property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getWorks().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Work }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link Work }
+     *     
      */
-    public List<Work> getWorks() {
-        if (works == null) {
-            works = new ArrayList<Work>();
-        }
-        return this.works;
+    public Work getWork() {
+        return work;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 work.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Work }
+     *     
+     */
+    public void setWork(Work value) {
+        this.work = value;
     }
 
 }

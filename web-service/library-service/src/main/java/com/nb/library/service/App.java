@@ -20,8 +20,8 @@ public class App {
         UserAccount user = new UserAccount();
         user.setId(12);
 
-        for (Reservation reservation: reservationDao.findAllByUserId(user)) {
-            System.out.println(reservation.getUser().getId() + "\t\t" + reservation.getWorks().iterator().next().getId() + "\t\t" + reservation.getReservationDate());
+        for (Reservation reservation: reservationDao.findAllByWorkId(work)) {
+            System.out.println(reservation.getUser().getId() + "\t\t" + reservation.getWork().getId() + "\t\t" + reservation.getReservationDate());
         }*/
 
         Reservation reservation = new Reservation();
@@ -29,13 +29,13 @@ public class App {
         user.setId(12);
         reservation.setUser(user);
         Work work = new Work();
-        work.setId(6);
-        reservation.getWorks().add(work);
+        work.setId(5);
+        reservation.setWork(work);
         reservation.setReservationDate(new Date());
 
         //reservationDao.save(reservation);
 
-        reservation.setId(14);
+        reservation.setId(9);
         reservationDao.delete(reservation);
     }
 }

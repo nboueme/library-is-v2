@@ -23,8 +23,8 @@ public class App {
         user.setId(12);
 
         System.out.println("User ID\tWork ID\tReservation date");
-        for (Reservation reservation : reservationManager.listReservationsByUser(user)) {
-            System.out.println(reservation.getUser().getId() + "\t\t" + reservation.getWorks().iterator().next().getId() + "\t\t" + reservation.getReservationDate());
+        for (Reservation reservation : reservationManager.listReservationsByWork(work)) {
+            System.out.println(reservation.getUser().getId() + "\t\t" + reservation.getWork().getId() + "\t\t" + reservation.getReservationDate());
         }
 
         /*Reservation reservation = new Reservation();
@@ -32,13 +32,13 @@ public class App {
         user.setId(12);
         reservation.setUser(user);
         Work work = new Work();
-        work.setId(6);
-        reservation.getWorks().add(work);
+        work.setId(5);
+        reservation.setWork(work);
         reservation.setReservationDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
 
         //reservationManager.addReservation(reservation);
 
-        reservation.setId(15);
+        reservation.setId(10);
         reservationManager.deleteReservation(reservation);*/
     }
 }
