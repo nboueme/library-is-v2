@@ -27,6 +27,18 @@ public interface TypeWorkClient {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<com.nb.library.client.type.TypeWork>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listTypesWorks", targetNamespace = "type.client.library.nb.com", className = "com.nb.library.client.type.ListTypesWorks")
+    @ResponseWrapper(localName = "listTypesWorksResponse", targetNamespace = "type.client.library.nb.com", className = "com.nb.library.client.type.ListTypesWorksResponse")
+    @Action(input = "type.client.library.nb.com/TypeWorkClient/listTypesWorksRequest", output = "type.client.library.nb.com/TypeWorkClient/listTypesWorksResponse")
+    public List<TypeWork> listTypesWorks();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns com.nb.library.client.type.TypeWork
@@ -39,17 +51,5 @@ public interface TypeWorkClient {
     public TypeWork getTypeWork(
         @WebParam(name = "arg0", targetNamespace = "")
         TypeWork arg0);
-
-    /**
-     * 
-     * @return
-     *     returns java.util.List<com.nb.library.client.type.TypeWork>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listTypesWorks", targetNamespace = "type.client.library.nb.com", className = "com.nb.library.client.type.ListTypesWorks")
-    @ResponseWrapper(localName = "listTypesWorksResponse", targetNamespace = "type.client.library.nb.com", className = "com.nb.library.client.type.ListTypesWorksResponse")
-    @Action(input = "type.client.library.nb.com/TypeWorkClient/listTypesWorksRequest", output = "type.client.library.nb.com/TypeWorkClient/listTypesWorksResponse")
-    public List<TypeWork> listTypesWorks();
 
 }

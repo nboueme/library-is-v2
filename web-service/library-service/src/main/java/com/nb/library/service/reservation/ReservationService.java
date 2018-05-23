@@ -16,6 +16,11 @@ public class ReservationService extends AbstractService {
     private ReservationDaoContract contract = getDaoFactory().getReservationDao();
 
     @WebMethod
+    public void addReservation(Reservation reservation) {
+        contract.save(reservation);
+    }
+
+    @WebMethod
     public List<Reservation> listReservationsByWork(Work work) {
         return contract.findAllByWorkId(work);
     }
@@ -23,5 +28,10 @@ public class ReservationService extends AbstractService {
     @WebMethod
     public List<Reservation> listReservationsByUser(UserAccount user) {
         return contract.findAllByUserId(user);
+    }
+
+    @WebMethod
+    public void deleteReservation(Reservation reservation) {
+        contract.delete(reservation);
     }
 }

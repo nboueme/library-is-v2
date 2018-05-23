@@ -17,6 +17,11 @@ public class HibernateReservation implements ReservationDaoContract {
     private ReservationRepository reservationRepository;
 
     @Transactional
+    public void save(Reservation reservation) {
+        reservationRepository.save(reservation);
+    }
+
+    @Transactional
     public List<Reservation> findAllByWorkId(Work work) {
         List<Reservation> reservations = new ArrayList<>(0);
         reservationRepository.findAllByWorkId(work.getId()).iterator().forEachRemaining(reservations::add);
@@ -28,5 +33,10 @@ public class HibernateReservation implements ReservationDaoContract {
         List<Reservation> reservations = new ArrayList<>(0);
         reservationRepository.findAllByUserId(user.getId()).iterator().forEachRemaining(reservations::add);
         return reservations;
+    }
+
+    @Transactional
+    public void delete(Reservation reservation) {
+        reservationRepository.deleteById(reservation.getId());
     }
 }

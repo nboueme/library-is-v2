@@ -7,9 +7,13 @@ import com.nb.library.client.reservation.Work;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import java.util.GregorianCalendar;
+
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DatatypeConfigurationException {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bootstrapContext.xml");
         ReservationManager reservationManager = applicationContext.getBean("reservationManager", ReservationManager.class);
 
@@ -22,5 +26,19 @@ public class App {
         for (Reservation reservation : reservationManager.listReservationsByUser(user)) {
             System.out.println(reservation.getUser().getId() + "\t\t" + reservation.getWorks().iterator().next().getId() + "\t\t" + reservation.getReservationDate());
         }
+
+        /*Reservation reservation = new Reservation();
+        UserAccount user = new UserAccount();
+        user.setId(12);
+        reservation.setUser(user);
+        Work work = new Work();
+        work.setId(6);
+        reservation.getWorks().add(work);
+        reservation.setReservationDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()));
+
+        //reservationManager.addReservation(reservation);
+
+        reservation.setId(15);
+        reservationManager.deleteReservation(reservation);*/
     }
 }

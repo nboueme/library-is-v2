@@ -10,11 +10,19 @@ import java.util.List;
 
 public class ReservationManagerImpl extends AbstractManager implements ReservationManager {
 
+    public void addReservation(Reservation reservation) {
+        getDaoFactory().getReservationDao().addReservation(reservation);
+    }
+
     public List<Reservation> listReservationsByWork(Work work) {
         return getDaoFactory().getReservationDao().listReservationsByWork(work);
     }
 
     public List<Reservation> listReservationsByUser(UserAccount user) {
         return getDaoFactory().getReservationDao().listReservationsByUser(user);
+    }
+
+    public void deleteReservation(Reservation reservation) {
+        getDaoFactory().getReservationDao().deleteReservation(reservation);
     }
 }

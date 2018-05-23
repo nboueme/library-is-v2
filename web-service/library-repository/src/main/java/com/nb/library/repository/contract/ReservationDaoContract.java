@@ -7,6 +7,11 @@ import com.nb.library.entity.reservation.Work;
 import java.util.List;
 
 public interface ReservationDaoContract {
+    void save(Reservation reservation);
+
     List<Reservation> findAllByWorkId(Work work);
+
     List<Reservation> findAllByUserId(UserAccount user);
+
+    void delete(Reservation reservation);
 }
