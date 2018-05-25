@@ -18,7 +18,7 @@ public class Reservation {
         this.id = id;
     }
 
-    @OneToOne(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private UserAccount user;
     public UserAccount getUser() {
@@ -28,10 +28,8 @@ public class Reservation {
         this.user = user;
     }
 
-    @OneToOne(targetEntity = Work.class, fetch = FetchType.LAZY)
-    @JoinTable(name = "reservation_work",
-            joinColumns = { @JoinColumn(name = "reservation_id", referencedColumnName = "id", nullable = false, updatable = false) },
-            inverseJoinColumns = { @JoinColumn(name = "work_id", referencedColumnName = "id", nullable = false, updatable = false) })
+    @ManyToOne(targetEntity = Work.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "work_id", referencedColumnName = "id")
     private Work work = new Work();
     public Work getWork() {
         return work;
