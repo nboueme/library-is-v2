@@ -80,6 +80,7 @@
                         <th scope="col">Titre</th>
                         <th scope="col">Date de retour</th>
                         <th scope="col">Position</th>
+                        <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -118,6 +119,9 @@
                                         </s:if>
                                     </s:iterator>
                                 </s:iterator>
+                            </td>
+                            <td>
+                                <a href="<s:url action="reservation/delete/%{id}"/>">annuler la réservation</a>
                             </td>
                         </tr>
                     </s:iterator>

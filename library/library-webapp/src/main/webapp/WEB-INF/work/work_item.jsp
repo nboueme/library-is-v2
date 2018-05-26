@@ -49,6 +49,10 @@
                 <td>
                     <s:set var="canReserve" value="%{true}"/>
                     <s:iterator value="borrowings">
+                        <s:if test="#session.userSession.id == userId">
+                            <s:set var="alreadyLoaned" value="%{true}"/>
+                        </s:if>
+
                         <s:if test="!loaned">
                             <s:set var="canReserve" value="%{false}"/>
                         </s:if>
@@ -79,11 +83,23 @@
         </p>
         <p class="mt-md-3">Nombre de réservation actuel : <s:property value="countReservationsByWork"/></p>
         <p class="mt-md-3">
-            <s:if test="countBooksByWork * 2 == countReservationsByWork">
-                Liste de réservations pleine
+            <s:iterator value="reservations">
+                <s:if test="#session.userSession.id == user.id">
+                    <s:set var="alreadyReserved" value="%{true}"/>
+                </s:if>
+            </s:iterator>
+
+            <s:if test="#alreadyLoaned">
+                Vous avez déjà un emprunt en cours pour cette oeuvre
             </s:if>
+            <s:elseif test="#alreadyReserved">
+                Vous avez une réservation en cours pour cette oeuvre
+            </s:elseif>
+            <s:elseif test="countBooksByWork * 2 == countReservationsByWork">
+                Liste de réservations pleine
+            </s:elseif>
             <s:else>
-                Réservation possible
+                <a href="<s:url action="reservation/add/%{work.id}"/>">Faire une réservation</a>
             </s:else>
         </p>
     </s:if>
