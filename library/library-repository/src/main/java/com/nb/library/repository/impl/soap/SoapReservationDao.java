@@ -22,6 +22,10 @@ public class SoapReservationDao implements ReservationDaoContract {
         return client.listReservationsByUser(user);
     }
 
+    public Integer countReservationsByWork(Integer workId) {
+        return client.countReservationsByWork(workId);
+    }
+
     public void deleteReservation(Reservation reservation) {
         client.deleteReservation(reservation);
     }

@@ -13,6 +13,8 @@ public class SearchAction extends AbstractService {
     private List<Work> works;
     private String search;
     private List<Borrowing> borrowings;
+    private List<Integer> countReservationsByWork;
+    private List<Boolean> cantReserve;
 
     public String execute() {
         works = getManagerFactory().getWorkManager().listWorksByWord(search);
@@ -20,11 +22,16 @@ public class SearchAction extends AbstractService {
         Borrowing borrowing = new Borrowing();
         borrowings = new ArrayList<>(0);
 
+        countReservationsByWork = new ArrayList<>(0);
+        cantReserve = new ArrayList<>(0);
+
         for (Work work : works) {
             for (Book book : work.getBooks()) {
                 borrowing.setBookId(book.getId());
                 borrowings.add(getManagerFactory().getBorrowingManager().getBorrowingByBookId(borrowing));
             }
+            countReservationsByWork.add(getManagerFactory().getReservationManager().countReservationsByWork(work.getId()));
+            cantReserve.add(work.getBooks().size() * 2 == getManagerFactory().getReservationManager().countReservationsByWork(work.getId()));
         }
 
         return SUCCESS;
@@ -44,5 +51,13 @@ public class SearchAction extends AbstractService {
 
     public List<Borrowing> getBorrowings() {
         return borrowings;
+    }
+
+    public List<Integer> getCountReservationsByWork() {
+        return countReservationsByWork;
+    }
+
+    public List<Boolean> getCantReserve() {
+        return cantReserve;
     }
 }

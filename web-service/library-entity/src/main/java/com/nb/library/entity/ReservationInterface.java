@@ -1,18 +1,11 @@
 package com.nb.library.entity;
 
-import com.nb.library.entity.reservation.UserAccount;
-import com.nb.library.entity.reservation.Work;
-
 import java.util.Date;
 
 public interface ReservationInterface {
-    UserAccount getUser();
+    Integer getId();
 
-    void setUser(UserAccount user);
-
-    Work getWork();
-
-    void setWork(Work work);
+    void setId(Integer id);
 
     Date getReservationDate();
 

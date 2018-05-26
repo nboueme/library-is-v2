@@ -4,6 +4,8 @@ import com.nb.library.entity.WorkInterface;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "work")
@@ -18,6 +20,16 @@ public class Work implements WorkInterface {
     }
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @OneToMany(targetEntity = Book.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "work_id", referencedColumnName = "id")
+    private Set<Book> books = new HashSet<>(0);
+    public Set<Book> getBooks() {
+        return books;
+    }
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     @Column(name = "title")

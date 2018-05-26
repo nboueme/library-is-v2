@@ -24,7 +24,7 @@ public class App {
             System.out.println(reservation.getUser().getId() + "\t\t" + reservation.getWork().getId() + "\t\t" + reservation.getReservationDate());
         }*/
 
-        Reservation reservation = new Reservation();
+        /*Reservation reservation = new Reservation();
         UserAccount user = new UserAccount();
         user.setId(12);
         reservation.setUser(user);
@@ -36,6 +36,8 @@ public class App {
         //reservationDao.save(reservation);
 
         reservation.setId(9);
-        reservationDao.delete(reservation);
+        reservationDao.delete(reservation);*/
+
+        System.out.println("Nombre d'exemplaires réservés pour l'oeuvre : " + reservationDao.countAllByWorkId(1));
     }
 }

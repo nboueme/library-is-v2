@@ -31,6 +31,11 @@ public class ReservationService extends AbstractService {
     }
 
     @WebMethod
+    public Integer countReservationsByWork(Integer workId) {
+        return contract.countAllByWorkId(workId);
+    }
+
+    @WebMethod
     public void deleteReservation(Reservation reservation) {
         contract.delete(reservation);
     }

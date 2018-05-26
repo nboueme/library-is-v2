@@ -13,5 +13,7 @@ public interface ReservationDaoContract {
 
     List<Reservation> findAllByUserId(UserAccount user);
 
+    Integer countAllByWorkId(Integer workId);
+
     void delete(Reservation reservation);
 }

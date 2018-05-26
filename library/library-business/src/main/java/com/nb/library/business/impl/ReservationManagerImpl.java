@@ -22,6 +22,10 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
         return getDaoFactory().getReservationDao().listReservationsByUser(user);
     }
 
+    public Integer countReservationsByWork(Integer workId) {
+        return getDaoFactory().getReservationDao().countReservationsByWork(workId);
+    }
+
     public void deleteReservation(Reservation reservation) {
         getDaoFactory().getReservationDao().deleteReservation(reservation);
     }

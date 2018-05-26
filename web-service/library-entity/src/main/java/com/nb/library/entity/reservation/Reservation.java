@@ -1,11 +1,13 @@
 package com.nb.library.entity.reservation;
 
+import com.nb.library.entity.ReservationInterface;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name = "reservation")
 @Table(name = "reservation")
-public class Reservation {
+public class Reservation implements ReservationInterface {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

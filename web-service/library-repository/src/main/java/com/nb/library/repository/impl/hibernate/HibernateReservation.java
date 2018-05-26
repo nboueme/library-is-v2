@@ -36,6 +36,11 @@ public class HibernateReservation implements ReservationDaoContract {
     }
 
     @Transactional
+    public Integer countAllByWorkId(Integer workId) {
+        return reservationRepository.countAllByWorkId(workId);
+    }
+
+    @Transactional
     public void delete(Reservation reservation) {
         reservationRepository.deleteById(reservation.getId());
     }

@@ -17,7 +17,7 @@ public class App {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bootstrapContext.xml");
         ReservationManager reservationManager = applicationContext.getBean("reservationManager", ReservationManager.class);
 
-        Work work = new Work();
+        /*Work work = new Work();
         work.setId(1);
         UserAccount user = new UserAccount();
         user.setId(12);
@@ -25,7 +25,7 @@ public class App {
         System.out.println("User ID\tWork ID\tReservation date");
         for (Reservation reservation : reservationManager.listReservationsByWork(work)) {
             System.out.println(reservation.getUser().getId() + "\t\t" + reservation.getWork().getId() + "\t\t" + reservation.getReservationDate());
-        }
+        }*/
 
         /*Reservation reservation = new Reservation();
         UserAccount user = new UserAccount();
@@ -40,5 +40,7 @@ public class App {
 
         reservation.setId(10);
         reservationManager.deleteReservation(reservation);*/
+
+        System.out.println("Nombre d'exemplaires réservés pour l'oeuvre : " + reservationManager.countReservationsByWork(1));
     }
 }

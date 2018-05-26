@@ -29,8 +29,10 @@ public class ObjectFactory {
     private final static QName _ListReservationsByUserResponse_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByUserResponse");
     private final static QName _DeleteReservation_QNAME = new QName("reservation.client.library.nb.com", "deleteReservation");
     private final static QName _ListReservationsByWorkResponse_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByWorkResponse");
+    private final static QName _CountReservationsByWork_QNAME = new QName("reservation.client.library.nb.com", "countReservationsByWork");
     private final static QName _AddReservation_QNAME = new QName("reservation.client.library.nb.com", "addReservation");
     private final static QName _DeleteReservationResponse_QNAME = new QName("reservation.client.library.nb.com", "deleteReservationResponse");
+    private final static QName _CountReservationsByWorkResponse_QNAME = new QName("reservation.client.library.nb.com", "countReservationsByWorkResponse");
     private final static QName _ListReservationsByWork_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByWork");
 
     /**
@@ -54,6 +56,22 @@ public class ObjectFactory {
      */
     public DeleteReservationResponse createDeleteReservationResponse() {
         return new DeleteReservationResponse();
+    }
+
+    /**
+     * Create an instance of {@link CountReservationsByWork }
+     * 
+     */
+    public CountReservationsByWork createCountReservationsByWork() {
+        return new CountReservationsByWork();
+    }
+
+    /**
+     * Create an instance of {@link CountReservationsByWorkResponse }
+     * 
+     */
+    public CountReservationsByWorkResponse createCountReservationsByWorkResponse() {
+        return new CountReservationsByWorkResponse();
     }
 
     /**
@@ -110,6 +128,14 @@ public class ObjectFactory {
      */
     public Work createWork() {
         return new Work();
+    }
+
+    /**
+     * Create an instance of {@link Book }
+     * 
+     */
+    public Book createBook() {
+        return new Book();
     }
 
     /**
@@ -174,6 +200,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CountReservationsByWork }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "countReservationsByWork")
+    public JAXBElement<CountReservationsByWork> createCountReservationsByWork(CountReservationsByWork value) {
+        return new JAXBElement<CountReservationsByWork>(_CountReservationsByWork_QNAME, CountReservationsByWork.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link AddReservation }{@code >}}
      * 
      */
@@ -189,6 +224,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "deleteReservationResponse")
     public JAXBElement<DeleteReservationResponse> createDeleteReservationResponse(DeleteReservationResponse value) {
         return new JAXBElement<DeleteReservationResponse>(_DeleteReservationResponse_QNAME, DeleteReservationResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CountReservationsByWorkResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "countReservationsByWorkResponse")
+    public JAXBElement<CountReservationsByWorkResponse> createCountReservationsByWorkResponse(CountReservationsByWorkResponse value) {
+        return new JAXBElement<CountReservationsByWorkResponse>(_CountReservationsByWorkResponse_QNAME, CountReservationsByWorkResponse.class, null, value);
     }
 
     /**

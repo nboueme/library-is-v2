@@ -13,6 +13,8 @@ public class WorkItemAction extends AbstractService {
 
     private Work work;
     private List<Borrowing> borrowings;
+    private Integer countBooksByWork;
+    private Integer countReservationsByWork;
 
     public String execute() {
         String workId = ActionContext.getContext().getParameters().get("work.id").toString();
@@ -20,6 +22,8 @@ public class WorkItemAction extends AbstractService {
         inputWork.setId(Integer.parseInt(workId));
 
         work = getManagerFactory().getWorkManager().getWork(inputWork);
+        countBooksByWork = work.getBooks().size();
+        countReservationsByWork = getManagerFactory().getReservationManager().countReservationsByWork(work.getId());
 
         Borrowing borrowing = new Borrowing();
         borrowings = new ArrayList<>(0);
@@ -38,5 +42,13 @@ public class WorkItemAction extends AbstractService {
 
     public List<Borrowing> getBorrowings() {
         return borrowings;
+    }
+
+    public Integer getCountBooksByWork() {
+        return countBooksByWork;
+    }
+
+    public Integer getCountReservationsByWork() {
+        return countReservationsByWork;
     }
 }

@@ -1,8 +1,11 @@
 
 package com.nb.library.client.reservation;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -18,6 +21,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="books" type="{reservation.client.library.nb.com}book" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="createdAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="imageURL" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -34,6 +38,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "work", propOrder = {
+    "books",
     "createdAt",
     "id",
     "imageURL",
@@ -43,6 +48,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class Work {
 
+    @XmlElement(nillable = true)
+    protected List<Book> books;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar createdAt;
     protected Integer id;
@@ -51,6 +58,35 @@ public class Work {
     protected String title;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar updatedAt;
+
+    /**
+     * Gets the value of the books property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the books property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBooks().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link Book }
+     * 
+     * 
+     */
+    public List<Book> getBooks() {
+        if (books == null) {
+            books = new ArrayList<Book>();
+        }
+        return this.books;
+    }
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.

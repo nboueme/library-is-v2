@@ -34,7 +34,7 @@
     </div>
 
     <table class="table table-sm table-striped mt-md-3">
-        <caption>Liste des éditions</caption>
+        <caption>Liste des éditions (<s:property value="countBooksByWork"/>)</caption>
         <thead>
         <tr>
             <th scope="col">ISBN</th>
@@ -42,17 +42,26 @@
             <th scope="col">Disponibilité</th>
         </tr>
         </thead>
-        <s:iterator value="work.books">
+        <s:iterator value="work.books" status="book">
             <tr>
                 <td><s:property value="ISBN"/></td>
                 <td><a href="<s:url action="editor/%{editor.id}"/>"><s:property value="editor.name"/></a> (<s:property value="year"/>)</td>
                 <td>
+                    <s:set var="canReserve" value="%{true}"/>
                     <s:iterator value="borrowings">
-                        <s:if test="loaned">
-                            <s:set var="isLoaned">true</s:set>
+                        <s:if test="!loaned">
+                            <s:set var="canReserve" value="%{false}"/>
                         </s:if>
+
+                        <s:if test="#minimumReturnDate == null">
+                            <s:set var="minimumReturnDate" value="%{returnDate}"/>
+                        </s:if>
+                        <s:elseif test="returnDate.toGregorianCalendar().before(#minimumReturnDate.toGregorianCalendar())">
+                            <s:set var="minimumReturnDate" value="%{returnDate}"/>
+                        </s:elseif>
                     </s:iterator>
-                    <s:if test="#isLoaned">
+
+                    <s:if test="borrowings[#book.index].loaned">
                         Indisponible
                     </s:if>
                     <s:else>
@@ -62,6 +71,22 @@
             </tr>
         </s:iterator>
     </table>
+
+    <s:if test="%{#canReserve && #session.userSession != null}">
+        <p class="mt-md-3">
+            Prochain retour le
+            <s:date name="#minimumReturnDate.toGregorianCalendar().time" format="dd MMMM yyyy"/>
+        </p>
+        <p class="mt-md-3">Nombre de réservation actuel : <s:property value="countReservationsByWork"/></p>
+        <p class="mt-md-3">
+            <s:if test="countBooksByWork * 2 == countReservationsByWork">
+                Liste de réservations pleine
+            </s:if>
+            <s:else>
+                Réservation possible
+            </s:else>
+        </p>
+    </s:if>
 </div>
 
 <%@ include file="../_include/footer.jsp" %>

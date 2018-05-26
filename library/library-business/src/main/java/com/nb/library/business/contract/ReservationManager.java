@@ -13,5 +13,7 @@ public interface ReservationManager {
 
     List<Reservation> listReservationsByUser(UserAccount user);
 
+    Integer countReservationsByWork(Integer workId);
+
     void deleteReservation(Reservation reservation);
 }
