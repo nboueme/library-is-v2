@@ -5,6 +5,7 @@ import com.nb.library.entity.borrowing.Borrowing;
 import com.nb.library.repository.contract.BorrowingDaoContract;
 import com.nb.library.repository.impl.data.BorrowingArchiveRepository;
 import com.nb.library.repository.impl.data.BorrowingRepository;
+import com.nb.library.repository.impl.data.ReservationRepository;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
@@ -21,6 +22,9 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     @Resource
     private BorrowingArchiveRepository borrowingArchiveRepository;
 
+    @Resource
+    private ReservationRepository reservationRepository;
+
     @Transactional
     public void save(Borrowing borrowing) {
         /* SI un emprunt n'existe pas dans la table borrowing avec pour book_id passé via l'objet borrowing
@@ -28,6 +32,8 @@ public class HibernateBorrowing implements BorrowingDaoContract {
          */
         Optional<Borrowing> existingBorrowing = borrowingRepository.findByBookId(borrowing.getBookId());
         if (!existingBorrowing.isPresent()) {
+            reservationRepository.deleteByUserIdAndWorkId(borrowing.getUserId(), borrowing.getBook().getWork().getId());
+            borrowing.setBook(null);
             borrowingRepository.save(borrowing);
         }
     }

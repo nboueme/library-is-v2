@@ -14,4 +14,6 @@ public interface ReservationRepository extends CrudRepository<Reservation, Integ
     Iterable<Reservation> findAllByUserId(@Param("user_id") Integer userId);
 
     Integer countAllByWorkId(Integer workId);
+
+    Integer deleteByUserIdAndWorkId(Integer userId, Integer workId);
 }
