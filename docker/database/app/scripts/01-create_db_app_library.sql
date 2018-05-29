@@ -87,6 +87,7 @@ CREATE TABLE public.user_account (
                 email VARCHAR(100) NOT NULL,
                 password VARCHAR(100) NOT NULL,
                 image_url VARCHAR(100),
+                reminder BOOLEAN DEFAULT true NOT NULL,
                 role VARCHAR(5) NOT NULL,
                 created_at TIMESTAMP(0) DEFAULT current_timestamp NOT NULL,
                 updated_at TIMESTAMP(0),
@@ -108,6 +109,7 @@ CREATE TABLE public.reservation (
                 user_id INTEGER NOT NULL,
                 work_id INTEGER NOT NULL,
                 reservation_date TIMESTAMP(0) DEFAULT current_timestamp NOT NULL,
+                notification_date DATE,
                 CONSTRAINT reservation_pk PRIMARY KEY (id)
 );
 
