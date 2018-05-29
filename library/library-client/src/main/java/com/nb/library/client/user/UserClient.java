@@ -39,4 +39,16 @@ public interface UserClient {
         @WebParam(name = "arg0", targetNamespace = "")
         UserAccount arg0);
 
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "updateUser", targetNamespace = "user.client.library.nb.com", className = "com.nb.library.client.user.UpdateUser")
+    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "user.client.library.nb.com", className = "com.nb.library.client.user.UpdateUserResponse")
+    @Action(input = "user.client.library.nb.com/UserClient/updateUserRequest", output = "user.client.library.nb.com/UserClient/updateUserResponse")
+    public void updateUser(
+        @WebParam(name = "arg0", targetNamespace = "")
+        UserAccount arg0);
+
 }

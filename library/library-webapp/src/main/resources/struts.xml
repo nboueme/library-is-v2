@@ -103,6 +103,11 @@
             <result name="success">/WEB-INF/user/user_borrowing.jsp</result>
             <result name="login">/WEB-INF/user/login.jsp</result>
         </action>
+
+        <action name="user/update/*" class="com.nb.library.webapp.action.user.UserBorrowingAction" method="update">
+            <param name="userSession.id">{1}</param>
+            <result name="success" type="redirect">borrowing</result>
+        </action>
     </package>
 
     <!-- ==== Work ===== -->

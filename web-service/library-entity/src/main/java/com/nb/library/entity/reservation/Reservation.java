@@ -48,4 +48,13 @@ public class Reservation implements ReservationInterface {
     public void setReservationDate(Date reservationDate) {
         this.reservationDate = reservationDate;
     }
+
+    @Column(name = "notification_date", columnDefinition = "DATE")
+    private Date notificationDate;
+    public Date getNotificationDate() {
+        return notificationDate;
+    }
+    public void setNotificationDate(Date notificationDate) {
+        this.notificationDate = notificationDate;
+    }
 }

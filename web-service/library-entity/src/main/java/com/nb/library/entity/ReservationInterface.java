@@ -9,5 +9,9 @@ public interface ReservationInterface {
 
     Date getReservationDate();
 
-    void setReservationDate(Date reservationDate);
+    void setReservationDate(Date notificationDate);
+
+    Date getNotificationDate();
+
+    void setNotificationDate(Date notificationDate);
 }

@@ -119,6 +119,15 @@ public class UserAccount implements UserAccountInterface {
         this.imageURL = imageURL;
     }
 
+    @Column(name = "reminder")
+    private Boolean isReminder;
+    public Boolean getReminder() {
+        return isReminder;
+    }
+    public void setReminder(Boolean isReminder) {
+        this.isReminder = isReminder;
+    }
+
     @Column(name = "role")
     private String role;
     public String getRole() {

@@ -28,6 +28,18 @@ public interface ReservationClient {
     /**
      * 
      * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "addReservation", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.AddReservation")
+    @ResponseWrapper(localName = "addReservationResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.AddReservationResponse")
+    @Action(input = "reservation.client.library.nb.com/ReservationClient/addReservationRequest", output = "reservation.client.library.nb.com/ReservationClient/addReservationResponse")
+    public void addReservation(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Reservation arg0);
+
+    /**
+     * 
+     * @param arg0
      * @return
      *     returns java.util.List<com.nb.library.client.reservation.Reservation>
      */
@@ -79,18 +91,6 @@ public interface ReservationClient {
     @ResponseWrapper(localName = "deleteReservationResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.DeleteReservationResponse")
     @Action(input = "reservation.client.library.nb.com/ReservationClient/deleteReservationRequest", output = "reservation.client.library.nb.com/ReservationClient/deleteReservationResponse")
     public void deleteReservation(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Reservation arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "addReservation", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.AddReservation")
-    @ResponseWrapper(localName = "addReservationResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.AddReservationResponse")
-    @Action(input = "reservation.client.library.nb.com/ReservationClient/addReservationRequest", output = "reservation.client.library.nb.com/ReservationClient/addReservationResponse")
-    public void addReservation(
         @WebParam(name = "arg0", targetNamespace = "")
         Reservation arg0);
 

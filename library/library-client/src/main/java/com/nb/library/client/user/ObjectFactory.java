@@ -24,6 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _UpdateUser_QNAME = new QName("user.client.library.nb.com", "updateUser");
+    private final static QName _UpdateUserResponse_QNAME = new QName("user.client.library.nb.com", "updateUserResponse");
     private final static QName _GetUserResponse_QNAME = new QName("user.client.library.nb.com", "getUserResponse");
     private final static QName _GetUser_QNAME = new QName("user.client.library.nb.com", "getUser");
 
@@ -51,11 +53,45 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link UpdateUser }
+     * 
+     */
+    public UpdateUser createUpdateUser() {
+        return new UpdateUser();
+    }
+
+    /**
+     * Create an instance of {@link UpdateUserResponse }
+     * 
+     */
+    public UpdateUserResponse createUpdateUserResponse() {
+        return new UpdateUserResponse();
+    }
+
+    /**
      * Create an instance of {@link UserAccount }
      * 
      */
     public UserAccount createUserAccount() {
         return new UserAccount();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateUser }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "user.client.library.nb.com", name = "updateUser")
+    public JAXBElement<UpdateUser> createUpdateUser(UpdateUser value) {
+        return new JAXBElement<UpdateUser>(_UpdateUser_QNAME, UpdateUser.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateUserResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "user.client.library.nb.com", name = "updateUserResponse")
+    public JAXBElement<UpdateUserResponse> createUpdateUserResponse(UpdateUserResponse value) {
+        return new JAXBElement<UpdateUserResponse>(_UpdateUserResponse_QNAME, UpdateUserResponse.class, null, value);
     }
 
     /**

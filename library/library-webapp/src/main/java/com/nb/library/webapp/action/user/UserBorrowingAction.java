@@ -8,13 +8,17 @@ import com.nb.library.client.user.UserAccount;
 import com.nb.library.webapp.AbstractService;
 import com.nb.library.webapp.utility.Constant;
 import com.opensymphony.xwork2.ActionContext;
+import org.apache.struts2.interceptor.SessionAware;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
-public class UserBorrowingAction extends AbstractService {
+public class UserBorrowingAction extends AbstractService implements SessionAware {
 
+    private UserAccount userSession;
+    private Map<String, Object> session;
     private List<Borrowing> borrowings;
     private Date currentDate;
     private List<Reservation> reservationsUser;
@@ -23,7 +27,7 @@ public class UserBorrowingAction extends AbstractService {
     private List<BorrowingArchive> archives;
 
     public String execute() {
-        UserAccount userSession = (UserAccount) ActionContext.getContext().getSession().get(Constant.USER_SESSION);
+        userSession = (UserAccount) ActionContext.getContext().getSession().get(Constant.USER_SESSION);
 
         Borrowing borrowing = new Borrowing();
         borrowing.setUserId(userSession.getId());
@@ -52,6 +56,23 @@ public class UserBorrowingAction extends AbstractService {
         archives = getManagerFactory().getBorrowingManager().listArchive(archive);
 
         return SUCCESS;
+    }
+
+    public String update() {
+        userSession = (UserAccount) ActionContext.getContext().getSession().get(Constant.USER_SESSION);
+        userSession.setReminder(!userSession.isReminder());
+        session.put(Constant.USER_SESSION, userSession);
+        getManagerFactory().getUserManager().updateUser(userSession);
+
+        return SUCCESS;
+    }
+
+    public UserAccount getUserSession() {
+        return userSession;
+    }
+
+    public void setSession(Map<String, Object> session) {
+        this.session = session;
     }
 
     public List<Borrowing> getBorrowings() {

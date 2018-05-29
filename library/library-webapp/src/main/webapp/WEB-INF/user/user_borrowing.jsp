@@ -12,6 +12,12 @@
 <div class="container">
     <h2 class="mt-md-3">Liste des emprunts de <s:property value="#session.userSession.firstName"/> <s:property value="#session.userSession.lastName"/></h2>
 
+    Recevoir un email de rappel 5 jours calendaires avant la fin d'un de mes prêts ?
+    <a href="<s:url action="user/update/%{#session.userSession.id}"/>">
+        <s:if test="#session.userSession.reminder">Désactiver</s:if>
+        <s:else>Activer</s:else>
+    </a>
+
     <nav class="mt-md-3">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-current-tab" data-toggle="tab" href="#nav-current" role="tab" aria-controls="nav-current" aria-selected="true">En cours</a>
@@ -114,14 +120,18 @@
                                 <s:iterator value="reservationsWork" status="resWork">
                                     <s:iterator value="reservationsWork[#resWork.index]" status="currentList">
                                         <s:if test="#userId == user.id && #workId == work.id && !#breakLoop">
-                                            <s:property value="#currentList.index + 1"/>
+                                            <div class="block-padding">
+                                                <s:property value="#currentList.index + 1"/>
+                                            </div>
                                             <s:set var="breakLoop" value="%{true}"/>
                                         </s:if>
                                     </s:iterator>
                                 </s:iterator>
                             </td>
                             <td>
-                                <a href="<s:url action="reservation/delete/%{id}"/>">annuler la réservation</a>
+                                <div class="block-padding">
+                                    <a href="<s:url action="reservation/delete/%{id}"/>">annuler la réservation</a>
+                                </div>
                             </td>
                         </tr>
                     </s:iterator>

@@ -39,4 +39,10 @@ public class HibernateUser implements UserDaoContract {
             return null;
         }
     }
+
+    @Transactional
+    public void update(UserAccount user) {
+        Optional<UserAccount> optionalUser = userRepository.findById(user.getId());
+        optionalUser.ifPresent(userAccount -> userAccount.setReminder(user.getReminder()));
+    }
 }
