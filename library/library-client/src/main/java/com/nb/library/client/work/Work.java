@@ -14,7 +14,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * <p>Classe Java pour work complex type.
  * 
- * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="work">
@@ -125,7 +125,7 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.
+     * Obtient la valeur de la propriété createdAt.
      * 
      * @return
      *     possible object is
@@ -137,7 +137,7 @@ public class Work {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 createdAt.
+     * Définit la valeur de la propriété createdAt.
      * 
      * @param value
      *     allowed object is
@@ -149,7 +149,7 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 id.
+     * Obtient la valeur de la propriété id.
      * 
      * @return
      *     possible object is
@@ -161,7 +161,7 @@ public class Work {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
+     * Définit la valeur de la propriété id.
      * 
      * @param value
      *     allowed object is
@@ -173,7 +173,7 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 imageURL.
+     * Obtient la valeur de la propriété imageURL.
      * 
      * @return
      *     possible object is
@@ -185,7 +185,7 @@ public class Work {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 imageURL.
+     * Définit la valeur de la propriété imageURL.
      * 
      * @param value
      *     allowed object is
@@ -197,7 +197,7 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 summary.
+     * Obtient la valeur de la propriété summary.
      * 
      * @return
      *     possible object is
@@ -209,7 +209,7 @@ public class Work {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 summary.
+     * Définit la valeur de la propriété summary.
      * 
      * @param value
      *     allowed object is
@@ -221,7 +221,7 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 title.
+     * Obtient la valeur de la propriété title.
      * 
      * @return
      *     possible object is
@@ -233,7 +233,7 @@ public class Work {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 title.
+     * Définit la valeur de la propriété title.
      * 
      * @param value
      *     allowed object is
@@ -245,7 +245,7 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 typeWork.
+     * Obtient la valeur de la propriété typeWork.
      * 
      * @return
      *     possible object is
@@ -257,7 +257,7 @@ public class Work {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 typeWork.
+     * Définit la valeur de la propriété typeWork.
      * 
      * @param value
      *     allowed object is
@@ -269,7 +269,7 @@ public class Work {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 updatedAt.
+     * Obtient la valeur de la propriété updatedAt.
      * 
      * @return
      *     possible object is
@@ -281,7 +281,7 @@ public class Work {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 updatedAt.
+     * Définit la valeur de la propriété updatedAt.
      * 
      * @param value
      *     allowed object is

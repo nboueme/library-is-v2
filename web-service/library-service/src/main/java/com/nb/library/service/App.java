@@ -44,7 +44,7 @@ public class App {
 
         //System.out.println("Nombre d'exemplaires réservés pour l'oeuvre : " + reservationDao.countAllByWorkId(1));
 
-        Borrowing borrowing = new Borrowing();
+        /*Borrowing borrowing = new Borrowing();
         borrowing.setBookId(12);
         borrowing.setUserId(13);
         Book book = new Book();
@@ -57,6 +57,10 @@ public class App {
         borrowing.setLoaned(true);
         borrowing.setExtended(false);
 
-        borrowingDao.save(borrowing);
+        borrowingDao.save(borrowing);*/
+
+        for (Borrowing borrowing : borrowingDao.findAllByUserIsReminder()) {
+            System.out.println(borrowing.getId() + " " + borrowing.getBook().getWork().getTitle());
+        }
     }
 }

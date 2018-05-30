@@ -23,7 +23,7 @@
         <property name="url" value="jdbc:postgresql://localhost:5432/app_library"/>
         <property name="username" value="admin_ocp"/>
         <property name="password" value="Shangri_La"/>
-    </-->
+    </bean-->
 
     <!-- ==== AbstractService ===== -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">

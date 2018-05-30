@@ -26,9 +26,11 @@ public class ObjectFactory {
 
     private final static QName _ListArchive_QNAME = new QName("borrowing.client.library.nb.com", "listArchive");
     private final static QName _FindByBookIdResponse_QNAME = new QName("borrowing.client.library.nb.com", "findByBookIdResponse");
+    private final static QName _FindAllByUserIsReminder_QNAME = new QName("borrowing.client.library.nb.com", "findAllByUserIsReminder");
     private final static QName _ListArchiveResponse_QNAME = new QName("borrowing.client.library.nb.com", "listArchiveResponse");
     private final static QName _DeleteBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "deleteBorrowingResponse");
     private final static QName _ListBorrowingByReturnDateBeforeCurrent_QNAME = new QName("borrowing.client.library.nb.com", "listBorrowingByReturnDateBeforeCurrent");
+    private final static QName _FindAllByUserIsReminderResponse_QNAME = new QName("borrowing.client.library.nb.com", "findAllByUserIsReminderResponse");
     private final static QName _UpdateBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "updateBorrowing");
     private final static QName _AddBorrowingResponse_QNAME = new QName("borrowing.client.library.nb.com", "addBorrowingResponse");
     private final static QName _DeleteBorrowing_QNAME = new QName("borrowing.client.library.nb.com", "deleteBorrowing");
@@ -65,6 +67,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link FindAllByUserIsReminder }
+     * 
+     */
+    public FindAllByUserIsReminder createFindAllByUserIsReminder() {
+        return new FindAllByUserIsReminder();
+    }
+
+    /**
      * Create an instance of {@link ListArchiveResponse }
      * 
      */
@@ -86,6 +96,14 @@ public class ObjectFactory {
      */
     public ListArchive createListArchive() {
         return new ListArchive();
+    }
+
+    /**
+     * Create an instance of {@link FindAllByUserIsReminderResponse }
+     * 
+     */
+    public FindAllByUserIsReminderResponse createFindAllByUserIsReminderResponse() {
+        return new FindAllByUserIsReminderResponse();
     }
 
     /**
@@ -235,6 +253,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindAllByUserIsReminder }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "findAllByUserIsReminder")
+    public JAXBElement<FindAllByUserIsReminder> createFindAllByUserIsReminder(FindAllByUserIsReminder value) {
+        return new JAXBElement<FindAllByUserIsReminder>(_FindAllByUserIsReminder_QNAME, FindAllByUserIsReminder.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListArchiveResponse }{@code >}}
      * 
      */
@@ -259,6 +286,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "listBorrowingByReturnDateBeforeCurrent")
     public JAXBElement<ListBorrowingByReturnDateBeforeCurrent> createListBorrowingByReturnDateBeforeCurrent(ListBorrowingByReturnDateBeforeCurrent value) {
         return new JAXBElement<ListBorrowingByReturnDateBeforeCurrent>(_ListBorrowingByReturnDateBeforeCurrent_QNAME, ListBorrowingByReturnDateBeforeCurrent.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link FindAllByUserIsReminderResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "borrowing.client.library.nb.com", name = "findAllByUserIsReminderResponse")
+    public JAXBElement<FindAllByUserIsReminderResponse> createFindAllByUserIsReminderResponse(FindAllByUserIsReminderResponse value) {
+        return new JAXBElement<FindAllByUserIsReminderResponse>(_FindAllByUserIsReminderResponse_QNAME, FindAllByUserIsReminderResponse.class, null, value);
     }
 
     /**

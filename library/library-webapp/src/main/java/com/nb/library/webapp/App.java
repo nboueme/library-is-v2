@@ -1,5 +1,6 @@
 package com.nb.library.webapp;
 
+import com.nb.library.business.contract.BorrowingManager;
 import com.nb.library.business.contract.ReservationManager;
 import com.nb.library.client.reservation.Reservation;
 import com.nb.library.client.reservation.UserAccount;
@@ -16,6 +17,7 @@ public class App {
     public static void main(String[] args) throws DatatypeConfigurationException {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bootstrapContext.xml");
         ReservationManager reservationManager = applicationContext.getBean("reservationManager", ReservationManager.class);
+        BorrowingManager borrowingManager = applicationContext.getBean("borrowingManager", BorrowingManager.class);
 
         /*Work work = new Work();
         work.setId(1);
@@ -40,6 +42,8 @@ public class App {
 
         reservation.setId(10);
         reservationManager.deleteReservation(reservation);*/
+
+        //System.out.println("Nombre d'exemplaires réservés pour l'oeuvre : " + reservationManager.countReservationsByWork(1));
 
         System.out.println("Nombre d'exemplaires réservés pour l'oeuvre : " + reservationManager.countReservationsByWork(1));
     }

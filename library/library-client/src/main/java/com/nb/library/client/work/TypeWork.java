@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour typeWork complex type.
  * 
- * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="typeWork">
@@ -37,7 +37,7 @@ public class TypeWork {
     protected String type;
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 id.
+     * Obtient la valeur de la propriété id.
      * 
      * @return
      *     possible object is
@@ -49,7 +49,7 @@ public class TypeWork {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
+     * Définit la valeur de la propriété id.
      * 
      * @param value
      *     allowed object is
@@ -61,7 +61,7 @@ public class TypeWork {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 type.
+     * Obtient la valeur de la propriété type.
      * 
      * @return
      *     possible object is
@@ -73,7 +73,7 @@ public class TypeWork {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 type.
+     * Définit la valeur de la propriété type.
      * 
      * @param value
      *     allowed object is

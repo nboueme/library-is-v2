@@ -11,7 +11,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * <p>Classe Java pour reservation complex type.
  * 
- * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="reservation">
@@ -50,7 +50,7 @@ public class Reservation {
     protected Work work;
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 id.
+     * Obtient la valeur de la propriété id.
      * 
      * @return
      *     possible object is
@@ -62,7 +62,7 @@ public class Reservation {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
+     * Définit la valeur de la propriété id.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +74,7 @@ public class Reservation {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 notificationDate.
+     * Obtient la valeur de la propriété notificationDate.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class Reservation {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 notificationDate.
+     * Définit la valeur de la propriété notificationDate.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class Reservation {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 reservationDate.
+     * Obtient la valeur de la propriété reservationDate.
      * 
      * @return
      *     possible object is
@@ -110,7 +110,7 @@ public class Reservation {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 reservationDate.
+     * Définit la valeur de la propriété reservationDate.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +122,7 @@ public class Reservation {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 user.
+     * Obtient la valeur de la propriété user.
      * 
      * @return
      *     possible object is
@@ -134,7 +134,7 @@ public class Reservation {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 user.
+     * Définit la valeur de la propriété user.
      * 
      * @param value
      *     allowed object is
@@ -146,7 +146,7 @@ public class Reservation {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 work.
+     * Obtient la valeur de la propriété work.
      * 
      * @return
      *     possible object is
@@ -158,7 +158,7 @@ public class Reservation {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 work.
+     * Définit la valeur de la propriété work.
      * 
      * @param value
      *     allowed object is

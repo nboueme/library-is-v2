@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour getEditorResponse complex type.
  * 
- * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="getEditorResponse">
@@ -36,7 +36,7 @@ public class GetEditorResponse {
     protected Editor _return;
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 return.
+     * Obtient la valeur de la propriété return.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class GetEditorResponse {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 return.
+     * Définit la valeur de la propriété return.
      * 
      * @param value
      *     allowed object is

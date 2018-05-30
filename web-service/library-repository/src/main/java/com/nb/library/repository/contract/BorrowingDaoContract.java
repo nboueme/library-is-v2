@@ -16,6 +16,8 @@ public interface BorrowingDaoContract {
 
     List<Borrowing> findAllByReturnDateBeforeCurrent();
 
+    List<Borrowing> findAllByUserIsReminder();
+
     Borrowing findByBookId(Borrowing borrowing);
 
     void update(Borrowing borrowing);

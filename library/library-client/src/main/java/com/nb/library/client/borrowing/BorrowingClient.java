@@ -96,6 +96,18 @@ public interface BorrowingClient {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "findAllByUserIsReminder", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.FindAllByUserIsReminder")
+    @ResponseWrapper(localName = "findAllByUserIsReminderResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.FindAllByUserIsReminderResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/findAllByUserIsReminderRequest", output = "borrowing.client.library.nb.com/BorrowingClient/findAllByUserIsReminderResponse")
+    public List<Borrowing> findAllByUserIsReminder();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns com.nb.library.client.borrowing.Borrowing

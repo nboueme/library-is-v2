@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour author complex type.
  * 
- * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="author">
@@ -40,7 +40,7 @@ public class Author {
     protected String lastName;
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 firstName.
+     * Obtient la valeur de la propriété firstName.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class Author {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 firstName.
+     * Définit la valeur de la propriété firstName.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class Author {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 id.
+     * Obtient la valeur de la propriété id.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class Author {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
+     * Définit la valeur de la propriété id.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class Author {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 lastName.
+     * Obtient la valeur de la propriété lastName.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class Author {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 lastName.
+     * Définit la valeur de la propriété lastName.
      * 
      * @param value
      *     allowed object is

@@ -66,6 +66,13 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     }
 
     @Transactional
+    public List<Borrowing> findAllByUserIsReminder() {
+        List<Borrowing> borrowings = new ArrayList<>(0);
+        borrowingRepository.findAllByUserIsReminder().iterator().forEachRemaining(borrowings::add);
+        return borrowings;
+    }
+
+    @Transactional
     public Borrowing findByBookId(Borrowing borrowing) {
         Optional<Borrowing> existingBorrowing = borrowingRepository.findByBookId(borrowing.getBookId());
         return existingBorrowing.orElse(null);

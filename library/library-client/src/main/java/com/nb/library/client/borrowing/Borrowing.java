@@ -11,7 +11,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * <p>Classe Java pour borrowing complex type.
  * 
- * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="borrowing">
@@ -62,7 +62,7 @@ public class Borrowing {
     protected Integer userId;
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 book.
+     * Obtient la valeur de la propriété book.
      * 
      * @return
      *     possible object is
@@ -74,7 +74,7 @@ public class Borrowing {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 book.
+     * Définit la valeur de la propriété book.
      * 
      * @param value
      *     allowed object is
@@ -86,7 +86,7 @@ public class Borrowing {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 bookId.
+     * Obtient la valeur de la propriété bookId.
      * 
      * @return
      *     possible object is
@@ -98,7 +98,7 @@ public class Borrowing {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 bookId.
+     * Définit la valeur de la propriété bookId.
      * 
      * @param value
      *     allowed object is
@@ -110,7 +110,7 @@ public class Borrowing {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 borrowingDate.
+     * Obtient la valeur de la propriété borrowingDate.
      * 
      * @return
      *     possible object is
@@ -122,7 +122,7 @@ public class Borrowing {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 borrowingDate.
+     * Définit la valeur de la propriété borrowingDate.
      * 
      * @param value
      *     allowed object is
@@ -134,7 +134,7 @@ public class Borrowing {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 extended.
+     * Obtient la valeur de la propriété extended.
      * 
      * @return
      *     possible object is
@@ -146,7 +146,7 @@ public class Borrowing {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 extended.
+     * Définit la valeur de la propriété extended.
      * 
      * @param value
      *     allowed object is
@@ -158,7 +158,7 @@ public class Borrowing {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 id.
+     * Obtient la valeur de la propriété id.
      * 
      * @return
      *     possible object is
@@ -170,7 +170,7 @@ public class Borrowing {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
+     * Définit la valeur de la propriété id.
      * 
      * @param value
      *     allowed object is
@@ -182,7 +182,7 @@ public class Borrowing {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 loaned.
+     * Obtient la valeur de la propriété loaned.
      * 
      * @return
      *     possible object is
@@ -194,7 +194,7 @@ public class Borrowing {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 loaned.
+     * Définit la valeur de la propriété loaned.
      * 
      * @param value
      *     allowed object is
@@ -206,7 +206,7 @@ public class Borrowing {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 returnDate.
+     * Obtient la valeur de la propriété returnDate.
      * 
      * @return
      *     possible object is
@@ -218,7 +218,7 @@ public class Borrowing {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 returnDate.
+     * Définit la valeur de la propriété returnDate.
      * 
      * @param value
      *     allowed object is
@@ -230,7 +230,7 @@ public class Borrowing {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 user.
+     * Obtient la valeur de la propriété user.
      * 
      * @return
      *     possible object is
@@ -242,7 +242,7 @@ public class Borrowing {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 user.
+     * Définit la valeur de la propriété user.
      * 
      * @param value
      *     allowed object is
@@ -254,7 +254,7 @@ public class Borrowing {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 userId.
+     * Obtient la valeur de la propriété userId.
      * 
      * @return
      *     possible object is
@@ -266,7 +266,7 @@ public class Borrowing {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 userId.
+     * Définit la valeur de la propriété userId.
      * 
      * @param value
      *     allowed object is

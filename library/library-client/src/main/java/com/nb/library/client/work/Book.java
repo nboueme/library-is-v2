@@ -12,7 +12,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * <p>Classe Java pour book complex type.
  * 
- * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="book">
@@ -57,7 +57,7 @@ public class Book {
     protected Integer year;
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 editor.
+     * Obtient la valeur de la propriété editor.
      * 
      * @return
      *     possible object is
@@ -69,7 +69,7 @@ public class Book {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 editor.
+     * Définit la valeur de la propriété editor.
      * 
      * @param value
      *     allowed object is
@@ -81,7 +81,7 @@ public class Book {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 isbn.
+     * Obtient la valeur de la propriété isbn.
      * 
      * @return
      *     possible object is
@@ -93,7 +93,7 @@ public class Book {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 isbn.
+     * Définit la valeur de la propriété isbn.
      * 
      * @param value
      *     allowed object is
@@ -105,7 +105,7 @@ public class Book {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 id.
+     * Obtient la valeur de la propriété id.
      * 
      * @return
      *     possible object is
@@ -117,7 +117,7 @@ public class Book {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
+     * Définit la valeur de la propriété id.
      * 
      * @param value
      *     allowed object is
@@ -129,7 +129,7 @@ public class Book {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 price.
+     * Obtient la valeur de la propriété price.
      * 
      * @return
      *     possible object is
@@ -141,7 +141,7 @@ public class Book {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 price.
+     * Définit la valeur de la propriété price.
      * 
      * @param value
      *     allowed object is
@@ -153,7 +153,7 @@ public class Book {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 purchaseDate.
+     * Obtient la valeur de la propriété purchaseDate.
      * 
      * @return
      *     possible object is
@@ -165,7 +165,7 @@ public class Book {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 purchaseDate.
+     * Définit la valeur de la propriété purchaseDate.
      * 
      * @param value
      *     allowed object is
@@ -177,7 +177,7 @@ public class Book {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 workId.
+     * Obtient la valeur de la propriété workId.
      * 
      * @return
      *     possible object is
@@ -189,7 +189,7 @@ public class Book {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 workId.
+     * Définit la valeur de la propriété workId.
      * 
      * @param value
      *     allowed object is
@@ -201,7 +201,7 @@ public class Book {
     }
 
     /**
-     * Obtient la valeur de la propri\u00e9t\u00e9 year.
+     * Obtient la valeur de la propriété year.
      * 
      * @return
      *     possible object is
@@ -213,7 +213,7 @@ public class Book {
     }
 
     /**
-     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 year.
+     * Définit la valeur de la propriété year.
      * 
      * @param value
      *     allowed object is

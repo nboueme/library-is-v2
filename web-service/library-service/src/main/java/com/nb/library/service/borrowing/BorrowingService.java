@@ -40,6 +40,11 @@ public class BorrowingService extends AbstractService {
     }
 
     @WebMethod
+    public List<Borrowing> findAllByUserIsReminder() {
+        return contract.findAllByUserIsReminder();
+    }
+
+    @WebMethod
     public Borrowing findByBookId(Borrowing borrowing) {
         return contract.findByBookId(borrowing);
     }
