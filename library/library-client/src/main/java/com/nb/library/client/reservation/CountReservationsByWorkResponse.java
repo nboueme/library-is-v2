@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour countReservationsByWorkResponse complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="countReservationsByWorkResponse">
@@ -36,7 +36,7 @@ public class CountReservationsByWorkResponse {
     protected Integer _return;
 
     /**
-     * Obtient la valeur de la propriété return.
+     * Obtient la valeur de la propri\u00e9t\u00e9 return.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class CountReservationsByWorkResponse {
     }
 
     /**
-     * Définit la valeur de la propriété return.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 return.
      * 
      * @param value
      *     allowed object is

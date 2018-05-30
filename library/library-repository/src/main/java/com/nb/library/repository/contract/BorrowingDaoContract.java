@@ -18,6 +18,8 @@ public interface BorrowingDaoContract {
 
     List<Borrowing> listBorrowingByPeriodsExceeded();
 
+    List<Borrowing> listAllByUserIsReminder();
+
     void updateBorrowing(Borrowing borrowing);
 
     void deleteBorrowing(Borrowing borrowing);

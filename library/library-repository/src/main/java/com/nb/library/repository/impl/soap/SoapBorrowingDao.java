@@ -37,6 +37,10 @@ public class SoapBorrowingDao implements BorrowingDaoContract {
         return client.listBorrowingByReturnDateBeforeCurrent();
     }
 
+    public List<Borrowing> listAllByUserIsReminder() {
+        return client.findAllByUserIsReminder();
+    }
+
     public void updateBorrowing(Borrowing borrowing) {
         client.updateBorrowing(borrowing);
     }

@@ -11,7 +11,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 /**
  * <p>Classe Java pour userAccount complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="userAccount">
@@ -84,7 +84,7 @@ public class UserAccount {
     protected XMLGregorianCalendar updatedAt;
 
     /**
-     * Obtient la valeur de la propriété address.
+     * Obtient la valeur de la propri\u00e9t\u00e9 address.
      * 
      * @return
      *     possible object is
@@ -96,7 +96,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété address.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 address.
      * 
      * @param value
      *     allowed object is
@@ -108,7 +108,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété birthDay.
+     * Obtient la valeur de la propri\u00e9t\u00e9 birthDay.
      * 
      * @return
      *     possible object is
@@ -120,7 +120,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété birthDay.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 birthDay.
      * 
      * @param value
      *     allowed object is
@@ -132,7 +132,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété city.
+     * Obtient la valeur de la propri\u00e9t\u00e9 city.
      * 
      * @return
      *     possible object is
@@ -144,7 +144,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété city.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 city.
      * 
      * @param value
      *     allowed object is
@@ -156,7 +156,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété createdAt.
+     * Obtient la valeur de la propri\u00e9t\u00e9 createdAt.
      * 
      * @return
      *     possible object is
@@ -168,7 +168,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété createdAt.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 createdAt.
      * 
      * @param value
      *     allowed object is
@@ -180,7 +180,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété email.
+     * Obtient la valeur de la propri\u00e9t\u00e9 email.
      * 
      * @return
      *     possible object is
@@ -192,7 +192,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété email.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 email.
      * 
      * @param value
      *     allowed object is
@@ -204,7 +204,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété firstName.
+     * Obtient la valeur de la propri\u00e9t\u00e9 firstName.
      * 
      * @return
      *     possible object is
@@ -216,7 +216,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété firstName.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 firstName.
      * 
      * @param value
      *     allowed object is
@@ -228,7 +228,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété id.
+     * Obtient la valeur de la propri\u00e9t\u00e9 id.
      * 
      * @return
      *     possible object is
@@ -240,7 +240,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété id.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
      * 
      * @param value
      *     allowed object is
@@ -252,7 +252,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété imageURL.
+     * Obtient la valeur de la propri\u00e9t\u00e9 imageURL.
      * 
      * @return
      *     possible object is
@@ -264,7 +264,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété imageURL.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 imageURL.
      * 
      * @param value
      *     allowed object is
@@ -276,7 +276,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété lastName.
+     * Obtient la valeur de la propri\u00e9t\u00e9 lastName.
      * 
      * @return
      *     possible object is
@@ -288,7 +288,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété lastName.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 lastName.
      * 
      * @param value
      *     allowed object is
@@ -300,7 +300,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété password.
+     * Obtient la valeur de la propri\u00e9t\u00e9 password.
      * 
      * @return
      *     possible object is
@@ -312,7 +312,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété password.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 password.
      * 
      * @param value
      *     allowed object is
@@ -324,7 +324,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété phoneNumber.
+     * Obtient la valeur de la propri\u00e9t\u00e9 phoneNumber.
      * 
      * @return
      *     possible object is
@@ -336,7 +336,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété phoneNumber.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 phoneNumber.
      * 
      * @param value
      *     allowed object is
@@ -348,7 +348,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété postalCode.
+     * Obtient la valeur de la propri\u00e9t\u00e9 postalCode.
      * 
      * @return
      *     possible object is
@@ -360,7 +360,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété postalCode.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 postalCode.
      * 
      * @param value
      *     allowed object is
@@ -372,7 +372,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété reminder.
+     * Obtient la valeur de la propri\u00e9t\u00e9 reminder.
      * 
      * @return
      *     possible object is
@@ -384,7 +384,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété reminder.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 reminder.
      * 
      * @param value
      *     allowed object is
@@ -396,7 +396,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété role.
+     * Obtient la valeur de la propri\u00e9t\u00e9 role.
      * 
      * @return
      *     possible object is
@@ -408,7 +408,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété role.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 role.
      * 
      * @param value
      *     allowed object is
@@ -420,7 +420,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété title.
+     * Obtient la valeur de la propri\u00e9t\u00e9 title.
      * 
      * @return
      *     possible object is
@@ -432,7 +432,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété title.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 title.
      * 
      * @param value
      *     allowed object is
@@ -444,7 +444,7 @@ public class UserAccount {
     }
 
     /**
-     * Obtient la valeur de la propriété updatedAt.
+     * Obtient la valeur de la propri\u00e9t\u00e9 updatedAt.
      * 
      * @return
      *     possible object is
@@ -456,7 +456,7 @@ public class UserAccount {
     }
 
     /**
-     * Définit la valeur de la propriété updatedAt.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 updatedAt.
      * 
      * @param value
      *     allowed object is

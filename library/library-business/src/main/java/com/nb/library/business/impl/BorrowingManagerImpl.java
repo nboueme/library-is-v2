@@ -33,6 +33,10 @@ public class BorrowingManagerImpl extends AbstractManager implements BorrowingMa
         return getDaoFactory().getBorrowingDao().listBorrowingByPeriodsExceeded();
     }
 
+    public List<Borrowing> listAllByUserIsReminder() {
+        return getDaoFactory().getBorrowingDao().listAllByUserIsReminder();
+    }
+
     public void updateBorrowing(Borrowing borrowing) {
         getDaoFactory().getBorrowingDao().updateBorrowing(borrowing);
     }

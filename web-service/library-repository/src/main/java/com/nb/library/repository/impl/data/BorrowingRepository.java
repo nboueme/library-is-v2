@@ -18,7 +18,7 @@ public interface BorrowingRepository extends CrudRepository<Borrowing, Integer> 
     @Query("SELECT b FROM borrowing b JOIN FETCH b.user u JOIN FETCH b.book book JOIN FETCH book.work WHERE b.returnDate <= current_date ORDER BY b.returnDate ASC")
     Iterable<Borrowing> findAllByReturnDateBeforeCurrent();
 
-    @Query("SELECT b FROM borrowing b JOIN FETCH b.user u JOIN FETCH b.book book JOIN FETCH book.work WHERE u.isReminder = true AND cast((current_date - b.returnDate) as integer) BETWEEN 0 AND 5 ORDER BY b.returnDate ASC")
+    @Query("SELECT b FROM borrowing b JOIN FETCH b.user u JOIN FETCH b.book book JOIN FETCH book.work WHERE u.isReminder = true AND cast((current_date - b.returnDate) as integer) BETWEEN 0 AND 5 ORDER BY u.email, b.returnDate ASC")
     Iterable<Borrowing> findAllByUserIsReminder();
 
     @Query("SELECT b FROM borrowing b JOIN FETCH b.user u JOIN FETCH b.book book JOIN FETCH book.work WHERE b.bookId = :book_id")

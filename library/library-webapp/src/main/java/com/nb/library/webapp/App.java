@@ -45,6 +45,6 @@ public class App {
 
         //System.out.println("Nombre d'exemplaires réservés pour l'oeuvre : " + reservationManager.countReservationsByWork(1));
 
-        System.out.println("Nombre d'exemplaires réservés pour l'oeuvre : " + reservationManager.countReservationsByWork(1));
+        System.out.println("Taille : " + borrowingManager.listAllByUserIsReminder().size());
     }
 }

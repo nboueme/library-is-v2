@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * <p>Classe Java pour editor complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType name="editor">
@@ -73,7 +73,7 @@ public class Editor {
     }
 
     /**
-     * Obtient la valeur de la propriété id.
+     * Obtient la valeur de la propri\u00e9t\u00e9 id.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class Editor {
     }
 
     /**
-     * Définit la valeur de la propriété id.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 id.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class Editor {
     }
 
     /**
-     * Obtient la valeur de la propriété name.
+     * Obtient la valeur de la propri\u00e9t\u00e9 name.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class Editor {
     }
 
     /**
-     * Définit la valeur de la propriété name.
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 name.
      * 
      * @param value
      *     allowed object is

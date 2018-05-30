@@ -60,7 +60,7 @@ public class App {
         borrowingDao.save(borrowing);*/
 
         for (Borrowing borrowing : borrowingDao.findAllByUserIsReminder()) {
-            System.out.println(borrowing.getId() + " " + borrowing.getBook().getWork().getTitle());
+            System.out.println(borrowing.getUser().getEmail() + " " + borrowing.getReturnDate());
         }
     }
 }

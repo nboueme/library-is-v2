@@ -33,6 +33,21 @@ public interface ReservationClient {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listReservationsByWork", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListReservationsByWork")
+    @ResponseWrapper(localName = "listReservationsByWorkResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListReservationsByWorkResponse")
+    @Action(input = "reservation.client.library.nb.com/ReservationClient/listReservationsByWorkRequest", output = "reservation.client.library.nb.com/ReservationClient/listReservationsByWorkResponse")
+    public List<Reservation> listReservationsByWork(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Work arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<com.nb.library.client.reservation.Reservation>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "listReservationsByUser", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListReservationsByUser")
     @ResponseWrapper(localName = "listReservationsByUserResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListReservationsByUserResponse")
     @Action(input = "reservation.client.library.nb.com/ReservationClient/listReservationsByUserRequest", output = "reservation.client.library.nb.com/ReservationClient/listReservationsByUserResponse")
@@ -78,20 +93,5 @@ public interface ReservationClient {
     public void addReservation(
         @WebParam(name = "arg0", targetNamespace = "")
         Reservation arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.util.List<com.nb.library.client.reservation.Reservation>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listReservationsByWork", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListReservationsByWork")
-    @ResponseWrapper(localName = "listReservationsByWorkResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListReservationsByWorkResponse")
-    @Action(input = "reservation.client.library.nb.com/ReservationClient/listReservationsByWorkRequest", output = "reservation.client.library.nb.com/ReservationClient/listReservationsByWorkResponse")
-    public List<Reservation> listReservationsByWork(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Work arg0);
 
 }
