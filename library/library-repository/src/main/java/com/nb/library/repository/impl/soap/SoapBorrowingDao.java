@@ -29,6 +29,10 @@ public class SoapBorrowingDao implements BorrowingDaoContract {
         return client.listBorrowing(borrowing);
     }
 
+    public List<Borrowing> listBorrowingsByWorkId(Borrowing borrowing) {
+        return client.listBorrowingsByWorkId(borrowing);
+    }
+
     public List<BorrowingArchive> listArchive(BorrowingArchive archive) {
         return client.listArchive(archive);
     }

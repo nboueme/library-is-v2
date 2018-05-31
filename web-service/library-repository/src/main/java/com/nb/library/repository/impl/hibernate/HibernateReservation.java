@@ -62,6 +62,13 @@ public class HibernateReservation implements ReservationDaoContract {
     }
 
     @Transactional
+    public List<Reservation> findAll() {
+        List<Reservation> reservations = new ArrayList<>(0);
+        reservationRepository.findAll().iterator().forEachRemaining(reservations::add);
+        return reservations;
+    }
+
+    @Transactional
     public List<Reservation> findAllByWorkId(Work work) {
         List<Reservation> reservations = new ArrayList<>(0);
         reservationRepository.findAllByWorkId(work.getId()).iterator().forEachRemaining(reservations::add);
@@ -78,6 +85,12 @@ public class HibernateReservation implements ReservationDaoContract {
     @Transactional
     public Integer countAllByWorkId(Integer workId) {
         return reservationRepository.countAllByWorkId(workId);
+    }
+
+    @Transactional
+    public void update(Reservation reservation) {
+        Optional<Reservation> optionalReservation = reservationRepository.findById(reservation.getId());
+        optionalReservation.ifPresent(transientReservation -> transientReservation.setNotificationDate(reservation.getNotificationDate()));
     }
 
     @Transactional

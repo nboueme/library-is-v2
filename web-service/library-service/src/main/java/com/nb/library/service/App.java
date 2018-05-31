@@ -59,8 +59,25 @@ public class App {
 
         borrowingDao.save(borrowing);*/
 
-        for (Borrowing borrowing : borrowingDao.findAllByUserIsReminder()) {
+        /*for (Borrowing borrowing : borrowingDao.findAllByUserIsReminder()) {
             System.out.println(borrowing.getUser().getEmail() + " " + borrowing.getReturnDate());
-        }
+        }*/
+
+        /*Borrowing borrowing = new Borrowing();
+        Book book = new Book();
+        com.nb.library.entity.borrowing.Work work = new com.nb.library.entity.borrowing.Work();
+
+        reservationDao.findAll().iterator().forEachRemaining(reservation -> {
+            //System.out.println(reservation.getWork().getTitle());
+            work.setId(reservation.getWork().getId());
+            book.setWork(work);
+            borrowing.setBook(book);
+            System.out.println(borrowingDao.findBorrowingsByWorkId(borrowing).size());
+        });*/
+
+        Reservation reservation = new Reservation();
+        reservation.setId(15);
+        reservation.setNotificationDate(new Date());
+        reservationDao.update(reservation);
     }
 }

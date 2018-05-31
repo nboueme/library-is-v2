@@ -52,6 +52,13 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     }
 
     @Transactional
+    public List<Borrowing> findBorrowingsByWorkId(Borrowing borrowing) {
+        List<Borrowing> borrowings = new ArrayList<>(0);
+        borrowingRepository.findAllByWorkId(borrowing.getBook().getWork().getId()).iterator().forEachRemaining(borrowings::add);
+        return borrowings;
+    }
+
+    @Transactional
     public List<BorrowingArchive> findArchivesByUserId(BorrowingArchive archive) {
         List<BorrowingArchive> archives = new ArrayList<>(0);
         borrowingArchiveRepository.findAllByUserId(archive.getUserId()).iterator().forEachRemaining(archives::add);

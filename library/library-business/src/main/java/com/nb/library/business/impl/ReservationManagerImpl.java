@@ -14,6 +14,10 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
         getDaoFactory().getReservationDao().addReservation(reservation);
     }
 
+    public List<Reservation> listAllReservations() {
+        return getDaoFactory().getReservationDao().listAllReservations();
+    }
+
     public List<Reservation> listReservationsByWork(Work work) {
         return getDaoFactory().getReservationDao().listReservationsByWork(work);
     }
@@ -24,6 +28,10 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
 
     public Integer countReservationsByWork(Integer workId) {
         return getDaoFactory().getReservationDao().countReservationsByWork(workId);
+    }
+
+    public void update(Reservation reservation) {
+        getDaoFactory().getReservationDao().update(reservation);
     }
 
     public void deleteReservation(Reservation reservation) {

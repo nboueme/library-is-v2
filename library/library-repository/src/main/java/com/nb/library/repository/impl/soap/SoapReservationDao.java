@@ -14,6 +14,10 @@ public class SoapReservationDao implements ReservationDaoContract {
         client.addReservation(reservation);
     }
 
+    public List<Reservation> listAllReservations() {
+        return client.listAllReservations();
+    }
+
     public List<Reservation> listReservationsByWork(Work work) {
         return client.listReservationsByWork(work);
     }
@@ -24,6 +28,10 @@ public class SoapReservationDao implements ReservationDaoContract {
 
     public Integer countReservationsByWork(Integer workId) {
         return client.countReservationsByWork(workId);
+    }
+
+    public void update(Reservation reservation) {
+        client.update(reservation);
     }
 
     public void deleteReservation(Reservation reservation) {

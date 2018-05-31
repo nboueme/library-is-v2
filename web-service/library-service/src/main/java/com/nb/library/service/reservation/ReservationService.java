@@ -21,6 +21,11 @@ public class ReservationService extends AbstractService {
     }
 
     @WebMethod
+    public List<Reservation> listAllReservations() {
+        return contract.findAll();
+    }
+
+    @WebMethod
     public List<Reservation> listReservationsByWork(Work work) {
         return contract.findAllByWorkId(work);
     }
@@ -33,6 +38,11 @@ public class ReservationService extends AbstractService {
     @WebMethod
     public Integer countReservationsByWork(Integer workId) {
         return contract.countAllByWorkId(workId);
+    }
+
+    @WebMethod
+    public void update(Reservation reservation) {
+        contract.update(reservation);
     }
 
     @WebMethod

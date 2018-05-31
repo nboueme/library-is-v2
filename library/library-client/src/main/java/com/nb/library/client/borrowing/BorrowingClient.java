@@ -28,6 +28,18 @@ public interface BorrowingClient {
     /**
      * 
      * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "addBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowing")
+    @ResponseWrapper(localName = "addBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowingResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingResponse")
+    public void addBorrowing(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Borrowing arg0);
+
+    /**
+     * 
+     * @param arg0
      * @return
      *     returns com.nb.library.client.borrowing.Borrowing
      */
@@ -52,6 +64,21 @@ public interface BorrowingClient {
     @ResponseWrapper(localName = "listBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingResponse")
     @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingResponse")
     public List<Borrowing> listBorrowing(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Borrowing arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listBorrowingsByWorkId", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingsByWorkId")
+    @ResponseWrapper(localName = "listBorrowingsByWorkIdResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingsByWorkIdResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByWorkIdRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByWorkIdResponse")
+    public List<Borrowing> listBorrowingsByWorkId(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
 
@@ -130,18 +157,6 @@ public interface BorrowingClient {
     @ResponseWrapper(localName = "deleteBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.DeleteBorrowingResponse")
     @Action(input = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/deleteBorrowingResponse")
     public void deleteBorrowing(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Borrowing arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "addBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowing")
-    @ResponseWrapper(localName = "addBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.AddBorrowingResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/addBorrowingResponse")
-    public void addBorrowing(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
 

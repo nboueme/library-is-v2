@@ -2,6 +2,8 @@ package com.nb.library.webapp;
 
 import com.nb.library.business.contract.BorrowingManager;
 import com.nb.library.business.contract.ReservationManager;
+import com.nb.library.client.borrowing.Book;
+import com.nb.library.client.borrowing.Borrowing;
 import com.nb.library.client.reservation.Reservation;
 import com.nb.library.client.reservation.UserAccount;
 import com.nb.library.client.reservation.Work;
@@ -45,6 +47,18 @@ public class App {
 
         //System.out.println("Nombre d'exemplaires réservés pour l'oeuvre : " + reservationManager.countReservationsByWork(1));
 
-        System.out.println("Taille : " + borrowingManager.listAllByUserIsReminder().size());
+        //System.out.println("Taille : " + borrowingManager.listAllByUserIsReminder().size());
+
+        Borrowing borrowing = new Borrowing();
+        Book book = new Book();
+        com.nb.library.client.borrowing.Work work = new com.nb.library.client.borrowing.Work();
+
+        reservationManager.listAllReservations().iterator().forEachRemaining(reservation -> {
+            //System.out.println(reservation.getWork().getTitle());
+            work.setId(reservation.getWork().getId());
+            book.setWork(work);
+            borrowing.setBook(book);
+            System.out.println(borrowingManager.listBorrowingsByWorkId(borrowing).size());
+        });
     }
 }

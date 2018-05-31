@@ -24,16 +24,20 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _Update_QNAME = new QName("reservation.client.library.nb.com", "update");
     private final static QName _ListReservationsByUser_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByUser");
-    private final static QName _AddReservationResponse_QNAME = new QName("reservation.client.library.nb.com", "addReservationResponse");
-    private final static QName _ListReservationsByUserResponse_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByUserResponse");
     private final static QName _DeleteReservation_QNAME = new QName("reservation.client.library.nb.com", "deleteReservation");
     private final static QName _ListReservationsByWorkResponse_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByWorkResponse");
-    private final static QName _CountReservationsByWork_QNAME = new QName("reservation.client.library.nb.com", "countReservationsByWork");
-    private final static QName _AddReservation_QNAME = new QName("reservation.client.library.nb.com", "addReservation");
+    private final static QName _ListAllReservationsResponse_QNAME = new QName("reservation.client.library.nb.com", "listAllReservationsResponse");
+    private final static QName _ListAllReservations_QNAME = new QName("reservation.client.library.nb.com", "listAllReservations");
     private final static QName _DeleteReservationResponse_QNAME = new QName("reservation.client.library.nb.com", "deleteReservationResponse");
     private final static QName _CountReservationsByWorkResponse_QNAME = new QName("reservation.client.library.nb.com", "countReservationsByWorkResponse");
     private final static QName _ListReservationsByWork_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByWork");
+    private final static QName _UpdateResponse_QNAME = new QName("reservation.client.library.nb.com", "updateResponse");
+    private final static QName _AddReservationResponse_QNAME = new QName("reservation.client.library.nb.com", "addReservationResponse");
+    private final static QName _ListReservationsByUserResponse_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByUserResponse");
+    private final static QName _CountReservationsByWork_QNAME = new QName("reservation.client.library.nb.com", "countReservationsByWork");
+    private final static QName _AddReservation_QNAME = new QName("reservation.client.library.nb.com", "addReservation");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.nb.library.client.reservation
@@ -43,11 +47,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AddReservation }
+     * Create an instance of {@link ListAllReservations }
      * 
      */
-    public AddReservation createAddReservation() {
-        return new AddReservation();
+    public ListAllReservations createListAllReservations() {
+        return new ListAllReservations();
     }
 
     /**
@@ -59,11 +63,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CountReservationsByWork }
+     * Create an instance of {@link ListAllReservationsResponse }
      * 
      */
-    public CountReservationsByWork createCountReservationsByWork() {
-        return new CountReservationsByWork();
+    public ListAllReservationsResponse createListAllReservationsResponse() {
+        return new ListAllReservationsResponse();
     }
 
     /**
@@ -80,6 +84,14 @@ public class ObjectFactory {
      */
     public ListReservationsByWork createListReservationsByWork() {
         return new ListReservationsByWork();
+    }
+
+    /**
+     * Create an instance of {@link Update }
+     * 
+     */
+    public Update createUpdate() {
+        return new Update();
     }
 
     /**
@@ -104,6 +116,30 @@ public class ObjectFactory {
      */
     public ListReservationsByUser createListReservationsByUser() {
         return new ListReservationsByUser();
+    }
+
+    /**
+     * Create an instance of {@link AddReservation }
+     * 
+     */
+    public AddReservation createAddReservation() {
+        return new AddReservation();
+    }
+
+    /**
+     * Create an instance of {@link CountReservationsByWork }
+     * 
+     */
+    public CountReservationsByWork createCountReservationsByWork() {
+        return new CountReservationsByWork();
+    }
+
+    /**
+     * Create an instance of {@link UpdateResponse }
+     * 
+     */
+    public UpdateResponse createUpdateResponse() {
+        return new UpdateResponse();
     }
 
     /**
@@ -155,30 +191,21 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Update }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "update")
+    public JAXBElement<Update> createUpdate(Update value) {
+        return new JAXBElement<Update>(_Update_QNAME, Update.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ListReservationsByUser }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "listReservationsByUser")
     public JAXBElement<ListReservationsByUser> createListReservationsByUser(ListReservationsByUser value) {
         return new JAXBElement<ListReservationsByUser>(_ListReservationsByUser_QNAME, ListReservationsByUser.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddReservationResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "addReservationResponse")
-    public JAXBElement<AddReservationResponse> createAddReservationResponse(AddReservationResponse value) {
-        return new JAXBElement<AddReservationResponse>(_AddReservationResponse_QNAME, AddReservationResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ListReservationsByUserResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "listReservationsByUserResponse")
-    public JAXBElement<ListReservationsByUserResponse> createListReservationsByUserResponse(ListReservationsByUserResponse value) {
-        return new JAXBElement<ListReservationsByUserResponse>(_ListReservationsByUserResponse_QNAME, ListReservationsByUserResponse.class, null, value);
     }
 
     /**
@@ -200,21 +227,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CountReservationsByWork }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListAllReservationsResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "countReservationsByWork")
-    public JAXBElement<CountReservationsByWork> createCountReservationsByWork(CountReservationsByWork value) {
-        return new JAXBElement<CountReservationsByWork>(_CountReservationsByWork_QNAME, CountReservationsByWork.class, null, value);
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "listAllReservationsResponse")
+    public JAXBElement<ListAllReservationsResponse> createListAllReservationsResponse(ListAllReservationsResponse value) {
+        return new JAXBElement<ListAllReservationsResponse>(_ListAllReservationsResponse_QNAME, ListAllReservationsResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AddReservation }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListAllReservations }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "addReservation")
-    public JAXBElement<AddReservation> createAddReservation(AddReservation value) {
-        return new JAXBElement<AddReservation>(_AddReservation_QNAME, AddReservation.class, null, value);
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "listAllReservations")
+    public JAXBElement<ListAllReservations> createListAllReservations(ListAllReservations value) {
+        return new JAXBElement<ListAllReservations>(_ListAllReservations_QNAME, ListAllReservations.class, null, value);
     }
 
     /**
@@ -242,6 +269,51 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "listReservationsByWork")
     public JAXBElement<ListReservationsByWork> createListReservationsByWork(ListReservationsByWork value) {
         return new JAXBElement<ListReservationsByWork>(_ListReservationsByWork_QNAME, ListReservationsByWork.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "updateResponse")
+    public JAXBElement<UpdateResponse> createUpdateResponse(UpdateResponse value) {
+        return new JAXBElement<UpdateResponse>(_UpdateResponse_QNAME, UpdateResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddReservationResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "addReservationResponse")
+    public JAXBElement<AddReservationResponse> createAddReservationResponse(AddReservationResponse value) {
+        return new JAXBElement<AddReservationResponse>(_AddReservationResponse_QNAME, AddReservationResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ListReservationsByUserResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "listReservationsByUserResponse")
+    public JAXBElement<ListReservationsByUserResponse> createListReservationsByUserResponse(ListReservationsByUserResponse value) {
+        return new JAXBElement<ListReservationsByUserResponse>(_ListReservationsByUserResponse_QNAME, ListReservationsByUserResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link CountReservationsByWork }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "countReservationsByWork")
+    public JAXBElement<CountReservationsByWork> createCountReservationsByWork(CountReservationsByWork value) {
+        return new JAXBElement<CountReservationsByWork>(_CountReservationsByWork_QNAME, CountReservationsByWork.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddReservation }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "addReservation")
+    public JAXBElement<AddReservation> createAddReservation(AddReservation value) {
+        return new JAXBElement<AddReservation>(_AddReservation_QNAME, AddReservation.class, null, value);
     }
 
 }

@@ -30,6 +30,11 @@ public class BorrowingService extends AbstractService {
     }
 
     @WebMethod
+    public List<Borrowing> listBorrowingsByWorkId(Borrowing borrowing) {
+        return contract.findBorrowingsByWorkId(borrowing);
+    }
+
+    @WebMethod
     public List<BorrowingArchive> listArchive(BorrowingArchive archive) {
         return contract.findArchivesByUserId(archive);
     }

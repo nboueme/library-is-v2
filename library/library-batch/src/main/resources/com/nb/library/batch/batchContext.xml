@@ -24,8 +24,8 @@
     </bean>
 
     <!-- ==== External properties file ===== -->
-    <context:property-placeholder location="file://#{systemProperties['user.home']}/Documents/java/javaee/library-is-v2/docker/batch/app/batch.properties"/>
-    <!--context:property-placeholder location="file:///app/batch.properties"/-->
+    <!--context:property-placeholder location="file://#{systemProperties['user.home']}/Documents/java/javaee/library-is-v2/docker/batch/app/batch.properties"/-->
+    <context:property-placeholder location="file:///app/batch.properties"/>
 
     <!-- ==== JavaMailSender configuration ===== -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
@@ -61,8 +61,7 @@
             <batch:tasklet ref="fiveDaysTasklet"/>
         </batch:step>
         <batch:step id="jobStep2" next="jobStep3">
-            <!--batch:tasklet ref="batchTasklet"/-->
-            <batch:tasklet ref="reservationTasklet"/>
+            <batch:tasklet ref="batchTasklet"/>
         </batch:step>
         <batch:step id="jobStep3">
             <batch:tasklet ref="reservationTasklet"/>

@@ -27,6 +27,18 @@ public interface ReservationClient {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<com.nb.library.client.reservation.Reservation>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listAllReservations", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListAllReservations")
+    @ResponseWrapper(localName = "listAllReservationsResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListAllReservationsResponse")
+    @Action(input = "reservation.client.library.nb.com/ReservationClient/listAllReservationsRequest", output = "reservation.client.library.nb.com/ReservationClient/listAllReservationsResponse")
+    public List<Reservation> listAllReservations();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns java.util.List<com.nb.library.client.reservation.Reservation>
@@ -91,6 +103,18 @@ public interface ReservationClient {
     @ResponseWrapper(localName = "addReservationResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.AddReservationResponse")
     @Action(input = "reservation.client.library.nb.com/ReservationClient/addReservationRequest", output = "reservation.client.library.nb.com/ReservationClient/addReservationResponse")
     public void addReservation(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Reservation arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
+    @RequestWrapper(localName = "update", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.Update")
+    @ResponseWrapper(localName = "updateResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.UpdateResponse")
+    @Action(input = "reservation.client.library.nb.com/ReservationClient/updateRequest", output = "reservation.client.library.nb.com/ReservationClient/updateResponse")
+    public void update(
         @WebParam(name = "arg0", targetNamespace = "")
         Reservation arg0);
 

@@ -9,11 +9,15 @@ import java.util.List;
 public interface ReservationManager {
     void addReservation(Reservation reservation);
 
+    List<Reservation> listAllReservations();
+
     List<Reservation> listReservationsByWork(Work work);
 
     List<Reservation> listReservationsByUser(UserAccount user);
 
     Integer countReservationsByWork(Integer workId);
+
+    void update(Reservation reservation);
 
     void deleteReservation(Reservation reservation);
 }

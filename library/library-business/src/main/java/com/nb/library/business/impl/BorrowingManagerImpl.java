@@ -25,6 +25,10 @@ public class BorrowingManagerImpl extends AbstractManager implements BorrowingMa
         return getDaoFactory().getBorrowingDao().listBorrowing(borrowing);
     }
 
+    public List<Borrowing> listBorrowingsByWorkId(Borrowing borrowing) {
+        return getDaoFactory().getBorrowingDao().listBorrowingsByWorkId(borrowing);
+    }
+
     public List<BorrowingArchive> listArchive(BorrowingArchive archive) {
         return getDaoFactory().getBorrowingDao().listArchive(archive);
     }

@@ -9,11 +9,15 @@ import java.util.List;
 public interface ReservationDaoContract {
     void save(Reservation reservation);
 
+    List<Reservation> findAll();
+
     List<Reservation> findAllByWorkId(Work work);
 
     List<Reservation> findAllByUserId(UserAccount user);
 
     Integer countAllByWorkId(Integer workId);
+
+    void update(Reservation reservation);
 
     void delete(Reservation reservation);
 }

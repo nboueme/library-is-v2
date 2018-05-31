@@ -14,6 +14,8 @@ public interface BorrowingDaoContract {
 
     List<Borrowing> listBorrowing(Borrowing borrowing);
 
+    List<Borrowing> listBorrowingsByWorkId(Borrowing borrowing);
+
     List<BorrowingArchive> listArchive(BorrowingArchive archive);
 
     List<Borrowing> listBorrowingByPeriodsExceeded();
