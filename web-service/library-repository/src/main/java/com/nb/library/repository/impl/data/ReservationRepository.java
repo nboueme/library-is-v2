@@ -5,7 +5,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Optional;
+
 public interface ReservationRepository extends CrudRepository<Reservation, Integer> {
+
+    @Query("SELECT r FROM reservation r JOIN FETCH r.work w JOIN FETCH r.user u JOIN FETCH w.books b WHERE u.id = :user_id AND w.id = :work_id")
+    Optional<Reservation> findByUserIdAndWorkId(@Param("user_id") Integer userId, @Param("work_id") Integer workId);
 
     @Query("SELECT DISTINCT r FROM reservation r JOIN FETCH r.work w JOIN FETCH r.user u JOIN FETCH w.books b ORDER BY w.id, r.reservationDate ASC")
     Iterable<Reservation> findAll();

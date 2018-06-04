@@ -17,7 +17,7 @@ public interface ReservationDaoContract {
 
     Integer countAllByWorkId(Integer workId);
 
-    void update(Reservation reservation);
+    void updateNotificationDate(Reservation reservation);
 
     void delete(Reservation reservation);
 }

@@ -30,11 +30,13 @@ public class HibernateReservation implements ReservationDaoContract {
     public void save(Reservation reservation) {
         // Il n’est pas possible pour un usager de réserver une oeuvre qu’il a déjà en cours d’emprunt
         for (Borrowing borrowing : borrowingRepository.findAllByUserId(reservation.getUser().getId())) {
-            if (borrowing.getBook().getWork().getId().equals(reservation.getWork().getId())) {
-                System.out.println("Oeuvre " + borrowing.getBook().getWork().getId() + " déjà en cours d'emprunt par l'utilisateur " + borrowing.getUser().getId() + ".");
-                return;
-            }
+            if (borrowing.getBook().getWork().getId().equals(reservation.getWork().getId())) return;
         }
+
+        // Empêcher un utilisateur de réserver une oeuvre qu’il a déjà en cours de réservation
+        Optional<Reservation> optionalReservation = reservationRepository.findByUserIdAndWorkId(reservation.getUser().getId(), reservation.getWork().getId());
+        if (optionalReservation.isPresent()) return;
+
 
         // Vérification de l'existance de l'oeuvre en question et définition de la taille maximale de la liste
         Optional<com.nb.library.entity.work.Work> work = workRepository.findById(reservation.getWork().getId());
@@ -55,9 +57,6 @@ public class HibernateReservation implements ReservationDaoContract {
         // 2x le nombre d’exemplaires de l’oeuvre
         if (reservationList.size() < maxListSize) {
             reservationRepository.save(reservation);
-        }
-        else {
-            System.out.println("La liste de réservations pour l'oeuvre " + reservation.getWork().getId() + " ne peut exceder " + maxListSize + " exemplaires.");
         }
     }
 
@@ -88,7 +87,7 @@ public class HibernateReservation implements ReservationDaoContract {
     }
 
     @Transactional
-    public void update(Reservation reservation) {
+    public void updateNotificationDate(Reservation reservation) {
         Optional<Reservation> optionalReservation = reservationRepository.findById(reservation.getId());
         optionalReservation.ifPresent(transientReservation -> transientReservation.setNotificationDate(reservation.getNotificationDate()));
     }

@@ -41,8 +41,8 @@ public class ReservationService extends AbstractService {
     }
 
     @WebMethod
-    public void update(Reservation reservation) {
-        contract.update(reservation);
+    public void updateNotificationDate(Reservation reservation) {
+        contract.updateNotificationDate(reservation);
     }
 
     @WebMethod
