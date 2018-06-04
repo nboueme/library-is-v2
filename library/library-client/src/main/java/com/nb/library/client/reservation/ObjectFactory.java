@@ -24,7 +24,6 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Update_QNAME = new QName("reservation.client.library.nb.com", "update");
     private final static QName _ListReservationsByUser_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByUser");
     private final static QName _DeleteReservation_QNAME = new QName("reservation.client.library.nb.com", "deleteReservation");
     private final static QName _ListReservationsByWorkResponse_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByWorkResponse");
@@ -33,7 +32,8 @@ public class ObjectFactory {
     private final static QName _DeleteReservationResponse_QNAME = new QName("reservation.client.library.nb.com", "deleteReservationResponse");
     private final static QName _CountReservationsByWorkResponse_QNAME = new QName("reservation.client.library.nb.com", "countReservationsByWorkResponse");
     private final static QName _ListReservationsByWork_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByWork");
-    private final static QName _UpdateResponse_QNAME = new QName("reservation.client.library.nb.com", "updateResponse");
+    private final static QName _UpdateNotificationDateResponse_QNAME = new QName("reservation.client.library.nb.com", "updateNotificationDateResponse");
+    private final static QName _UpdateNotificationDate_QNAME = new QName("reservation.client.library.nb.com", "updateNotificationDate");
     private final static QName _AddReservationResponse_QNAME = new QName("reservation.client.library.nb.com", "addReservationResponse");
     private final static QName _ListReservationsByUserResponse_QNAME = new QName("reservation.client.library.nb.com", "listReservationsByUserResponse");
     private final static QName _CountReservationsByWork_QNAME = new QName("reservation.client.library.nb.com", "countReservationsByWork");
@@ -87,14 +87,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Update }
-     * 
-     */
-    public Update createUpdate() {
-        return new Update();
-    }
-
-    /**
      * Create an instance of {@link DeleteReservation }
      * 
      */
@@ -135,11 +127,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UpdateResponse }
+     * Create an instance of {@link UpdateNotificationDate }
      * 
      */
-    public UpdateResponse createUpdateResponse() {
-        return new UpdateResponse();
+    public UpdateNotificationDate createUpdateNotificationDate() {
+        return new UpdateNotificationDate();
+    }
+
+    /**
+     * Create an instance of {@link UpdateNotificationDateResponse }
+     * 
+     */
+    public UpdateNotificationDateResponse createUpdateNotificationDateResponse() {
+        return new UpdateNotificationDateResponse();
     }
 
     /**
@@ -188,15 +188,6 @@ public class ObjectFactory {
      */
     public Reservation createReservation() {
         return new Reservation();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Update }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "update")
-    public JAXBElement<Update> createUpdate(Update value) {
-        return new JAXBElement<Update>(_Update_QNAME, Update.class, null, value);
     }
 
     /**
@@ -272,12 +263,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateNotificationDateResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "updateResponse")
-    public JAXBElement<UpdateResponse> createUpdateResponse(UpdateResponse value) {
-        return new JAXBElement<UpdateResponse>(_UpdateResponse_QNAME, UpdateResponse.class, null, value);
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "updateNotificationDateResponse")
+    public JAXBElement<UpdateNotificationDateResponse> createUpdateNotificationDateResponse(UpdateNotificationDateResponse value) {
+        return new JAXBElement<UpdateNotificationDateResponse>(_UpdateNotificationDateResponse_QNAME, UpdateNotificationDateResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateNotificationDate }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "reservation.client.library.nb.com", name = "updateNotificationDate")
+    public JAXBElement<UpdateNotificationDate> createUpdateNotificationDate(UpdateNotificationDate value) {
+        return new JAXBElement<UpdateNotificationDate>(_UpdateNotificationDate_QNAME, UpdateNotificationDate.class, null, value);
     }
 
     /**

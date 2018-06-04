@@ -17,7 +17,7 @@ public interface ReservationManager {
 
     Integer countReservationsByWork(Integer workId);
 
-    void update(Reservation reservation);
+    void updateNotificationDate(Reservation reservation);
 
     void deleteReservation(Reservation reservation);
 }

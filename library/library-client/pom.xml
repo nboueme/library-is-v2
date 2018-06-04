@@ -53,15 +53,6 @@
                         <wsdlUrl>http://web-service:8080/library/UserService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/WorkService?wsdl</wsdlUrl>
                     </wsdlUrls>
-                    <!--wsdlUrls>
-                        <wsdlUrl>http://localhost:8081/library/AuthorService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8081/library/BorrowingService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8081/library/EditorService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8081/library/ReservationService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8081/library/TypeWorkService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8081/library/UserService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8081/library/WorkService?wsdl</wsdlUrl>
-                    </wsdlUrls-->
                 </configuration>
             </plugin>
         </plugins>

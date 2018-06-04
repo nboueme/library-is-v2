@@ -60,7 +60,7 @@ public class ReservationTasklet extends AbstractService implements Tasklet {
             if (reservation.getWork().getBooks().size() != getManagerFactory().getBorrowingManager().listBorrowingsByWorkId(borrowing).size()) {
                 if (reservation.getNotificationDate() == null) {
                     reservation.setNotificationDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar));
-                    getManagerFactory().getReservationManager().update(reservation);
+                    getManagerFactory().getReservationManager().updateNotificationDate(reservation);
 
                     sendEmail(reservation);
                 }
@@ -74,7 +74,7 @@ public class ReservationTasklet extends AbstractService implements Tasklet {
 
                         Reservation reservationToUpdate = getManagerFactory().getReservationManager().listReservationsByWork(workReservation).get(0);
                         reservationToUpdate.setNotificationDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar));
-                        getManagerFactory().getReservationManager().update(reservationToUpdate);
+                        getManagerFactory().getReservationManager().updateNotificationDate(reservationToUpdate);
 
                         sendEmail(reservationToUpdate);
                     }

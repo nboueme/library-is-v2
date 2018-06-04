@@ -87,6 +87,18 @@ public interface ReservationClient {
      * @param arg0
      */
     @WebMethod
+    @RequestWrapper(localName = "updateNotificationDate", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.UpdateNotificationDate")
+    @ResponseWrapper(localName = "updateNotificationDateResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.UpdateNotificationDateResponse")
+    @Action(input = "reservation.client.library.nb.com/ReservationClient/updateNotificationDateRequest", output = "reservation.client.library.nb.com/ReservationClient/updateNotificationDateResponse")
+    public void updateNotificationDate(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Reservation arg0);
+
+    /**
+     * 
+     * @param arg0
+     */
+    @WebMethod
     @RequestWrapper(localName = "deleteReservation", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.DeleteReservation")
     @ResponseWrapper(localName = "deleteReservationResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.DeleteReservationResponse")
     @Action(input = "reservation.client.library.nb.com/ReservationClient/deleteReservationRequest", output = "reservation.client.library.nb.com/ReservationClient/deleteReservationResponse")
@@ -103,18 +115,6 @@ public interface ReservationClient {
     @ResponseWrapper(localName = "addReservationResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.AddReservationResponse")
     @Action(input = "reservation.client.library.nb.com/ReservationClient/addReservationRequest", output = "reservation.client.library.nb.com/ReservationClient/addReservationResponse")
     public void addReservation(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Reservation arg0);
-
-    /**
-     * 
-     * @param arg0
-     */
-    @WebMethod
-    @RequestWrapper(localName = "update", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.Update")
-    @ResponseWrapper(localName = "updateResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.UpdateResponse")
-    @Action(input = "reservation.client.library.nb.com/ReservationClient/updateRequest", output = "reservation.client.library.nb.com/ReservationClient/updateResponse")
-    public void update(
         @WebParam(name = "arg0", targetNamespace = "")
         Reservation arg0);
 

@@ -30,8 +30,8 @@ public class SoapReservationDao implements ReservationDaoContract {
         return client.countReservationsByWork(workId);
     }
 
-    public void update(Reservation reservation) {
-        client.update(reservation);
+    public void updateNotificationDate(Reservation reservation) {
+        client.updateNotificationDate(reservation);
     }
 
     public void deleteReservation(Reservation reservation) {
