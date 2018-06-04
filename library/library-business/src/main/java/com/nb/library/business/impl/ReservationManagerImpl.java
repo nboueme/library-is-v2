@@ -6,6 +6,7 @@ import com.nb.library.client.reservation.Reservation;
 import com.nb.library.client.reservation.UserAccount;
 import com.nb.library.client.reservation.Work;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReservationManagerImpl extends AbstractManager implements ReservationManager {
@@ -15,7 +16,24 @@ public class ReservationManagerImpl extends AbstractManager implements Reservati
     }
 
     public List<Reservation> listAllReservations() {
-        return getDaoFactory().getReservationDao().listAllReservations();
+        List<Reservation> reservations = getDaoFactory().getReservationDao().listAllReservations();
+        List<Reservation> distinctReservations = new ArrayList<>(0);
+
+        Integer workId = 0;
+
+        for (Reservation reservation : reservations) {
+            if (workId.equals(0)) {
+                workId = reservation.getWork().getId();
+                distinctReservations.add(reservation);
+            }
+
+            if (!workId.equals(reservation.getWork().getId())) {
+                workId = reservation.getWork().getId();
+                distinctReservations.add(reservation);
+            }
+        }
+
+        return distinctReservations;
     }
 
     public List<Reservation> listReservationsByWork(Work work) {

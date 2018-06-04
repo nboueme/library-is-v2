@@ -28,22 +28,7 @@ public class ReservationTasklet extends AbstractService implements Tasklet {
 
     @Override
     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-        List<Reservation> reservations = getManagerFactory().getReservationManager().listAllReservations();
-        List<Reservation> distinctReservations = new ArrayList<>(0);
-
-        Integer workId = 0;
-
-        for (Reservation reservation : reservations) {
-            if (workId.equals(0)) {
-                workId = reservation.getWork().getId();
-                distinctReservations.add(reservation);
-            }
-
-            if (!workId.equals(reservation.getWork().getId())) {
-                workId = reservation.getWork().getId();
-                distinctReservations.add(reservation);
-            }
-        }
+        List<Reservation> distinctReservations = getManagerFactory().getReservationManager().listAllReservations();
 
         LocalDate currentDate = LocalDate.now();
         LocalDate notificationDate;
@@ -72,11 +57,13 @@ public class ReservationTasklet extends AbstractService implements Tasklet {
                         com.nb.library.client.reservation.Work workReservation = new com.nb.library.client.reservation.Work();
                         workReservation.setId(reservation.getWork().getId());
 
-                        Reservation reservationToUpdate = getManagerFactory().getReservationManager().listReservationsByWork(workReservation).get(0);
-                        reservationToUpdate.setNotificationDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar));
-                        getManagerFactory().getReservationManager().updateNotificationDate(reservationToUpdate);
-
-                        sendEmail(reservationToUpdate);
+                        List<Reservation> reservationsWork = getManagerFactory().getReservationManager().listReservationsByWork(workReservation);
+                        if (reservationsWork.size() > 0) {
+                            Reservation reservationToUpdate = reservationsWork.get(0);
+                            reservationToUpdate.setNotificationDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar));
+                            getManagerFactory().getReservationManager().updateNotificationDate(reservationToUpdate);
+                            sendEmail(reservationToUpdate);
+                        }
                     }
                 }
             }
