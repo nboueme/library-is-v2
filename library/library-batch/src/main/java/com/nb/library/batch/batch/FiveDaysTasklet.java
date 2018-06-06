@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 
@@ -23,49 +24,10 @@ public class FiveDaysTasklet extends AbstractService implements Tasklet {
 
     @Override
     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-        List<Borrowing> borrowings = getManagerFactory().getBorrowingManager().listBorrowingsByUserIsReminder();
-        List<Borrowing> userBorrowings = new ArrayList<>(0);
-
-        String currentUserEmail = "";
-
-        for (Borrowing borrowing : borrowings) {
-            String email = borrowing.getUser().getEmail();
-
-            if (currentUserEmail.equals("")) {
-                currentUserEmail = email;
-            }
-
-            if (currentUserEmail.equals(email)) {
-                userBorrowings.add(borrowing);
-            }
-            else if (!currentUserEmail.equals(email)) {
-                if (checkDaysBetween(userBorrowings)) {
-                    sendEmail(userBorrowings);
-                }
-                userBorrowings.clear();
-                userBorrowings.add(borrowing);
-
-                currentUserEmail = email;
-            }
-        }
-
-        if (checkDaysBetween(userBorrowings)) {
-            sendEmail(userBorrowings);
-        }
+        Map<String, List<Borrowing>> borrowings = getManagerFactory().getBorrowingManager().listBorrowingsByUserIsReminder();
+        borrowings.entrySet().iterator().forEachRemaining(userBorrowings -> sendEmail(userBorrowings.getValue()));
 
         return RepeatStatus.FINISHED;
-    }
-
-    private boolean checkDaysBetween(List<Borrowing> userBorrowings) {
-        LocalDate currentDate = LocalDate.now();
-        LocalDate returnDate;
-
-        for (Borrowing borrowing : userBorrowings) {
-            returnDate = LocalDate.from(borrowing.getReturnDate().toGregorianCalendar().toZonedDateTime().toLocalDate());
-            if (DAYS.between(returnDate, currentDate) == 5) return true;
-        }
-
-        return false;
     }
 
     private void sendEmail(List<Borrowing> userBorrowings) {

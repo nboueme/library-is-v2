@@ -4,6 +4,7 @@ import com.nb.library.client.borrowing.Borrowing;
 import com.nb.library.client.borrowing.BorrowingArchive;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BorrowingManager {
     void addBorrowing(Borrowing borrowing);
@@ -20,7 +21,7 @@ public interface BorrowingManager {
 
     List<Borrowing> listBorrowingByPeriodsExceeded();
 
-    List<Borrowing> listBorrowingsByUserIsReminder();
+    Map<String, List<Borrowing>> listBorrowingsByUserIsReminder();
 
     void updateBorrowing(Borrowing borrowing);
 
