@@ -1,5 +1,5 @@
 
-package com.nb.library.client.borrowing;
+package com.nb.library.client.reservation;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour getBorrowingResponse complex type.
+ * <p>Classe Java pour countReservationsByWorkResponse complex type.
  * 
  * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="getBorrowingResponse">
+ * &lt;complexType name="countReservationsByWorkResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{borrowing.client.library.nb.com}borrowing" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,23 +27,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getBorrowingResponse", propOrder = {
+@XmlType(name = "countReservationsByWorkResponse", propOrder = {
     "_return"
 })
-public class GetBorrowingResponse {
+public class CountReservationsByWorkResponse {
 
     @XmlElement(name = "return")
-    protected Borrowing _return;
+    protected Integer _return;
 
     /**
      * Obtient la valeur de la propri\u00e9t\u00e9 return.
      * 
      * @return
      *     possible object is
-     *     {@link Borrowing }
+     *     {@link Integer }
      *     
      */
-    public Borrowing getReturn() {
+    public Integer getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class GetBorrowingResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Borrowing }
+     *     {@link Integer }
      *     
      */
-    public void setReturn(Borrowing value) {
+    public void setReturn(Integer value) {
         this._return = value;
     }
 

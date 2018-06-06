@@ -28,6 +28,14 @@ public class ManagerFactory {
         this.editorManager = editorManager;
     }
 
+    private ReservationManager reservationManager;
+    public ReservationManager getReservationManager() {
+        return reservationManager;
+    }
+    public void setReservationManager(ReservationManager reservationManager) {
+        this.reservationManager = reservationManager;
+    }
+
     private TypeWorkManager typeWorkManager;
     public TypeWorkManager getTypeWorkManager() {
         return typeWorkManager;

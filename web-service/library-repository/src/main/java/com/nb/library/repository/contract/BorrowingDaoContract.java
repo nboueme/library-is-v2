@@ -12,9 +12,13 @@ public interface BorrowingDaoContract {
 
     List<Borrowing> findBorrowingsByUserId(Borrowing borrowing);
 
+    List<Borrowing> findBorrowingsByWorkId(Borrowing borrowing);
+
     List<BorrowingArchive> findArchivesByUserId(BorrowingArchive archive);
 
     List<Borrowing> findAllByReturnDateBeforeCurrent();
+
+    List<Borrowing> findAllByUserIsReminder();
 
     Borrowing findByBookId(Borrowing borrowing);
 

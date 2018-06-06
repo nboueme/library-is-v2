@@ -51,6 +51,21 @@
         </action>
     </package>
 
+    <!-- ==== Reservation ===== -->
+    <package name="reservation" namespace="/" extends="struts-default">
+        <action name="reservation/add/*" class="com.nb.library.webapp.action.reservation.ReservationAction" method="addReservation">
+            <param name="work.id">{1}</param>
+            <result name="success" type="redirect">work/{1}</result>
+            <result name="login" type="redirect">borrowing</result>
+        </action>
+
+        <action name="reservation/delete/*" class="com.nb.library.webapp.action.reservation.ReservationAction" method="deleteReservation">
+            <param name="reservation.id">{1}</param>
+            <result name="success" type="redirect">borrowing</result>
+            <result name="login" type="redirect">borrowing</result>
+        </action>
+    </package>
+
     <!-- ==== Type ===== -->
     <package name="type" namespace="/" extends="struts-default">
         <action name="type" class="com.nb.library.webapp.action.type.TypeAction" method="execute">
@@ -87,6 +102,11 @@
             <interceptor-ref name="secureStack"/>
             <result name="success">/WEB-INF/user/user_borrowing.jsp</result>
             <result name="login">/WEB-INF/user/login.jsp</result>
+        </action>
+
+        <action name="user/update/*" class="com.nb.library.webapp.action.user.UserBorrowingAction" method="update">
+            <param name="userSession.id">{1}</param>
+            <result name="success" type="redirect">borrowing</result>
         </action>
     </package>
 

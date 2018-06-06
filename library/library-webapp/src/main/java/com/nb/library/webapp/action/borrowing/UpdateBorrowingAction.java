@@ -23,7 +23,7 @@ public class UpdateBorrowingAction extends AbstractService {
 
 
         borrowing.setUserId(userSession.getId());
-        Borrowing existingBorrowing = getManagerFactory().getBorrowingManager().getBorrowing(borrowing);
+        Borrowing existingBorrowing = getManagerFactory().getBorrowingManager().getBorrowingByIdAndUserId(borrowing);
 
         GregorianCalendar calendar = existingBorrowing.getReturnDate().toGregorianCalendar();
         calendar.add(Calendar.WEEK_OF_MONTH, 4);

@@ -24,8 +24,8 @@
     </bean>
 
     <!-- ==== External properties file ===== -->
+    <!--context:property-placeholder location="file://#{systemProperties['user.home']}/Documents/java/javaee/library-is-v2/docker/batch/app/batch.properties"/-->
     <context:property-placeholder location="file:///app/batch.properties"/>
-    <!--context:property-placeholder location="file:///Users/nicolasboueme/Documents/java/javaee/library-is/docker/batch/app/batch.properties"/-->
 
     <!-- ==== JavaMailSender configuration ===== -->
     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
@@ -51,18 +51,26 @@
 
     <!-- ==== Batch beans ===== -->
     <bean id="batchTasklet" class="com.nb.library.batch.batch.BatchTasklet"/>
+    <bean id="fiveDaysTasklet" class="com.nb.library.batch.batch.FiveDaysTasklet"/>
+    <bean id="reservationTasklet" class="com.nb.library.batch.batch.ReservationTasklet"/>
     <bean id="batchLauncher" class="com.nb.library.batch.batch.BatchLauncher"/>
 
     <!-- ==== Batch job ===== -->
     <batch:job id="scheduledJob">
-        <batch:step id="jobStep">
+        <batch:step id="jobStep1" next="jobStep2">
+            <batch:tasklet ref="fiveDaysTasklet"/>
+        </batch:step>
+        <batch:step id="jobStep2" next="jobStep3">
             <batch:tasklet ref="batchTasklet"/>
+        </batch:step>
+        <batch:step id="jobStep3">
+            <batch:tasklet ref="reservationTasklet"/>
         </batch:step>
     </batch:job>
 
     <!-- ==== Batch scheduler ===== -->
     <task:scheduled-tasks>
-        <task:scheduled ref="batchLauncher" method="run" fixed-delay="${batch.delay}"/>
+        <task:scheduled ref="batchLauncher" method="run" fixed-delay="300000"/>
         <!--task:scheduled ref="batchLauncher" method="run" cron="${batch.cron}"/-->
     </task:scheduled-tasks>
 </beans>

@@ -17,16 +17,20 @@ public class SoapBorrowingDao implements BorrowingDaoContract {
         client.addBorrowing(borrowing);
     }
 
-    public Borrowing getBorrowing(Borrowing borrowing) {
-        return client.getBorrowing(borrowing);
+    public Borrowing getBorrowingByIdAndUserId(Borrowing borrowing) {
+        return client.getBorrowingByIdAndUserId(borrowing);
     }
 
     public Borrowing getBorrowingByBookId(Borrowing borrowing) {
-        return client.findByBookId(borrowing);
+        return client.getBorrowingByBookId(borrowing);
     }
 
     public List<Borrowing> listBorrowing(Borrowing borrowing) {
         return client.listBorrowing(borrowing);
+    }
+
+    public List<Borrowing> listBorrowingsByWorkId(Borrowing borrowing) {
+        return client.listBorrowingsByWorkId(borrowing);
     }
 
     public List<BorrowingArchive> listArchive(BorrowingArchive archive) {
@@ -35,6 +39,10 @@ public class SoapBorrowingDao implements BorrowingDaoContract {
 
     public List<Borrowing> listBorrowingByPeriodsExceeded() {
         return client.listBorrowingByReturnDateBeforeCurrent();
+    }
+
+    public List<Borrowing> listBorrowingsByUserIsReminder() {
+        return client.listBorrowingsByUserIsReminder();
     }
 
     public void updateBorrowing(Borrowing borrowing) {

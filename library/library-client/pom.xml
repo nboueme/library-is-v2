@@ -9,7 +9,7 @@
     <parent>
         <artifactId>library</artifactId>
         <groupId>com.nb.library</groupId>
-        <version>1.0.1</version>
+        <version>1.2.1</version>
     </parent>
 
     <!-- ===== Maven information ===== -->
@@ -48,18 +48,11 @@
                         <wsdlUrl>http://web-service:8080/library/AuthorService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/BorrowingService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/EditorService?wsdl</wsdlUrl>
+                        <wsdlUrl>http://web-service:8080/library/ReservationService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/TypeWorkService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/UserService?wsdl</wsdlUrl>
                         <wsdlUrl>http://web-service:8080/library/WorkService?wsdl</wsdlUrl>
                     </wsdlUrls>
-                    <!--wsdlUrls>
-                        <wsdlUrl>http://localhost:8080/library/AuthorService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8080/library/BorrowingService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8080/library/EditorService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8080/library/TypeWorkService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8080/library/UserService?wsdl</wsdlUrl>
-                        <wsdlUrl>http://localhost:8080/library/WorkService?wsdl</wsdlUrl>
-                    </wsdlUrls-->
                 </configuration>
             </plugin>
         </plugins>

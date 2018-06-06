@@ -87,6 +87,7 @@ CREATE TABLE public.user_account (
                 email VARCHAR(100) NOT NULL,
                 password VARCHAR(100) NOT NULL,
                 image_url VARCHAR(100),
+                reminder BOOLEAN DEFAULT true NOT NULL,
                 role VARCHAR(5) NOT NULL,
                 created_at TIMESTAMP(0) DEFAULT current_timestamp NOT NULL,
                 updated_at TIMESTAMP(0),
@@ -101,13 +102,27 @@ CREATE UNIQUE INDEX user_account_email_uindex
  ON public.user_account
  ( email ASC );
 
+CREATE SEQUENCE public.reservation_id_seq;
+
+CREATE TABLE public.reservation (
+                id INTEGER NOT NULL DEFAULT nextval('public.reservation_id_seq'),
+                user_id INTEGER NOT NULL,
+                work_id INTEGER NOT NULL,
+                reservation_date TIMESTAMP(0) DEFAULT current_timestamp NOT NULL,
+                notification_date DATE,
+                CONSTRAINT reservation_pk PRIMARY KEY (id)
+);
+
+
+ALTER SEQUENCE public.reservation_id_seq OWNED BY public.reservation.id;
+
 CREATE SEQUENCE public.borrowing_archive_id_seq;
 
 CREATE TABLE public.borrowing_archive (
                 id INTEGER NOT NULL DEFAULT nextval('public.borrowing_archive_id_seq'),
                 book_id INTEGER NOT NULL,
                 user_id INTEGER NOT NULL,
-                borrowing_date TIMESTAMP NOT NULL,
+                borrowing_date TIMESTAMP(0) NOT NULL,
                 return_date DATE NOT NULL,
                 CONSTRAINT borrowing_archive_pk PRIMARY KEY (id)
 );
@@ -121,7 +136,7 @@ CREATE TABLE public.borrowing (
                 id INTEGER NOT NULL DEFAULT nextval('public.borrowing_id_seq'),
                 book_id INTEGER NOT NULL,
                 user_id INTEGER NOT NULL,
-                borrowing_date TIMESTAMP DEFAULT current_timestamp NOT NULL,
+                borrowing_date TIMESTAMP(0) DEFAULT current_timestamp NOT NULL,
                 return_date DATE NOT NULL,
                 is_loaned BOOLEAN NOT NULL,
                 is_extended BOOLEAN NOT NULL,
@@ -163,6 +178,13 @@ ON DELETE NO ACTION
 ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
+ALTER TABLE public.reservation ADD CONSTRAINT work_reservation_fk
+FOREIGN KEY (work_id)
+REFERENCES public.work (id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
 ALTER TABLE public.book ADD CONSTRAINT editor_book_fk
 FOREIGN KEY (editor_id)
 REFERENCES public.editor (id)
@@ -192,6 +214,13 @@ ON UPDATE NO ACTION
 NOT DEFERRABLE;
 
 ALTER TABLE public.borrowing_archive ADD CONSTRAINT user_account_borrowing_archive_fk
+FOREIGN KEY (user_id)
+REFERENCES public.user_account (id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION
+NOT DEFERRABLE;
+
+ALTER TABLE public.reservation ADD CONSTRAINT user_account_reservation_fk
 FOREIGN KEY (user_id)
 REFERENCES public.user_account (id)
 ON DELETE NO ACTION

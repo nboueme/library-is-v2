@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java pour findByBookIdResponse complex type.
+ * <p>Classe Java pour getBorrowingByBookIdResponse complex type.
  * 
  * <p>Le fragment de sch\u00e9ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
- * &lt;complexType name="findByBookIdResponse">
+ * &lt;complexType name="getBorrowingByBookIdResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "findByBookIdResponse", propOrder = {
+@XmlType(name = "getBorrowingByBookIdResponse", propOrder = {
     "_return"
 })
-public class FindByBookIdResponse {
+public class GetBorrowingByBookIdResponse {
 
     @XmlElement(name = "return")
     protected Borrowing _return;

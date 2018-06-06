@@ -30,6 +30,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="phoneNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="postalCode" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="reminder" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="role" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="title" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="updatedAt" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
@@ -55,6 +56,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "password",
     "phoneNumber",
     "postalCode",
+    "reminder",
     "role",
     "title",
     "updatedAt"
@@ -75,6 +77,7 @@ public class UserAccount {
     protected String password;
     protected String phoneNumber;
     protected Integer postalCode;
+    protected Boolean reminder;
     protected String role;
     protected String title;
     @XmlSchemaType(name = "dateTime")
@@ -366,6 +369,30 @@ public class UserAccount {
      */
     public void setPostalCode(Integer value) {
         this.postalCode = value;
+    }
+
+    /**
+     * Obtient la valeur de la propri\u00e9t\u00e9 reminder.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isReminder() {
+        return reminder;
+    }
+
+    /**
+     * D\u00e9finit la valeur de la propri\u00e9t\u00e9 reminder.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setReminder(Boolean value) {
+        this.reminder = value;
     }
 
     /**

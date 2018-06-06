@@ -5,7 +5,7 @@
             <PatternLayout pattern="%highlight{%-5level} [%t] %c : %m%n"/>
         </Console>
         <File name="BATCH" fileName="/logs/batch.log">
-        <!--File name="BATCH" fileName="/Users/nicolasboueme/Documents/java/javaee/library-is/docker/batch/app/logs/batch.log"-->
+        <!--File name="BATCH" fileName="/Users/nicolasboueme/Documents/java/javaee/library-is-v2/docker/batch/app/logs/batch.log"-->
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>

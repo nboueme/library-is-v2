@@ -51,6 +51,10 @@ public interface UserAccountInterface {
 
     void setImageURL(String imageURL);
 
+    Boolean getReminder();
+
+    void setReminder(Boolean isReminder);
+
     String getRole();
 
     void setRole(String role);

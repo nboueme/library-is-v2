@@ -23,6 +23,7 @@ public class WorkService extends AbstractService {
         return contract.findAll();
     }
 
+    @WebMethod
     public List<Work> listWorksByWord(String word) {
         return contract.findByWord(word);
     }
