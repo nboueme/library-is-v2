@@ -33,7 +33,7 @@ sur [_OpenClassrooms_](https://www.openclassrooms.com).
 #### Modules
 
 - `library-webapp` : module contenant les vues et ses contrôleurs
-- `library-batch` : module contenant un batch qui envoie un mail de relance
+- `library-batch` : module contenant les différents batch
 - `library-business` : module contenant la logique métier
 - `library-repository` : module contenant le pattern DAO, appelle le service web
 - `library-client` : module contenant les entités et classes auto-générées
