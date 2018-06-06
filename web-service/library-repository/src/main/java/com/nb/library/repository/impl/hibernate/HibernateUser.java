@@ -41,7 +41,7 @@ public class HibernateUser implements UserDaoContract {
     }
 
     @Transactional
-    public void update(UserAccount user) {
+    public void updateReminder(UserAccount user) {
         Optional<UserAccount> optionalUser = userRepository.findById(user.getId());
         optionalUser.ifPresent(userAccount -> userAccount.setReminder(user.getReminder()));
     }

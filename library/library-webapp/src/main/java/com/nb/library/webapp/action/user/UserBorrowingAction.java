@@ -62,7 +62,7 @@ public class UserBorrowingAction extends AbstractService implements SessionAware
         userSession = (UserAccount) ActionContext.getContext().getSession().get(Constant.USER_SESSION);
         userSession.setReminder(!userSession.isReminder());
         session.put(Constant.USER_SESSION, userSession);
-        getManagerFactory().getUserManager().updateUser(userSession);
+        getManagerFactory().getUserManager().updateReminder(userSession);
 
         return SUCCESS;
     }

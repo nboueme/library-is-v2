@@ -24,8 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _UpdateUser_QNAME = new QName("user.client.library.nb.com", "updateUser");
-    private final static QName _UpdateUserResponse_QNAME = new QName("user.client.library.nb.com", "updateUserResponse");
+    private final static QName _UpdateReminderResponse_QNAME = new QName("user.client.library.nb.com", "updateReminderResponse");
+    private final static QName _UpdateReminder_QNAME = new QName("user.client.library.nb.com", "updateReminder");
     private final static QName _GetUserResponse_QNAME = new QName("user.client.library.nb.com", "getUserResponse");
     private final static QName _GetUser_QNAME = new QName("user.client.library.nb.com", "getUser");
 
@@ -53,19 +53,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UpdateUser }
+     * Create an instance of {@link UpdateReminderResponse }
      * 
      */
-    public UpdateUser createUpdateUser() {
-        return new UpdateUser();
+    public UpdateReminderResponse createUpdateReminderResponse() {
+        return new UpdateReminderResponse();
     }
 
     /**
-     * Create an instance of {@link UpdateUserResponse }
+     * Create an instance of {@link UpdateReminder }
      * 
      */
-    public UpdateUserResponse createUpdateUserResponse() {
-        return new UpdateUserResponse();
+    public UpdateReminder createUpdateReminder() {
+        return new UpdateReminder();
     }
 
     /**
@@ -77,21 +77,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateUser }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateReminderResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "user.client.library.nb.com", name = "updateUser")
-    public JAXBElement<UpdateUser> createUpdateUser(UpdateUser value) {
-        return new JAXBElement<UpdateUser>(_UpdateUser_QNAME, UpdateUser.class, null, value);
+    @XmlElementDecl(namespace = "user.client.library.nb.com", name = "updateReminderResponse")
+    public JAXBElement<UpdateReminderResponse> createUpdateReminderResponse(UpdateReminderResponse value) {
+        return new JAXBElement<UpdateReminderResponse>(_UpdateReminderResponse_QNAME, UpdateReminderResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateUserResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateReminder }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "user.client.library.nb.com", name = "updateUserResponse")
-    public JAXBElement<UpdateUserResponse> createUpdateUserResponse(UpdateUserResponse value) {
-        return new JAXBElement<UpdateUserResponse>(_UpdateUserResponse_QNAME, UpdateUserResponse.class, null, value);
+    @XmlElementDecl(namespace = "user.client.library.nb.com", name = "updateReminder")
+    public JAXBElement<UpdateReminder> createUpdateReminder(UpdateReminder value) {
+        return new JAXBElement<UpdateReminder>(_UpdateReminder_QNAME, UpdateReminder.class, null, value);
     }
 
     /**

@@ -23,7 +23,7 @@ public class FiveDaysTasklet extends AbstractService implements Tasklet {
 
     @Override
     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-        List<Borrowing> borrowings = getManagerFactory().getBorrowingManager().listAllByUserIsReminder();
+        List<Borrowing> borrowings = getManagerFactory().getBorrowingManager().listBorrowingsByUserIsReminder();
         List<Borrowing> userBorrowings = new ArrayList<>(0);
 
         String currentUserEmail = "";

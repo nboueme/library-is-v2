@@ -8,7 +8,7 @@ import java.util.List;
 public interface BorrowingManager {
     void addBorrowing(Borrowing borrowing);
 
-    Borrowing getBorrowing(Borrowing borrowing);
+    Borrowing getBorrowingByIdAndUserId(Borrowing borrowing);
 
     Borrowing getBorrowingByBookId(Borrowing borrowing);
 
@@ -20,7 +20,7 @@ public interface BorrowingManager {
 
     List<Borrowing> listBorrowingByPeriodsExceeded();
 
-    List<Borrowing> listAllByUserIsReminder();
+    List<Borrowing> listBorrowingsByUserIsReminder();
 
     void updateBorrowing(Borrowing borrowing);
 

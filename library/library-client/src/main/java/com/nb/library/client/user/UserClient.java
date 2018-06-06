@@ -44,10 +44,10 @@ public interface UserClient {
      * @param arg0
      */
     @WebMethod
-    @RequestWrapper(localName = "updateUser", targetNamespace = "user.client.library.nb.com", className = "com.nb.library.client.user.UpdateUser")
-    @ResponseWrapper(localName = "updateUserResponse", targetNamespace = "user.client.library.nb.com", className = "com.nb.library.client.user.UpdateUserResponse")
-    @Action(input = "user.client.library.nb.com/UserClient/updateUserRequest", output = "user.client.library.nb.com/UserClient/updateUserResponse")
-    public void updateUser(
+    @RequestWrapper(localName = "updateReminder", targetNamespace = "user.client.library.nb.com", className = "com.nb.library.client.user.UpdateReminder")
+    @ResponseWrapper(localName = "updateReminderResponse", targetNamespace = "user.client.library.nb.com", className = "com.nb.library.client.user.UpdateReminderResponse")
+    @Action(input = "user.client.library.nb.com/UserClient/updateReminderRequest", output = "user.client.library.nb.com/UserClient/updateReminderResponse")
+    public void updateReminder(
         @WebParam(name = "arg0", targetNamespace = "")
         UserAccount arg0);
 

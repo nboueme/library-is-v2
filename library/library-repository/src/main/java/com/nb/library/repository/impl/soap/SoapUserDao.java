@@ -14,7 +14,7 @@ public class SoapUserDao implements UserDaoContract {
         return client.getUser(user);
     }
 
-    public void updateUser(UserAccount user) {
-        client.updateUser(user);
+    public void updateReminder(UserAccount user) {
+        client.updateReminder(user);
     }
 }

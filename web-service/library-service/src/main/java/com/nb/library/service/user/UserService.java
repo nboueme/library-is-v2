@@ -18,7 +18,7 @@ public class UserService extends AbstractService {
     }
 
     @WebMethod
-    public void updateUser(UserAccount user) {
-        contract.update(user);
+    public void updateReminder(UserAccount user) {
+        contract.updateReminder(user);
     }
 }

@@ -10,23 +10,23 @@
 <message name="addBorrowingResponse">
 <part name="parameters" element="tns:addBorrowingResponse"/>
 </message>
-<message name="listBorrowingsByWorkId">
-<part name="parameters" element="tns:listBorrowingsByWorkId"/>
+<message name="getBorrowingByIdAndUserId">
+<part name="parameters" element="tns:getBorrowingByIdAndUserId"/>
 </message>
-<message name="listBorrowingsByWorkIdResponse">
-<part name="parameters" element="tns:listBorrowingsByWorkIdResponse"/>
-</message>
-<message name="getBorrowing">
-<part name="parameters" element="tns:getBorrowing"/>
-</message>
-<message name="getBorrowingResponse">
-<part name="parameters" element="tns:getBorrowingResponse"/>
+<message name="getBorrowingByIdAndUserIdResponse">
+<part name="parameters" element="tns:getBorrowingByIdAndUserIdResponse"/>
 </message>
 <message name="listBorrowing">
 <part name="parameters" element="tns:listBorrowing"/>
 </message>
 <message name="listBorrowingResponse">
 <part name="parameters" element="tns:listBorrowingResponse"/>
+</message>
+<message name="listBorrowingsByWorkId">
+<part name="parameters" element="tns:listBorrowingsByWorkId"/>
+</message>
+<message name="listBorrowingsByWorkIdResponse">
+<part name="parameters" element="tns:listBorrowingsByWorkIdResponse"/>
 </message>
 <message name="listArchive">
 <part name="parameters" element="tns:listArchive"/>
@@ -40,17 +40,17 @@
 <message name="listBorrowingByReturnDateBeforeCurrentResponse">
 <part name="parameters" element="tns:listBorrowingByReturnDateBeforeCurrentResponse"/>
 </message>
-<message name="findAllByUserIsReminder">
-<part name="parameters" element="tns:findAllByUserIsReminder"/>
+<message name="listBorrowingsByUserIsReminder">
+<part name="parameters" element="tns:listBorrowingsByUserIsReminder"/>
 </message>
-<message name="findAllByUserIsReminderResponse">
-<part name="parameters" element="tns:findAllByUserIsReminderResponse"/>
+<message name="listBorrowingsByUserIsReminderResponse">
+<part name="parameters" element="tns:listBorrowingsByUserIsReminderResponse"/>
 </message>
-<message name="findByBookId">
-<part name="parameters" element="tns:findByBookId"/>
+<message name="getBorrowingByBookId">
+<part name="parameters" element="tns:getBorrowingByBookId"/>
 </message>
-<message name="findByBookIdResponse">
-<part name="parameters" element="tns:findByBookIdResponse"/>
+<message name="getBorrowingByBookIdResponse">
+<part name="parameters" element="tns:getBorrowingByBookIdResponse"/>
 </message>
 <message name="updateBorrowing">
 <part name="parameters" element="tns:updateBorrowing"/>
@@ -69,17 +69,17 @@
 <input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/addBorrowingRequest" message="tns:addBorrowing"/>
 <output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/addBorrowingResponse" message="tns:addBorrowingResponse"/>
 </operation>
-<operation name="listBorrowingsByWorkId">
-<input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByWorkIdRequest" message="tns:listBorrowingsByWorkId"/>
-<output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByWorkIdResponse" message="tns:listBorrowingsByWorkIdResponse"/>
-</operation>
-<operation name="getBorrowing">
-<input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/getBorrowingRequest" message="tns:getBorrowing"/>
-<output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/getBorrowingResponse" message="tns:getBorrowingResponse"/>
+<operation name="getBorrowingByIdAndUserId">
+<input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/getBorrowingByIdAndUserIdRequest" message="tns:getBorrowingByIdAndUserId"/>
+<output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/getBorrowingByIdAndUserIdResponse" message="tns:getBorrowingByIdAndUserIdResponse"/>
 </operation>
 <operation name="listBorrowing">
 <input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingRequest" message="tns:listBorrowing"/>
 <output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingResponse" message="tns:listBorrowingResponse"/>
+</operation>
+<operation name="listBorrowingsByWorkId">
+<input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByWorkIdRequest" message="tns:listBorrowingsByWorkId"/>
+<output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByWorkIdResponse" message="tns:listBorrowingsByWorkIdResponse"/>
 </operation>
 <operation name="listArchive">
 <input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listArchiveRequest" message="tns:listArchive"/>
@@ -89,13 +89,13 @@
 <input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingByReturnDateBeforeCurrentRequest" message="tns:listBorrowingByReturnDateBeforeCurrent"/>
 <output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingByReturnDateBeforeCurrentResponse" message="tns:listBorrowingByReturnDateBeforeCurrentResponse"/>
 </operation>
-<operation name="findAllByUserIsReminder">
-<input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/findAllByUserIsReminderRequest" message="tns:findAllByUserIsReminder"/>
-<output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/findAllByUserIsReminderResponse" message="tns:findAllByUserIsReminderResponse"/>
+<operation name="listBorrowingsByUserIsReminder">
+<input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByUserIsReminderRequest" message="tns:listBorrowingsByUserIsReminder"/>
+<output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByUserIsReminderResponse" message="tns:listBorrowingsByUserIsReminderResponse"/>
 </operation>
-<operation name="findByBookId">
-<input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/findByBookIdRequest" message="tns:findByBookId"/>
-<output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/findByBookIdResponse" message="tns:findByBookIdResponse"/>
+<operation name="getBorrowingByBookId">
+<input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/getBorrowingByBookIdRequest" message="tns:getBorrowingByBookId"/>
+<output wsam:Action="borrowing.client.library.nb.com/BorrowingClient/getBorrowingByBookIdResponse" message="tns:getBorrowingByBookIdResponse"/>
 </operation>
 <operation name="updateBorrowing">
 <input wsam:Action="borrowing.client.library.nb.com/BorrowingClient/updateBorrowingRequest" message="tns:updateBorrowing"/>
@@ -117,16 +117,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="listBorrowingsByWorkId">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getBorrowing">
+<operation name="getBorrowingByIdAndUserId">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -136,6 +127,15 @@
 </output>
 </operation>
 <operation name="listBorrowing">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="listBorrowingsByWorkId">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -162,7 +162,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="findAllByUserIsReminder">
+<operation name="listBorrowingsByUserIsReminder">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -171,7 +171,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="findByBookId">
+<operation name="getBorrowingByBookId">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -13,8 +13,8 @@ public class BorrowingManagerImpl extends AbstractManager implements BorrowingMa
         getDaoFactory().getBorrowingDao().addBorrowing(borrowing);
     }
 
-    public Borrowing getBorrowing(Borrowing borrowing) {
-        return getDaoFactory().getBorrowingDao().getBorrowing(borrowing);
+    public Borrowing getBorrowingByIdAndUserId(Borrowing borrowing) {
+        return getDaoFactory().getBorrowingDao().getBorrowingByIdAndUserId(borrowing);
     }
 
     public Borrowing getBorrowingByBookId(Borrowing borrowing) {
@@ -37,8 +37,8 @@ public class BorrowingManagerImpl extends AbstractManager implements BorrowingMa
         return getDaoFactory().getBorrowingDao().listBorrowingByPeriodsExceeded();
     }
 
-    public List<Borrowing> listAllByUserIsReminder() {
-        return getDaoFactory().getBorrowingDao().listAllByUserIsReminder();
+    public List<Borrowing> listBorrowingsByUserIsReminder() {
+        return getDaoFactory().getBorrowingDao().listBorrowingsByUserIsReminder();
     }
 
     public void updateBorrowing(Borrowing borrowing) {

@@ -10,20 +10,20 @@
 <message name="getUserResponse">
 <part name="parameters" element="tns:getUserResponse"/>
 </message>
-<message name="updateUser">
-<part name="parameters" element="tns:updateUser"/>
+<message name="updateReminder">
+<part name="parameters" element="tns:updateReminder"/>
 </message>
-<message name="updateUserResponse">
-<part name="parameters" element="tns:updateUserResponse"/>
+<message name="updateReminderResponse">
+<part name="parameters" element="tns:updateReminderResponse"/>
 </message>
 <portType name="UserClient">
 <operation name="getUser">
 <input wsam:Action="user.client.library.nb.com/UserClient/getUserRequest" message="tns:getUser"/>
 <output wsam:Action="user.client.library.nb.com/UserClient/getUserResponse" message="tns:getUserResponse"/>
 </operation>
-<operation name="updateUser">
-<input wsam:Action="user.client.library.nb.com/UserClient/updateUserRequest" message="tns:updateUser"/>
-<output wsam:Action="user.client.library.nb.com/UserClient/updateUserResponse" message="tns:updateUserResponse"/>
+<operation name="updateReminder">
+<input wsam:Action="user.client.library.nb.com/UserClient/updateReminderRequest" message="tns:updateReminder"/>
+<output wsam:Action="user.client.library.nb.com/UserClient/updateReminderResponse" message="tns:updateReminderResponse"/>
 </operation>
 </portType>
 <binding name="UserPortBinding" type="tns:UserClient">
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="updateUser">
+<operation name="updateReminder">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

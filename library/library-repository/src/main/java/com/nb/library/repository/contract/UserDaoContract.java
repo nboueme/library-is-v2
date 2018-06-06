@@ -5,5 +5,5 @@ import com.nb.library.client.user.UserAccount;
 public interface UserDaoContract {
     UserAccount getUser(UserAccount user);
 
-    void updateUser(UserAccount user);
+    void updateReminder(UserAccount user);
 }

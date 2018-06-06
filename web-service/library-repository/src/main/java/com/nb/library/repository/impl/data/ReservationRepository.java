@@ -23,5 +23,5 @@ public interface ReservationRepository extends CrudRepository<Reservation, Integ
 
     Integer countAllByWorkId(Integer workId);
 
-    Integer deleteByUserIdAndWorkId(Integer userId, Integer workId);
+    void deleteByUserIdAndWorkId(Integer userId, Integer workId);
 }

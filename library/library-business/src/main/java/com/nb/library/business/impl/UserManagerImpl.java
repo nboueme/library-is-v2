@@ -10,7 +10,7 @@ public class UserManagerImpl extends AbstractManager implements UserManager {
         return getDaoFactory().getUserDao().getUser(user);
     }
 
-    public void updateUser(UserAccount user) {
-        getDaoFactory().getUserDao().updateUser(user);
+    public void updateReminder(UserAccount user) {
+        getDaoFactory().getUserDao().updateReminder(user);
     }
 }

@@ -27,18 +27,6 @@ public interface ReservationClient {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<com.nb.library.client.reservation.Reservation>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "listAllReservations", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListAllReservations")
-    @ResponseWrapper(localName = "listAllReservationsResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListAllReservationsResponse")
-    @Action(input = "reservation.client.library.nb.com/ReservationClient/listAllReservationsRequest", output = "reservation.client.library.nb.com/ReservationClient/listAllReservationsResponse")
-    public List<Reservation> listAllReservations();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns java.util.List<com.nb.library.client.reservation.Reservation>
@@ -117,5 +105,17 @@ public interface ReservationClient {
     public void addReservation(
         @WebParam(name = "arg0", targetNamespace = "")
         Reservation arg0);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<com.nb.library.client.reservation.Reservation>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listAllReservations", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListAllReservations")
+    @ResponseWrapper(localName = "listAllReservationsResponse", targetNamespace = "reservation.client.library.nb.com", className = "com.nb.library.client.reservation.ListAllReservationsResponse")
+    @Action(input = "reservation.client.library.nb.com/ReservationClient/listAllReservationsRequest", output = "reservation.client.library.nb.com/ReservationClient/listAllReservationsResponse")
+    public List<Reservation> listAllReservations();
 
 }
