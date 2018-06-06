@@ -43,6 +43,7 @@
     <bean id="authorDao" class="com.nb.library.repository.impl.hibernate.HibernateAuthor"/>
     <bean id="borrowingDao" class="com.nb.library.repository.impl.hibernate.HibernateBorrowing"/>
     <bean id="editorDao" class="com.nb.library.repository.impl.hibernate.HibernateEditor"/>
+    <bean id="reservationDao" class="com.nb.library.repository.impl.hibernate.HibernateReservation"/>
     <bean id="typeWorkDao" class="com.nb.library.repository.impl.hibernate.HibernateTypeWork"/>
     <bean id="userDao" class="com.nb.library.repository.impl.hibernate.HibernateUser"/>
     <bean id="workDao" class="com.nb.library.repository.impl.hibernate.HibernateWork"/>
@@ -52,6 +53,7 @@
         <property name="authorDao" ref="authorDao"/>
         <property name="borrowingDao" ref="borrowingDao"/>
         <property name="editorDao" ref="editorDao"/>
+        <property name="reservationDao" ref="reservationDao"/>
         <property name="typeWorkDao" ref="typeWorkDao"/>
         <property name="userDao" ref="userDao"/>
         <property name="workDao" ref="workDao"/>

@@ -45,10 +45,10 @@ public interface BorrowingClient {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getBorrowing", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowing")
-    @ResponseWrapper(localName = "getBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowingResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingResponse")
-    public Borrowing getBorrowing(
+    @RequestWrapper(localName = "getBorrowingByIdAndUserId", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowingByIdAndUserId")
+    @ResponseWrapper(localName = "getBorrowingByIdAndUserIdResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowingByIdAndUserIdResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingByIdAndUserIdRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingByIdAndUserIdResponse")
+    public Borrowing getBorrowingByIdAndUserId(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
 
@@ -64,6 +64,21 @@ public interface BorrowingClient {
     @ResponseWrapper(localName = "listBorrowingResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingResponse")
     @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingResponse")
     public List<Borrowing> listBorrowing(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Borrowing arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listBorrowingsByWorkId", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingsByWorkId")
+    @ResponseWrapper(localName = "listBorrowingsByWorkIdResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingsByWorkIdResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByWorkIdRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByWorkIdResponse")
+    public List<Borrowing> listBorrowingsByWorkId(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
 
@@ -96,16 +111,28 @@ public interface BorrowingClient {
 
     /**
      * 
+     * @return
+     *     returns java.util.List<com.nb.library.client.borrowing.Borrowing>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "listBorrowingsByUserIsReminder", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingsByUserIsReminder")
+    @ResponseWrapper(localName = "listBorrowingsByUserIsReminderResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.ListBorrowingsByUserIsReminderResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByUserIsReminderRequest", output = "borrowing.client.library.nb.com/BorrowingClient/listBorrowingsByUserIsReminderResponse")
+    public List<Borrowing> listBorrowingsByUserIsReminder();
+
+    /**
+     * 
      * @param arg0
      * @return
      *     returns com.nb.library.client.borrowing.Borrowing
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "findByBookId", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.FindByBookId")
-    @ResponseWrapper(localName = "findByBookIdResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.FindByBookIdResponse")
-    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/findByBookIdRequest", output = "borrowing.client.library.nb.com/BorrowingClient/findByBookIdResponse")
-    public Borrowing findByBookId(
+    @RequestWrapper(localName = "getBorrowingByBookId", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowingByBookId")
+    @ResponseWrapper(localName = "getBorrowingByBookIdResponse", targetNamespace = "borrowing.client.library.nb.com", className = "com.nb.library.client.borrowing.GetBorrowingByBookIdResponse")
+    @Action(input = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingByBookIdRequest", output = "borrowing.client.library.nb.com/BorrowingClient/getBorrowingByBookIdResponse")
+    public Borrowing getBorrowingByBookId(
         @WebParam(name = "arg0", targetNamespace = "")
         Borrowing arg0);
 

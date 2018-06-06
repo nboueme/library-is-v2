@@ -28,6 +28,14 @@ public class DaoFactory {
         this.editorDao = editorDao;
     }
 
+    private ReservationDaoContract reservationDao;
+    public ReservationDaoContract getReservationDao() {
+        return reservationDao;
+    }
+    public void setReservationDao(ReservationDaoContract reservationDao) {
+        this.reservationDao = reservationDao;
+    }
+
     private TypeWorkDaoContract typeWorkDao;
     public TypeWorkDaoContract getTypeWorkDao() {
         return typeWorkDao;

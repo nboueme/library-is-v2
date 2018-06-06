@@ -9,6 +9,7 @@
     <bean id="authorManager" class="com.nb.library.business.impl.AuthorManagerImpl"/>
     <bean id="borrowingManager" class="com.nb.library.business.impl.BorrowingManagerImpl"/>
     <bean id="editorManager" class="com.nb.library.business.impl.EditorManagerImpl"/>
+    <bean id="reservationManager" class="com.nb.library.business.impl.ReservationManagerImpl"/>
     <bean id="typeWorkManager" class="com.nb.library.business.impl.TypeWorkManagerImpl"/>
     <bean id="userManager" class="com.nb.library.business.impl.UserManagerImpl"/>
     <bean id="workManager" class="com.nb.library.business.impl.WorkManagerImpl"/>
@@ -18,6 +19,7 @@
         <property name="authorManager" ref="authorManager"/>
         <property name="borrowingManager" ref="borrowingManager"/>
         <property name="editorManager" ref="editorManager"/>
+        <property name="reservationManager" ref="reservationManager"/>
         <property name="typeWorkManager" ref="typeWorkManager"/>
         <property name="userManager" ref="userManager"/>
         <property name="workManager" ref="workManager"/>

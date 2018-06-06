@@ -5,6 +5,7 @@ import com.nb.library.entity.borrowing.Borrowing;
 import com.nb.library.repository.contract.BorrowingDaoContract;
 import com.nb.library.repository.impl.data.BorrowingArchiveRepository;
 import com.nb.library.repository.impl.data.BorrowingRepository;
+import com.nb.library.repository.impl.data.ReservationRepository;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
@@ -21,6 +22,9 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     @Resource
     private BorrowingArchiveRepository borrowingArchiveRepository;
 
+    @Resource
+    private ReservationRepository reservationRepository;
+
     @Transactional
     public void save(Borrowing borrowing) {
         /* SI un emprunt n'existe pas dans la table borrowing avec pour book_id passé via l'objet borrowing
@@ -28,6 +32,8 @@ public class HibernateBorrowing implements BorrowingDaoContract {
          */
         Optional<Borrowing> existingBorrowing = borrowingRepository.findByBookId(borrowing.getBookId());
         if (!existingBorrowing.isPresent()) {
+            reservationRepository.deleteByUserIdAndWorkId(borrowing.getUserId(), borrowing.getBook().getWork().getId());
+            borrowing.setBook(null);
             borrowingRepository.save(borrowing);
         }
     }
@@ -46,6 +52,13 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     }
 
     @Transactional
+    public List<Borrowing> findBorrowingsByWorkId(Borrowing borrowing) {
+        List<Borrowing> borrowings = new ArrayList<>(0);
+        borrowingRepository.findAllByWorkId(borrowing.getBook().getWork().getId()).iterator().forEachRemaining(borrowings::add);
+        return borrowings;
+    }
+
+    @Transactional
     public List<BorrowingArchive> findArchivesByUserId(BorrowingArchive archive) {
         List<BorrowingArchive> archives = new ArrayList<>(0);
         borrowingArchiveRepository.findAllByUserId(archive.getUserId()).iterator().forEachRemaining(archives::add);
@@ -56,6 +69,13 @@ public class HibernateBorrowing implements BorrowingDaoContract {
     public List<Borrowing> findAllByReturnDateBeforeCurrent() {
         List<Borrowing> borrowings = new ArrayList<>(0);
         borrowingRepository.findAllByReturnDateBeforeCurrent().iterator().forEachRemaining(borrowings::add);
+        return borrowings;
+    }
+
+    @Transactional
+    public List<Borrowing> findAllByUserIsReminder() {
+        List<Borrowing> borrowings = new ArrayList<>(0);
+        borrowingRepository.findAllByUserIsReminder().iterator().forEachRemaining(borrowings::add);
         return borrowings;
     }
 

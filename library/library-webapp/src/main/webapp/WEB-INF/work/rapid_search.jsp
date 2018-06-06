@@ -23,7 +23,7 @@
         </tr>
         </thead>
         <tbody>
-        <s:iterator value="works">
+        <s:iterator value="works" status="work">
             <tr>
                 <td>
                     <a href="<s:url action="work/%{id}"/>"><img class="img-sm" src="<s:property value="imageURL"/>"/></a>
@@ -55,18 +55,59 @@
                 </td>
                 <td>
                     <div class="block-padding">
-                        <s:set var="isLoaned" value="%{false}"/>
+                        <s:set var="countBorrowingByBook" value="%{0}"/>
+                        <s:set var="alreadyLoaned" value="%{false}"/>
 
-                        <s:iterator value="borrowings" status="borrowing">
-                            <s:iterator value="books" status="book">
-                                <s:if test="books[#book.index].id == borrowings[#borrowing.index].bookId">
-                                    <s:set var="isLoaned" value="%{true}"/>
+                        <s:iterator value="books" status="book">
+                            <s:iterator value="borrowings" status="borrowing">
+                                <s:if test="books[#book.index].id == bookId">
+                                    <s:if test="#session.userSession.id == userId">
+                                        <s:set var="alreadyLoaned" value="%{true}"/>
+                                    </s:if>
+
+                                    <s:if test="#book.index == 0">
+                                        <s:set var="minimumReturnDate" value="%{returnDate}"/>
+                                    </s:if>
+                                    <s:elseif test="returnDate.toGregorianCalendar().before(#minimumReturnDate.toGregorianCalendar())">
+                                        <s:set var="minimumReturnDate" value="%{returnDate}"/>
+                                    </s:elseif>
+                                    <s:set var="countBorrowingByBook" value="%{#countBorrowingByBook + 1}"/>
                                 </s:if>
                             </s:iterator>
                         </s:iterator>
 
-                        <s:if test="#isLoaned">
-                            Indisponible
+                        <s:if test="#countBorrowingByBook == books.size">
+                            <p>Indisponible</p>
+                            <s:if test="%{#session.userSession != null}">
+                                <p>
+                                    Prochain retour le
+                                    <s:date name="#minimumReturnDate.toGregorianCalendar().time" format="dd MMMM yyyy"/>
+                                </p>
+                                <p>
+                                    Nombre de réservation actuel :
+                                    <s:property value="countReservationsByWork[#work.index]"/>
+                                </p>
+                                <p>
+                                    <s:iterator value="reservations">
+                                        <s:if test="work.id == works[#work.index].id">
+                                            <s:set var="alreadyReserved" value="%{true}"/>
+                                        </s:if>
+                                    </s:iterator>
+
+                                    <s:if test="#alreadyLoaned">
+                                        Vous avez déjà un emprunt en cours pour cette oeuvre
+                                    </s:if>
+                                    <s:elseif test="#alreadyReserved">
+                                        Vous avez une réservation en cours pour cette oeuvre
+                                    </s:elseif>
+                                    <s:elseif test="cantReserve[#work.index]">
+                                        Liste de réservations pleine
+                                    </s:elseif>
+                                    <s:else>
+                                        <a href="<s:url action="reservation/add/%{id}"/>">Faire une réservation</a>
+                                    </s:else>
+                                </p>
+                            </s:if>
                         </s:if>
                         <s:else>
                             Disponible

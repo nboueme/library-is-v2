@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
         <p>
-            Library Web Application - version 1.0
+            Library Web Application - version 1.2.1
             &copy; <a href="https://www.library.com">LibraryCity</a>
         </p>
     </div>

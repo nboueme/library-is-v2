@@ -4,4 +4,6 @@ import com.nb.library.client.user.UserAccount;
 
 public interface UserManager {
     UserAccount getUser(UserAccount user);
+
+    void updateReminder(UserAccount user);
 }

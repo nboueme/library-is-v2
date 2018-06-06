@@ -20,13 +20,18 @@ public class BorrowingService extends AbstractService {
     }
 
     @WebMethod
-    public Borrowing getBorrowing(Borrowing borrowing) {
+    public Borrowing getBorrowingByIdAndUserId(Borrowing borrowing) {
         return contract.findByIdAndUserId(borrowing);
     }
 
     @WebMethod
     public List<Borrowing> listBorrowing(Borrowing borrowing) {
         return contract.findBorrowingsByUserId(borrowing);
+    }
+
+    @WebMethod
+    public List<Borrowing> listBorrowingsByWorkId(Borrowing borrowing) {
+        return contract.findBorrowingsByWorkId(borrowing);
     }
 
     @WebMethod
@@ -40,7 +45,12 @@ public class BorrowingService extends AbstractService {
     }
 
     @WebMethod
-    public Borrowing findByBookId(Borrowing borrowing) {
+    public List<Borrowing> listBorrowingsByUserIsReminder() {
+        return contract.findAllByUserIsReminder();
+    }
+
+    @WebMethod
+    public Borrowing getBorrowingByBookId(Borrowing borrowing) {
         return contract.findByBookId(borrowing);
     }
 
